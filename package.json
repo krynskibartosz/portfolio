@@ -1,0 +1,32 @@
+{
+  "name": "portoflio",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc"
+  },
+  "dependencies": {
+    "@tailwindcss/line-clamp": "^0.2.2",
+    "next": "12.0.2",
+    "next-compose-plugins": "^2.2.1",
+    "next-optimized-images": "^2.6.2",
+    "next-redux-wrapper": "^7.0.5",
+    "next-seo": "^4.28.1",
+    "postcss-nesting": "^10.0.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "16.11.6",
+    "@types/react": "17.0.34",
+    "@types/react-dom": "^17.0.11",
+    "autoprefixer": "^10.4.0",
+    "eslint": "7.32.0",
+    "eslint-config-next": "12.0.2",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.2",
+    "typescript": "4.4.4"
+  }
+}
