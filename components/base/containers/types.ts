@@ -31,13 +31,8 @@ export type ColumnAndRow = {
   onClick?: (e?: any) => void;
 };
 
-export type SectionType = {
-  /** fill: boolean => set maxWidth to 1200px.
-   * @default 1200px
-   * */
-  children: JSX.Element | JSX.Element[];
-  fill?: boolean;
-  className?: string;
-  style?: CSSProperties;
-  as?: ElementType;
+export type SET_ALIGNEMENT = {
+  positionX: POSITIONX;
+  positionY: POSITIONY;
+  variant: "col" | "row";
 };
