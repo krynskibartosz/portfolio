@@ -1,8 +1,9 @@
 import Head from "next/head";
 
 import { NextSeo } from "next-seo";
+import { Nav } from "./Nav";
 
-export type LayoutType = {
+export type LAYOUT = {
   children: JSX.Element | JSX.Element[];
   pageTitle: string;
   seoTitle: string;
@@ -14,7 +15,7 @@ export const Layout = ({
   pageTitle,
   seoTitle,
   seoDescription,
-}: LayoutType): JSX.Element => {
+}: LAYOUT): JSX.Element => {
   return (
     <>
       <Head>
@@ -24,7 +25,12 @@ export const Layout = ({
       </Head>
       <div id="portal" className="relative" />
 
-      <div className={``}>{children}</div>
+      <div className="relative w-screen h-screen bg-white dark:bg-gray-900">
+        <section className="h-full max-w-5xl mx-auto max-md:mx-0 ">
+          {children}
+        </section>
+        <Nav />
+      </div>
     </>
   );
 };

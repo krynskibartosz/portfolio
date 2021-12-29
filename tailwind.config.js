@@ -3,9 +3,12 @@
 module.exports = {
   mode: "jit",
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  media: false,
+  darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        red: "#ff0052",
+      },
       screens: {
         "max-2xl": { max: "1535px" },
         "max-xl": { max: "1279px" },
