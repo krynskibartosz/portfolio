@@ -3,6 +3,42 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: FreightSans;
+    font-weight: 400;
+    src: local("FreightSans"),
+      url("/fonts/FreightSansProMedium-Regular.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: FreightSans;
+    font-weight: 500;
+    src: local("FreightSans"),
+      url("/fonts/FreightSansProMedium-Medium.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: FreightSans;
+    font-weight: 600;
+    src: local("FreightSans"),
+      url("/fonts/FreightSansProSemibold-Regular.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: FreightSans;
+    font-weight: 700;
+    src: local("FreightSans"),
+      url("/fonts/FreightSansProBold-Regular.ttf") format("truetype");
+  }
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
 }
 
 /* todo: change background */

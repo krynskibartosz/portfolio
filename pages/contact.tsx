@@ -7,8 +7,10 @@ const Home = () => {
       pageTitle="Bartosz Home"
       seoTitle="Front-end Développeur Bartosz"
       seoDescription="" // todo:
+      title="Contact"
+      description="You want to trust me with a mission or recruit me, everything happens here!"
     >
-      <section className="h-full max-w-5xl mx-auto "></section>
+      <p className="h-20 text-gray-900 dark:text-white">Contact</p>
     </Layout>
   );
 };

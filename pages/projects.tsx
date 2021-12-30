@@ -6,8 +6,10 @@ const Home = () => {
       pageTitle="Bartosz Home"
       seoTitle="Front-end Développeur Bartosz"
       seoDescription="" // todo:
+      title="Projects"
+      description="A Selection of projects that I'm not too ashamed of"
     >
-      <p>Projects</p>
+      <p className="h-20 text-gray-900 dark:text-white">Projects</p>
     </Layout>
   );
 };
