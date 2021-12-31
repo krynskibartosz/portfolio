@@ -6,9 +6,6 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
-      colors: {
-        red: "#ff0052",
-      },
       boxShadow: {
         main: "0px 0px 10px 2px rgba(0, 0, 0, 0.05)",
       },

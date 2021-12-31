@@ -73,8 +73,12 @@ export const NavBar = () => {
             positionY="center"
             onMouseEnter={() => setNavHover(true)}
             onMouseLeave={() => setNavHover(false)}
-            className="py-1 transition-all duration-500 ease-in-out bg-white border border-gray-200 rounded-xl max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none"
-            style={isNavHover ? { width: 380 } : { width: 320 }}
+            className="py-1 duration-500 ease-in-out bg-white border border-gray-100 dark:bg-black dark:bg-opacity-70 dark:backdrop-blur-sm rounded-2xl max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none dark:border-none"
+            // style={isNavHover ? { width: 380 } : { width: 320 }}
+            style={{
+              width: isNavHover ? 380 : 320,
+              transitionProperty: "width",
+            }}
           >
             {links.map((el, i) => {
               const copy = [...animationConfig];
@@ -107,13 +111,16 @@ export const NavBar = () => {
                     }}
                     style={
                       isNavHover && isAtLeastOnElementHovered
-                        ? animationConfig[i]?.style
+                        ? {
+                            ...animationConfig[i]?.style,
+                            transitionProperty: "transform, margin",
+                          }
                         : {}
                     }
                     className={`${
                       isActive
-                        ? "bg-black"
-                        : "bg-gradient-to-br from-gray-50 to-gray-200"
+                        ? "bg-black dark:bg-gray-200"
+                        : "bg-gradient-to-br from-gray-50 to-gray-100 dark:from-[#1c1c1c] dark:to-[#1c1c1c]"
                     } ${el.value === "projects" ? "z-50" : ""}`}
                   >
                     <div>
@@ -125,7 +132,7 @@ export const NavBar = () => {
             })}
             <Row className="gap-x-2">
               <div
-                className={`pl-2 border-l border-gray-100  ${
+                className={`pl-2 border-l border-gray-100 dark:border-[#1c1c1c]  ${
                   isAtLeastOnElementHovered ? "border-none" : ""
                 }`}
               >
@@ -161,7 +168,7 @@ export const NavBar = () => {
                       ? animationConfig[3]?.style
                       : {}
                   }
-                  className={`bg-gradient-to-br relative from-gray-50 to-gray-200`}
+                  className={`bg-gradient-to-br dark:from-[#1c1c1c] dark:to-[#1c1c1c] relative from-gray-50 to-gray-200`}
                 >
                   <IdeaIcon />
                 </Card>
@@ -197,7 +204,7 @@ export const NavBar = () => {
                       ? animationConfig[4]?.style
                       : {}
                   }
-                  className={`bg-gradient-to-br relative from-gray-50 to-gray-200`}
+                  className={`bg-gradient-to-br dark:from-[#1c1c1c] dark:to-[#1c1c1c]  relative from-gray-50 to-gray-200`}
                 >
                   <TranslationIcon />
                 </Card>
