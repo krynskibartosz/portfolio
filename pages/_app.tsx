@@ -40,7 +40,7 @@ export const Avatar = ({ size, src }: { size: number; src: any }) => {
     <div
       className={`grid  w-${size + 2} h-${
         size + 2
-      } border-2 rounded-full border-[#38BCF8] dark:border-yellow-400 place-items-center`}
+      } border-2 rounded-full border-gray-900 dark:border-yellow-400 place-items-center`}
     >
       <div
         className={`relative m-0.5 overflow-hidden rounded-full cursor-pointer w-${size} h-${size} `}

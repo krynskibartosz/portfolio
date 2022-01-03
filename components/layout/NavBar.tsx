@@ -8,6 +8,8 @@ import setNextLanguage from "next-translate/setLanguage";
 import { useRouter } from "next/dist/client/router";
 import { links, toggleTheme } from "./utils";
 
+// todo: mettre opacity sur la navbar aussi en theme light
+
 export const NavBar = () => {
   const { pathname } = useRouter();
 
@@ -73,7 +75,7 @@ export const NavBar = () => {
             positionY="center"
             onMouseEnter={() => setNavHover(true)}
             onMouseLeave={() => setNavHover(false)}
-            className="py-1 duration-500 ease-in-out bg-white border border-gray-100 dark:bg-black dark:bg-opacity-70 dark:backdrop-blur-sm rounded-2xl max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none dark:border-none"
+            className="py-1 duration-500 ease-in-out bg-white border border-gray-100 dark:bg-black bg-opacity-70 backdrop-blur-sm rounded-2xl max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none dark:border-none"
             // style={isNavHover ? { width: 380 } : { width: 320 }}
             style={{
               width: isNavHover ? 380 : 320,

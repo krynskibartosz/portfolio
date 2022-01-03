@@ -1,12 +1,9 @@
 import { Column, Layout, Image, Row } from "components";
 import { BecodeIcon } from "components/layout/Icons/Becode";
 import { DigitaluIcon } from "components/layout/Icons/Digitalu";
-import { NextJsIcon } from "components/layout/Icons/NextJs";
-import { ReactIcon } from "components/layout/Icons/skills/React";
-import { TailwinIcon } from "components/layout/Icons/skills/Tailwind";
-import { TypeScriptIcon } from "components/layout/Icons/skills/TypeScript";
-import { VsCodeIcon } from "components/layout/Icons/skills/VsCode";
+
 import { UtopixIcon } from "components/layout/Icons/Utopix";
+import useNextBlurhash from "use-next-blurhash";
 
 // todo: digitalu logo on mobile
 const Home = () => {
@@ -21,7 +18,7 @@ const Home = () => {
     >
       <Column className="w-full gap-y-20">
         {/* EXPERIENCES */}
-        <section className="w-full ">
+        <section className="w-full max-w-2xl mx-auto ">
           <h2 className="mb-8 text-3xl font-semibold text-gray-900 dark:text-white">
             My professional experiences
           </h2>
@@ -49,19 +46,57 @@ const Home = () => {
           </div>
         </section>
         {/* FAVORIETE PROJECT */}
+
         <section className="w-full">
-          <h2 className="mb-8 text-3xl font-semibold text-gray-900 dark:text-white">
-            Favorite project
-          </h2>
-          <div className="relative overflow-hidden transition-transform duration-500 ease-in-out cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black hover:scale-105">
-            <div className="relative  rounded-xl  w-full h-[450px]">
-              <Image src="/img/umengo.png" layout="fill" objectFit="cover" />
-            </div>
+          <div className="max-w-2xl mx-auto">
+            <h2 className="mb-8 text-3xl font-semibold text-gray-900 dark:text-white">
+              Favorite project
+            </h2>
           </div>
+          {/* todo: this need to be carousel */}
+          {/* todo: place des bul coloré autour des card du carousel */}
+          <Row
+            positionX="center"
+            className="overflow-x-scroll gap-x-10"
+            style={{ minHeight: 550 }}
+          >
+            <div className="relative w-full overflow-hidden transition-transform duration-500 ease-in-out cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black hover:scale-105 min-w-min max-w-max">
+              <div
+                className="relative  rounded-xl   h-[500px] "
+                style={{ minWidth: 672 }}
+              >
+                <Image src="/img/umengo.png" layout="fill" objectFit="cover" />
+              </div>
+            </div>
+            <div className="relative w-full overflow-hidden transition-transform duration-500 ease-in-out cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black hover:scale-105 min-w-min max-w-max">
+              <div
+                className="relative  rounded-xl   h-[500px] "
+                style={{ minWidth: 672 }}
+              >
+                <Image src="/img/umengo.png" layout="fill" objectFit="cover" />
+              </div>
+            </div>
+            <div className="relative w-full overflow-hidden transition-transform duration-500 ease-in-out cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black hover:scale-105 min-w-min max-w-max">
+              <div
+                className="relative  rounded-xl   h-[500px] "
+                style={{ minWidth: 672 }}
+              >
+                <Image src="/img/umengo.png" layout="fill" objectFit="cover" />
+              </div>
+            </div>
+            <div className="relative w-full overflow-hidden transition-transform duration-500 ease-in-out cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black hover:scale-105 min-w-min max-w-max">
+              <div
+                className="relative  rounded-xl   h-[500px] "
+                style={{ minWidth: 672 }}
+              >
+                <Image src="/img/umengo.png" layout="fill" objectFit="cover" />
+              </div>
+            </div>
+          </Row>
         </section>
         {/* SKILLS */}
 
-        <section className="w-full">
+        <section className="w-full max-w-2xl mx-auto">
           <h2 className="mb-8 text-3xl font-semibold text-gray-900 dark:text-white">
             Professional skills
           </h2>
@@ -75,6 +110,7 @@ const Home = () => {
               img="/img/skills/code.jpg"
               badges={["React", "Redux", "NextJs", "TypeScript", "Tailwind"]}
               color="bg-red-500"
+              blur="L383nu]n1JBoClEg-B=|0|AC}Y=e"
             />
             <SkillsCard
               title="Project software management"
@@ -83,9 +119,10 @@ const Home = () => {
               aperiam quisquam laborum quia ullam nam laudantium. Minima ducimus
               magni ratione nostrum!"
               direction="right"
-              img="/img/skills/tablet.jpg"
+              img="/img/yellow/manette.jpg"
               badges={["Notion", "Airtable", "Jira", "Google doc"]}
               color="bg-yellow-500"
+              blur="LLRxbFae]]tRo#SQngwZ}Ms-AMRj"
             />
             <SkillsCard
               title="Team collaboration"
@@ -94,13 +131,14 @@ const Home = () => {
               aperiam quisquam laborum quia ullam nam laudantium. Minima ducimus
               magni ratione nostrum!"
               direction="left"
-              img="/img/skills/communication.jpg"
+              img="/img/purple/cat.jpg"
               badges={["Confidence", "Empathy", "Friendly", "Responsiveness"]}
               color="bg-purple-500"
+              blur="LrF4a]RjRUohD%t7ouah?1jJRjbW"
             />
 
             <SkillsCard
-              title="Design and UX"
+              title="UI & UX"
               description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
               minus, quos optio officia quo placeat ex temporibus voluptate
               aperiam quisquam laborum quia ullam nam laudantium. Minima ducimus
@@ -109,12 +147,13 @@ const Home = () => {
               img="/img/skills/design.jpg"
               badges={["Figma", "Zeplin", "CSS", "HTML"]}
               color="bg-pink-500"
+              blur="LLEVTx4.-;S2~BIV-pof%zVtxus:"
             />
           </Column>
         </section>
-        {/* SKILLS */}
+        {/* ABOUT ME */}
 
-        <section className="w-full">
+        <section className="w-full max-w-2xl mx-auto">
           <h2 className="mb-8 text-3xl font-semibold text-gray-900 dark:text-white">
             About me
           </h2>
@@ -133,7 +172,11 @@ const SkillsCard = ({
   img,
   badges,
   color,
+  blur,
 }: any) => {
+  const [blurDataUrl] = useNextBlurhash(blur);
+  console.log("🚀 ~ file: index.tsx ~ line 161 ~ blurDataUrl", blurDataUrl);
+
   return (
     <div
       className={`z-10 cursor-pointer w-full h-[250px] bg-gradient-to-br relative from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black overflow-hidden transition-transform duration-500 ease-in-out hover:scale-105 ${className}`}
@@ -141,7 +184,13 @@ const SkillsCard = ({
       <Row className="w-full h-full">
         {direction === "left" && (
           <div className="relative w-[400px] h-full">
-            <Image objectFit="cover" layout="fill" src={img} />
+            <Image
+              placeholder="blur"
+              blurDataURL={blurDataUrl}
+              objectFit="cover"
+              layout="fill"
+              src={img}
+            />
           </div>
         )}
 
@@ -167,7 +216,13 @@ const SkillsCard = ({
         </Column>
         {direction === "right" && (
           <div className="relative w-[400px] h-full">
-            <Image objectFit="cover" layout="fill" src={img} />
+            <Image
+              placeholder="blur"
+              blurDataURL={blurDataUrl}
+              objectFit="cover"
+              layout="fill"
+              src={img}
+            />
           </div>
         )}
       </Row>
@@ -210,7 +265,7 @@ const CompanyCard = ({
               {title}
             </p>
 
-            <div className="w-[0px] -translate-x-5 group-hover:w-full ease-in-out transition-all duration-700 h-0.5 bg-gray-200" />
+            <div className="w-0 -translate-x-5 group-hover:w-full ease-in-out transition-all duration-700 h-0.5 bg-gray-200" />
           </div>
           <p className="text-sm text-gray-800 transition-opacity duration-300 ease-in-out delay-1000 opacity-0 dark:text-gray-400 group-hover:opacity-100 ">
             {description}
