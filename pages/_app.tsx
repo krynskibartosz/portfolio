@@ -6,7 +6,7 @@ import "swiper/css/effect-cards";
 import i18nConfig from "../i18n";
 import appWithI18n from "next-translate/appWithI18n";
 import { NavBar } from "components/layout/NavBar";
-import { Row, Image } from "components";
+import { Row, Image, Blob } from "components";
 
 function App({ Component, pageProps }: any) {
   i18nConfig.defaultLocale = "fr";
@@ -19,9 +19,9 @@ function App({ Component, pageProps }: any) {
         className="absolute top-0 left-0 w-screen h-0 mt-10 max-lg:hidden "
       >
         <div className="relative h-[450px] w-[410px]">
-          <AnimatedCircle className="top-0 bg-pink-300 -left-4 dark:opacity-40" />
-          <AnimatedCircle className="top-0 bg-indigo-400 -right-4 animation-delay-2000 dark:opacity-40" />
-          <AnimatedCircle className="bg-[#38BCF8] dark:opacity-90 animation-delay-4000 -bottom-8 left-20" />
+          <Blob className="top-0 w-64 h-64 bg-pink-300 -left-4 dark:opacity-40" />
+          <Blob className="top-0 w-64 h-64 bg-indigo-400 -right-4 animation-delay-2000 dark:opacity-40" />
+          <Blob className="w-64 h-64 bg-[#38BCF8] dark:opacity-90 animation-delay-4000 -bottom-8 left-20" />
         </div>
       </Row>
       <div className="fixed left-10 top-10 max-md:hidden">
@@ -38,7 +38,7 @@ function App({ Component, pageProps }: any) {
   );
 }
 
-export const Avatar = ({ size, src }: { size: number; src: any }) => {
+const Avatar = ({ size, src }: { size: number; src: `/${string}` }) => {
   return (
     <div
       className={`grid  w-${size + 2} h-${
@@ -51,14 +51,6 @@ export const Avatar = ({ size, src }: { size: number; src: any }) => {
         <Image layout="fill" objectFit="cover" src={src} />
       </div>
     </div>
-  );
-};
-
-const AnimatedCircle = ({ className }: any) => {
-  return (
-    <div
-      className={`absolute w-64 h-64 rounded-full  blur-xl opacity-70 animate-blob dark:mix-blend-color ${className}`}
-    />
   );
 };
 

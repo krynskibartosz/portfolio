@@ -4,7 +4,7 @@ import { useState } from "react";
 const Home = () => {
   return (
     <Layout
-      pageTitle="Bartosz Home"
+      headTitle="Bartosz Home"
       seoTitle="Front-end Développeur Bartosz"
       seoDescription="" // todo:
       title="Contact"

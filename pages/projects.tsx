@@ -3,7 +3,7 @@ import { Layout } from "components";
 const Home = () => {
   return (
     <Layout
-      pageTitle="Bartosz Home"
+      headTitle="Bartosz Home"
       seoTitle="Front-end Développeur Bartosz"
       seoDescription="" // todo:
       title="Projects"

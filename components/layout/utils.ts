@@ -1,6 +1,6 @@
-import { HomeIcon } from "./Icons/Home";
-import { FolderIcon } from "./Icons/Folder";
-import { ContactIcon } from "./Icons/Contact";
+import { HomeIcon } from "../base/Icons/Home";
+import { FolderIcon } from "../base/Icons/Folder";
+import { ContactIcon } from "../base/Icons/Contact";
 
 export const links = [
   {

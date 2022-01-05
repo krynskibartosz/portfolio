@@ -5,7 +5,7 @@ import { Column } from "components";
 
 export type LAYOUT = {
   children: JSX.Element | JSX.Element[];
-  pageTitle: string;
+  headTitle: string;
   seoTitle: string;
   seoDescription: string;
   title: string;
@@ -14,7 +14,7 @@ export type LAYOUT = {
 
 export const Layout = ({
   children,
-  pageTitle,
+  headTitle,
   seoTitle,
   seoDescription,
   title,
@@ -23,7 +23,7 @@ export const Layout = ({
   return (
     <>
       <Head>
-        <title>{pageTitle}</title>
+        <title>{headTitle}</title>
         <NextSeo title={seoTitle} description={seoDescription} />
         <link rel="shortcut icon" href="/vercel.svg" />
       </Head>

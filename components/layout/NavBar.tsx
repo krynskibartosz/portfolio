@@ -1,18 +1,18 @@
+// todo: add tooltip to element that indicate the path
+
 import { Row, Link, ClickOutside } from "components";
 
-import { TranslationIcon } from "components/layout/Icons/Translation";
+import { TranslationIcon } from "components/base/Icons/Translation";
 import { HTMLAttributes, useEffect, useState } from "react";
 
-import { IdeaIcon } from "./Icons/Idea";
+import { IdeaIcon } from "../base/Icons/Idea";
 import { useRouter } from "next/dist/client/router";
 import { links, toggleTheme } from "./utils";
 import setNextLanguage from "next-translate/setLanguage";
 import { Form } from "components/forms/Form";
 import { Radio } from "components/forms/inputs/Radio";
 
-// todo: mettre opacity sur la navbar aussi en theme light
-
-const genders = [
+const lng = [
   {
     label: "Fr",
     value: "fr",
@@ -33,9 +33,7 @@ export const NavBar = () => {
 
   const [isNavHover, setNavHover] = useState(false);
 
-  const [resetLanguage, setResetLanguage] = useState(false);
   const { locale } = useRouter();
-  console.log("🚀 ~ file: NavBar.tsx ~ line 38 ~ NavBar ~ locale", locale);
   const persistLocaleCookie = (language: string) => {
     const date = new Date();
     const expireMs = 100 * 365 * 24 * 60 * 60 * 1000; // 100 days
@@ -43,14 +41,7 @@ export const NavBar = () => {
     document.cookie = `NEXT_LOCALE=${language};expires=${date.toUTCString()};path=/`;
   };
 
-  const [lng, setLng] = useState("fr");
-
   const [open, setOpen] = useState(false);
-
-  const ChangeLanguge = () => {
-    setNextLanguage(lng);
-    persistLocaleCookie(lng);
-  };
 
   const [animationConfig, setAnimationConfig] = useState([
     { name: "home", isHovered: false, style: {} },
@@ -99,7 +90,8 @@ export const NavBar = () => {
     setAnimationConfig(copy);
   };
 
-  // todo: translate-y on animation
+  //  bg-white border border-gray-100 dark:bg-black bg-opacity-70 backdrop-blur-sm
+
   return (
     <>
       <nav
@@ -251,6 +243,7 @@ export const NavBar = () => {
                             ? "scale-[0.60]"
                             : "scale-[0.80]"
                         }`}
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <Form
                           submit={() => null}
@@ -262,10 +255,11 @@ export const NavBar = () => {
                             <Radio
                               {...inputProps("lng")}
                               onChange={() => {
+                                setNavHover(false);
                                 changeLanguage(body.lng);
                                 setOpen(false);
                               }}
-                              options={genders}
+                              options={lng}
                             />
                           )}
                         />
@@ -297,22 +291,6 @@ const Card = ({
     {children}
   </div>
 );
-
-const LngDropdown = () => {
-  return (
-    <Form
-      initialBody={{}}
-      submit={() => null}
-      name="lng"
-      form="lng"
-      id="lng"
-      showLogs
-      children={({ inputProps }) => (
-        <Radio label="Genre" options={genders} {...inputProps("lng")} />
-      )}
-    />
-  );
-};
 
 const persistLocaleCookie = (language: string) => {
   const date = new Date();

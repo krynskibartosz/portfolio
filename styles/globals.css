@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  .card {
+    @apply transition-transform duration-500 ease-in-out cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black hover:scale-105 dark:from-black dark:to-black;
+  }
+
   @font-face {
     font-family: FreightSans;
     font-weight: 400;

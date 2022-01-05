@@ -29,7 +29,7 @@ export const Radio = ({
       {label && <p className="text-gray-800 dark:text-gray-400">{label}</p>}
 
       {options.map((el, i) => (
-        <Row className="items-center gap-x-2">
+        <Row key={i} className="items-center gap-x-2">
           <div className="relative grid w-full h-full place-items-center ">
             <input
               type="radio"
@@ -39,7 +39,7 @@ export const Radio = ({
               className="w-6 h-6 transition-all border border-gray-300 appearance-none cursor-pointer hover:border-purple checked:bg-purple checked:border-[#38BCF8] rounded-xl bg-gray-50 "
               onChange={handleChange}
               {...rest}
-              id={`${i}`}
+              id={`radio-${i}`}
             />
             {value === el.value && (
               <Row
@@ -53,7 +53,7 @@ export const Radio = ({
           </div>
           <label
             key={i}
-            htmlFor={`${i}`}
+            htmlFor={`radio-${i}`}
             className={` font-semibold cursor-pointer   first-letter:uppercase text-gray-800 dark:text-gray-400 ${
               value === el.label ? "!text-gray-900" : ""
             }`}

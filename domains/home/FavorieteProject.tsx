@@ -1,7 +1,7 @@
-import { Column, Section, Image } from "components";
+import { Column, Section, Image, Blob } from "components";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { UmengoIcon } from "components/layout/Icons/Umengo";
+import { UmengoIcon } from "components/base/Icons/Umengo";
 import useTranslation from "next-translate/useTranslation";
 
 export const FavorieteProject = ({ ...rest }) => {
@@ -13,10 +13,10 @@ export const FavorieteProject = ({ ...rest }) => {
       <>
         <div className="relative w-full h-full">
           {/* animation need to be outisde of the swipper */}
-          <AnimatedCircle className="bg-[#38BCF8] w-[550px] h-[400px] -left-32  dark:opacity-40 -top-5" />
-          <AnimatedCircle className="bg-purple-400  w-[550px] h-[500px] top-24 -left-28  dark:opacity-40 animation-delay-2000" />
-          <AnimatedCircle className="bg-blue-400  w-[550px] h-[500px] top-32 left-64  dark:opacity-40 animation-delay-4000" />
-          <AnimatedCircle className="bg-pink-300 w-[550px] h-[400px] -top-5 left-1/2  dark:opacity-40 animation-delay-6000" />
+          <Blob className="bg-[#38BCF8] w-[550px] h-[400px] -left-32  dark:opacity-40 -top-5" />
+          <Blob className="bg-purple-400  w-[550px] h-[500px] top-24 -left-28  dark:opacity-40 animation-delay-2000" />
+          <Blob className="bg-blue-400  w-[550px] h-[500px] top-32 left-64  dark:opacity-40 animation-delay-4000" />
+          <Blob className="bg-pink-300 w-[550px] h-[400px] -top-5 left-1/2  dark:opacity-40 animation-delay-6000" />
 
           <Swiper
             effect={"cards"}
@@ -292,13 +292,5 @@ export const FavorieteProject = ({ ...rest }) => {
         </div>
       </>
     </Section>
-  );
-};
-
-const AnimatedCircle = ({ className }: any) => {
-  return (
-    <div
-      className={`absolute w-64 h-64 rounded-full  blur-xl opacity-70  dark:mix-blend-color animate-blob ${className}`}
-    />
   );
 };
