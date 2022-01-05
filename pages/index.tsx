@@ -10,6 +10,11 @@ SwiperCore.use([EffectCards]);
 
 const Home = () => {
   const { t } = useTranslation("home");
+
+  function darkify() {
+    document.documentElement.classList.toggle("theme--night");
+  }
+
   return (
     <Layout
       headTitle="Bartosz Portfolio Home"

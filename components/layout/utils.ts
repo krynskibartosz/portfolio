@@ -26,13 +26,10 @@ export const links = [
 export const toggleTheme = () => {
   const dark = localStorage.theme === "dark";
   if (dark) {
+    document.documentElement.classList.add("dark");
     localStorage.theme = "light";
   } else {
-    localStorage.theme = "dark";
-  }
-  if (dark) {
-    document.documentElement.classList.add("dark");
-  } else {
     document.documentElement.classList.remove("dark");
+    localStorage.theme = "dark";
   }
 };

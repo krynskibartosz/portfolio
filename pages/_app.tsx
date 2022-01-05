@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "../styles/theme.scss";
 import "swiper/css/bundle";
 import "swiper/css";
 import "swiper/css/effect-cards";

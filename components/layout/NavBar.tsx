@@ -90,7 +90,9 @@ export const NavBar = () => {
     setAnimationConfig(copy);
   };
 
-  //  bg-white border border-gray-100 dark:bg-black bg-opacity-70 backdrop-blur-sm
+  function darkify() {
+    document.documentElement.classList.toggle("theme--night");
+  }
 
   return (
     <>
@@ -169,6 +171,7 @@ export const NavBar = () => {
               >
                 <Card
                   onClick={() => {
+                    darkify();
                     toggleTheme();
                   }}
                   onMouseEnter={() => {
@@ -201,7 +204,20 @@ export const NavBar = () => {
                   }
                   className={`bg-gradient-to-br dark:from-[#1c1c1c] dark:to-[#1c1c1c] relative from-gray-50 to-gray-200`}
                 >
-                  <IdeaIcon />
+                  {/* <IdeaIcon /> */}
+                  <div
+                    className="dark:relative theme-toggle theme-toggle-js isolate"
+                    // onClick={() => darkify()}
+                  >
+                    <span className="moon "></span>
+                    <span className="sun"></span>
+                    <small className="sun__ray"></small>
+                    <small className="sun__ray"></small>
+                    <small className="sun__ray"></small>
+                    <small className="sun__ray"></small>
+                    <small className="sun__ray"></small>
+                    <small className="sun__ray"></small>
+                  </div>
                 </Card>
               </div>
               <ClickOutside onClick={() => setOpen(false)}>
@@ -238,7 +254,7 @@ export const NavBar = () => {
                   >
                     {open ? (
                       <div
-                        className={`absolute flex flex-col w-full gap-5 p-2 duration-500 ease-in-out  bg-white border border-gray-100 min-w-min dark:bg-black bg-opacity-70 backdrop-blur-sm rounded-2xl max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none dark:border-none -top-[90px] ${
+                        className={`absolute flex flex-col w-full gap-5 p-2 duration-500 ease-in-out transition-transform  bg-white border border-gray-100 min-w-min dark:bg-black bg-opacity-70 backdrop-blur-sm rounded-2xl max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none dark:border-none -top-[90px] ${
                           isNavHover && isAtLeastOnElementHovered
                             ? "scale-[0.60]"
                             : "scale-[0.80]"
