@@ -3,8 +3,8 @@ import { Column, Layout } from "components";
 import { FavorieteProject } from "domains/home/FavorieteProject";
 import SwiperCore, { EffectCards } from "swiper";
 import useTranslation from "next-translate/useTranslation";
-import { Experiences } from "domains/home/experiences/Experiences";
 import { Skills } from "domains/home/skills/Skills";
+import { Experiences } from "domains/home/experiences/Experiences";
 
 SwiperCore.use([EffectCards]);
 

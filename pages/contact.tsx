@@ -1,7 +1,19 @@
-import { Layout } from "components";
+import { Column, CounterInput, Layout, TextInput } from "components";
+import { Form } from "components/forms/Form";
 import { useState } from "react";
 
 const Home = () => {
+  const loading = false;
+  const [reset, setReset] = useState(false);
+
+  const submit = (body: any) => {
+    fetch("/api/mail", {
+      method: "post",
+      body: JSON.stringify(body),
+    });
+    // setReset(!reset);
+  };
+
   return (
     <Layout
       headTitle="Bartosz Home"
@@ -10,7 +22,56 @@ const Home = () => {
       title="Contact"
       description="You want to trust me with a mission or recruit me, everything happens here!"
     >
-      <p className="h-20 text-gray-900 dark:text-white">Contact</p>
+      <Form
+        form="contact"
+        id="contact"
+        name="contact"
+        initialBody={{
+          name: "",
+          email: "",
+          description: "",
+        }}
+        submit={submit}
+        reset={reset}
+        className={"w-full"}
+        children={({ inputProps }) => {
+          return (
+            <>
+              {/* INPUTS */}
+
+              <Column className="w-full gap-5">
+                <TextInput
+                  {...inputProps("email")}
+                  placeholder="Email"
+                  label="Email"
+                  required={true}
+                  type="email"
+                />
+                <TextInput
+                  placeholder="Name"
+                  label="Name"
+                  maxLength={30}
+                  required
+                  {...inputProps("name")}
+                />
+                <CounterInput
+                  placeholder="Description"
+                  label="Description"
+                  required
+                  maxLength={300}
+                  {...inputProps("description")}
+                />
+                <input
+                  type="submit"
+                  value="Register"
+                  accessKey="Enter"
+                  form="contact"
+                />
+              </Column>
+            </>
+          );
+        }}
+      />
     </Layout>
   );
 };
