@@ -1,19 +1,56 @@
-import { Row, Link } from "components";
+import { Row, Link, ClickOutside } from "components";
 
 import { TranslationIcon } from "components/layout/Icons/Translation";
 import { HTMLAttributes, useEffect, useState } from "react";
 
 import { IdeaIcon } from "./Icons/Idea";
-import setNextLanguage from "next-translate/setLanguage";
 import { useRouter } from "next/dist/client/router";
 import { links, toggleTheme } from "./utils";
+import setNextLanguage from "next-translate/setLanguage";
+import { Form } from "components/forms/Form";
+import { Radio } from "components/forms/inputs/Radio";
 
 // todo: mettre opacity sur la navbar aussi en theme light
+
+const genders = [
+  {
+    label: "Fr",
+    value: "fr",
+  },
+  {
+    label: "En",
+    value: "en",
+  },
+
+  {
+    label: "Pl",
+    value: "pl",
+  },
+];
 
 export const NavBar = () => {
   const { pathname } = useRouter();
 
   const [isNavHover, setNavHover] = useState(false);
+
+  const [resetLanguage, setResetLanguage] = useState(false);
+  const { locale } = useRouter();
+  console.log("🚀 ~ file: NavBar.tsx ~ line 38 ~ NavBar ~ locale", locale);
+  const persistLocaleCookie = (language: string) => {
+    const date = new Date();
+    const expireMs = 100 * 365 * 24 * 60 * 60 * 1000; // 100 days
+    date.setTime(date.getTime() + expireMs);
+    document.cookie = `NEXT_LOCALE=${language};expires=${date.toUTCString()};path=/`;
+  };
+
+  const [lng, setLng] = useState("fr");
+
+  const [open, setOpen] = useState(false);
+
+  const ChangeLanguge = () => {
+    setNextLanguage(lng);
+    persistLocaleCookie(lng);
+  };
 
   const [animationConfig, setAnimationConfig] = useState([
     { name: "home", isHovered: false, style: {} },
@@ -175,42 +212,71 @@ export const NavBar = () => {
                   <IdeaIcon />
                 </Card>
               </div>
-              <div>
-                <Card
-                  onClick={() => {
-                    changeLanguage("en");
-                  }}
-                  onMouseEnter={() => {
-                    const copy = [...animationConfig];
-                    copy[4].isHovered = true;
-                    copy[4].style = {
-                      transform: "scale(1.6) translateY(-10px)",
-                      zIndex: 28,
-                    };
-                    setAnimationConfig(copy);
-                  }}
-                  onMouseLeave={() => {
-                    const copy = [...animationConfig];
-                    copy[4].isHovered = false;
-                    if (isNavHover) {
+              <ClickOutside onClick={() => setOpen(false)}>
+                <div className="relative">
+                  <Card
+                    onMouseEnter={() => {
+                      const copy = [...animationConfig];
+                      copy[4].isHovered = true;
                       copy[4].style = {
-                        transform: "scale(1.3) translateY(-10px)",
+                        transform: "scale(1.6) translateY(-10px)",
+                        zIndex: 28,
                       };
-                    } else {
-                      copy[4].style = { transform: "scale(1)" };
+                      setAnimationConfig(copy);
+                    }}
+                    onMouseLeave={() => {
+                      const copy = [...animationConfig];
+                      copy[4].isHovered = false;
+                      if (isNavHover) {
+                        copy[4].style = {
+                          transform: "scale(1.3) translateY(-10px)",
+                        };
+                      } else {
+                        copy[4].style = { transform: "scale(1)" };
+                      }
+                      setAnimationConfig(copy);
+                    }}
+                    style={
+                      isNavHover && isAtLeastOnElementHovered
+                        ? animationConfig[4]?.style
+                        : {}
                     }
-                    setAnimationConfig(copy);
-                  }}
-                  style={
-                    isNavHover && isAtLeastOnElementHovered
-                      ? animationConfig[4]?.style
-                      : {}
-                  }
-                  className={`bg-gradient-to-br dark:from-[#1c1c1c] dark:to-[#1c1c1c]  relative from-gray-50 to-gray-200`}
-                >
-                  <TranslationIcon />
-                </Card>
-              </div>
+                    onClick={() => setOpen(!open)}
+                    className={`bg-gradient-to-br dark:from-[#1c1c1c] dark:to-[#1c1c1c]  relative from-gray-50 to-gray-200`}
+                  >
+                    {open ? (
+                      <div
+                        className={`absolute flex flex-col w-full gap-5 p-2 duration-500 ease-in-out  bg-white border border-gray-100 min-w-min dark:bg-black bg-opacity-70 backdrop-blur-sm rounded-2xl max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none dark:border-none -top-[90px] ${
+                          isNavHover && isAtLeastOnElementHovered
+                            ? "scale-[0.60]"
+                            : "scale-[0.80]"
+                        }`}
+                      >
+                        <Form
+                          submit={() => null}
+                          initialBody={{ lng: locale }}
+                          name="lng"
+                          id="lng"
+                          form="lng"
+                          children={({ inputProps, body }) => (
+                            <Radio
+                              {...inputProps("lng")}
+                              onChange={() => {
+                                changeLanguage(body.lng);
+                                setOpen(false);
+                              }}
+                              options={genders}
+                            />
+                          )}
+                        />
+                      </div>
+                    ) : (
+                      <></>
+                    )}
+                    <TranslationIcon />
+                  </Card>
+                </div>
+              </ClickOutside>
             </Row>
           </Row>
         </Row>
@@ -231,6 +297,22 @@ const Card = ({
     {children}
   </div>
 );
+
+const LngDropdown = () => {
+  return (
+    <Form
+      initialBody={{}}
+      submit={() => null}
+      name="lng"
+      form="lng"
+      id="lng"
+      showLogs
+      children={({ inputProps }) => (
+        <Radio label="Genre" options={genders} {...inputProps("lng")} />
+      )}
+    />
+  );
+};
 
 const persistLocaleCookie = (language: string) => {
   const date = new Date();

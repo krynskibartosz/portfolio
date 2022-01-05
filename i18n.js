@@ -1,8 +1,8 @@
 module.exports = {
-  locales: ["en", "fr"],
+  locales: ["en", "fr", "pl"],
   defaultLocale: "fr",
   pages: {
-    "*": ["common"],
+    "*": ["common", "home"],
   },
   loader: false,
   loadLocaleFrom: (lang, ns) =>

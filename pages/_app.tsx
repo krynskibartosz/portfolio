@@ -1,4 +1,7 @@
 import "../styles/globals.css";
+import "swiper/css/bundle";
+import "swiper/css";
+import "swiper/css/effect-cards";
 
 import i18nConfig from "../i18n";
 import appWithI18n from "next-translate/appWithI18n";
@@ -54,7 +57,7 @@ export const Avatar = ({ size, src }: { size: number; src: any }) => {
 const AnimatedCircle = ({ className }: any) => {
   return (
     <div
-      className={`absolute w-64 h-64 rounded-full filter blur-xl opacity-70 animate-blob dark:mix-blend-color ${className}`}
+      className={`absolute w-64 h-64 rounded-full  blur-xl opacity-70 animate-blob dark:mix-blend-color ${className}`}
     />
   );
 };

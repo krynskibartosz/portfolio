@@ -49,3 +49,20 @@ export const Row = ({
     </HtmlRow>
   );
 };
+
+export const Section = ({
+  title,
+  children,
+  className,
+}: {
+  title: string;
+  children: JSX.Element;
+  className?: string;
+}) => (
+  <section className={`w-full relative ${className}`}>
+    <h2 className="mb-8 text-3xl font-semibold text-gray-900 dark:text-white">
+      {title}
+    </h2>
+    {children}
+  </section>
+);
