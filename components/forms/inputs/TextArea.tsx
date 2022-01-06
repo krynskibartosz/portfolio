@@ -23,25 +23,27 @@ export const TextAreaInput = ({
 
   const [focused, setFocused] = useState(false);
   const borderColor = focused
-    ? "border-purple"
+    ? "!border-[#38BCF8]"
     : error
-    ? "border-red`"
-    : "border-gray-300 hover:border-purple ";
+    ? "!border-red"
+    : "border-gray-300 dark:border-black ";
 
   return (
     <Column className={`w-full`}>
       {label && (
         <label
-          htmlFor={label}
-          className={`mb-2 first-letter:uppercase text-sm font-semibold text-gray-900`}
+          htmlFor={id}
+          className="mb-2 text-sm font-semibold text-gray-800 dark:text-gray-400 first-letter:uppercase"
         >
           {label}
         </label>
       )}
-      <div className={`border w-full rounded-xl bg-gray-50 ${borderColor} `}>
+      <div
+        className={`border min-h-[200px] dark:border-none    w-full rounded-xl bg-gray-50 dark:bg-black ${borderColor} `}
+      >
         <textarea
-          id={id || label}
-          className={`text-gray-700 hover:text-gray-800 focus:text-gray-900  bg-transparent sm:text-sm w-full p-2.5 max-h-96 `}
+          id={id}
+          className={`text-input bg-transparent sm:text-sm w-full p-2.5 h-full min-h-[200px] outline-none rounded-xl max-h-96 resize-none`}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
           value={value || ""}

@@ -26,7 +26,11 @@ export const Radio = ({
 
   return (
     <Column className="gap-y-3">
-      {label && <p className="text-gray-800 dark:text-gray-400">{label}</p>}
+      {label && (
+        <p className="text-gray-800 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">
+          {label}
+        </p>
+      )}
 
       {options.map((el, i) => (
         <Row key={i} className="items-center gap-x-2">
@@ -36,10 +40,10 @@ export const Radio = ({
               value={el.value}
               checked={value === el.value}
               style={{ minWidth: 24, minHeight: 24 }}
-              className="w-6 h-6 transition-all border border-gray-300 appearance-none cursor-pointer hover:border-purple checked:bg-purple checked:border-[#38BCF8] rounded-xl bg-gray-50 "
+              className="w-6 h-6 transition-all  border-gray-300 appearance-none cursor-pointer hover:border-[#38BCF8] checked:bg-purple checked:border-[#38BCF8] border-2 dark:checked:border-yellow-400 dark:hover:border-yellow-400 rounded-xl bg-gray-50 "
               onChange={handleChange}
-              {...rest}
               id={`radio-${i}`}
+              {...rest}
             />
             {value === el.value && (
               <Row
@@ -77,7 +81,8 @@ function CheckIcon({ ...rest }: any) {
       {...rest}
     >
       <path
-        stroke="#38BCF8"
+        className="stroke-[#38BCF8] dark:stroke-yellow-400"
+        stroke=""
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="2"

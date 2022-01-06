@@ -37,34 +37,35 @@ export const TextInput = ({
 
   //! the border is handle on the parent div of the input cause on mobile there's an uggly native border
   const borderC = focused
-    ? "border-purple"
+    ? "!border-[#38BCF8]"
     : error
-    ? "border-red`"
-    : "border-gray-300 hover:border-purple";
+    ? "!border-red`"
+    : "border-gray-300 !hover:border-[#38BCF8]";
 
   return (
     <Column className={`w-full`}>
       {label && (
         <label
-          htmlFor={id || label}
-          className="mb-2 text-sm font-semibold text-gray-900 first-letter:uppercase"
+          htmlFor={id}
+          className="mb-2 text-sm font-semibold text-gray-800 dark:text-gray-400 first-letter:uppercase"
         >
           {label}
         </label>
       )}
       <div
-        className={`border w-full rounded-xl bg-gray-50 ${
+        className={`border w-full rounded-xl bg-gray-50 dark:bg-black dark:border-none ${
           borderColor || borderC
         }`}
       >
         <input
-          id={id || label}
-          className={`rounded-xl bg-transparent w-full p-2.5 text-input`}
+          id={id}
+          className={`rounded-xl  bg-transparent outline-none w-full p-2.5 text-input`}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
           value={value || ""}
           onChange={setText}
           type={type}
+          placeholder={placeholder}
           {...rest}
         />
       </div>

@@ -5,7 +5,6 @@ import { Row, Link, ClickOutside } from "components";
 import { TranslationIcon } from "components/base/Icons/Translation";
 import { HTMLAttributes, useEffect, useState } from "react";
 
-import { IdeaIcon } from "../base/Icons/Idea";
 import { useRouter } from "next/dist/client/router";
 import { links, toggleTheme } from "./utils";
 import setNextLanguage from "next-translate/setLanguage";

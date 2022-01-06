@@ -1,4 +1,4 @@
-import { Column, CounterInput, Layout, TextInput } from "components";
+import { Column, CounterInput, Layout, Row, TextInput } from "components";
 import { Form } from "components/forms/Form";
 import { useState } from "react";
 
@@ -40,20 +40,23 @@ const Home = () => {
               {/* INPUTS */}
 
               <Column className="w-full gap-5">
-                <TextInput
-                  {...inputProps("email")}
-                  placeholder="Email"
-                  label="Email"
-                  required={true}
-                  type="email"
-                />
-                <TextInput
-                  placeholder="Name"
-                  label="Name"
-                  maxLength={30}
-                  required
-                  {...inputProps("name")}
-                />
+                <Row positionY="center" className="w-full gap-5">
+                  <TextInput
+                    {...inputProps("email")}
+                    placeholder="jhon-doe@gmail.com"
+                    label="Email"
+                    required={true}
+                    type="email"
+                  />
+                  <TextInput
+                    placeholder="John Doe"
+                    label="Name"
+                    maxLength={30}
+                    required
+                    {...inputProps("name")}
+                  />
+                </Row>
+
                 <CounterInput
                   placeholder="Description"
                   label="Description"

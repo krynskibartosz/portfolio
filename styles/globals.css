@@ -4,7 +4,10 @@
 
 @layer base {
   .card {
-    @apply transition-transform duration-500 ease-in-out cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black hover:scale-105 dark:from-black dark:to-black;
+    @apply transition-transform duration-500 ease-in-out bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black hover:scale-105 dark:from-black dark:to-black;
+  }
+  .text-input {
+    @apply text-gray-700 hover:text-gray-800 focus:text-gray-900 sm:text-sm dark:focus:text-white dark:text-gray-300 dark:hover:text-gray-200;
   }
 
   @font-face {
@@ -37,6 +40,15 @@
 }
 
 @layer utilities {
+  .animation-delay-500 {
+    animation-delay: 0.5s;
+  }
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+  .animation-delay-1500 {
+    animation-delay: 1.5s;
+  }
   .animation-delay-2000 {
     animation-delay: 2s;
   }
