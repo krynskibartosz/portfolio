@@ -33,12 +33,6 @@ export const NavBar = () => {
   const [isNavHover, setNavHover] = useState(false);
 
   const { locale } = useRouter();
-  const persistLocaleCookie = (language: string) => {
-    const date = new Date();
-    const expireMs = 100 * 365 * 24 * 60 * 60 * 1000; // 100 days
-    date.setTime(date.getTime() + expireMs);
-    document.cookie = `NEXT_LOCALE=${language};expires=${date.toUTCString()};path=/`;
-  };
 
   const [open, setOpen] = useState(false);
 
@@ -59,7 +53,7 @@ export const NavBar = () => {
       setNavHover(true);
     }
     let notHovered = [...animationConfig].filter((el) => !el.isHovered);
-    let hovered = [...animationConfig].filter((el) => el.isHovered === true);
+    let hovered = [...animationConfig].filter((el) => el.isHovered);
 
     notHovered.forEach((element) => {
       element.style = {
@@ -81,18 +75,6 @@ export const NavBar = () => {
     });
   }, [animationConfig]);
 
-  // to use only if the animation stay the same
-  const onHover = ({ i, style }: any) => {
-    const copy = [...animationConfig];
-    copy[i].isHovered = true;
-    copy[i].style = style;
-    setAnimationConfig(copy);
-  };
-
-  function darkify() {
-    document.documentElement.classList.toggle("theme--night");
-  }
-
   return (
     <>
       <nav
@@ -106,7 +88,6 @@ export const NavBar = () => {
             onMouseEnter={() => setNavHover(true)}
             onMouseLeave={() => setNavHover(false)}
             className="py-1 duration-500 ease-in-out bg-white border border-gray-100 dark:bg-black bg-opacity-70 backdrop-blur-sm rounded-2xl max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none dark:border-none"
-            // style={isNavHover ? { width: 380 } : { width: 320 }}
             style={{
               width: isNavHover ? 380 : 320,
               transitionProperty: "width",
@@ -151,7 +132,7 @@ export const NavBar = () => {
                     }
                     className={`${
                       isActive
-                        ? "bg-black dark:bg-gray-200"
+                        ? "bg-gray-800  dark:bg-gray-200"
                         : "bg-gradient-to-br from-gray-50 to-gray-100 dark:from-[#1c1c1c] dark:to-[#1c1c1c]"
                     } ${el.value === "projects" ? "z-50" : ""}`}
                   >
@@ -170,7 +151,6 @@ export const NavBar = () => {
               >
                 <Card
                   onClick={() => {
-                    darkify();
                     toggleTheme();
                   }}
                   onMouseEnter={() => {
@@ -203,20 +183,7 @@ export const NavBar = () => {
                   }
                   className={`bg-gradient-to-br dark:from-[#1c1c1c] dark:to-[#1c1c1c] relative from-gray-50 to-gray-200`}
                 >
-                  {/* <IdeaIcon /> */}
-                  <div
-                    className="dark:relative theme-toggle theme-toggle-js isolate"
-                    // onClick={() => darkify()}
-                  >
-                    <span className="moon "></span>
-                    <span className="sun"></span>
-                    <small className="sun__ray"></small>
-                    <small className="sun__ray"></small>
-                    <small className="sun__ray"></small>
-                    <small className="sun__ray"></small>
-                    <small className="sun__ray"></small>
-                    <small className="sun__ray"></small>
-                  </div>
+                  <ThemeIcon />
                 </Card>
               </div>
               <ClickOutside onClick={() => setOpen(false)}>
@@ -318,3 +285,16 @@ const changeLanguage = (language: string) => {
   setNextLanguage(language);
   persistLocaleCookie(language);
 };
+
+const ThemeIcon = () => (
+  <div className="dark:relative theme-toggle theme-toggle-js isolate">
+    <span className="moon "></span>
+    <span className="sun"></span>
+    <small className="sun__ray"></small>
+    <small className="sun__ray"></small>
+    <small className="sun__ray"></small>
+    <small className="sun__ray"></small>
+    <small className="sun__ray"></small>
+    <small className="sun__ray"></small>
+  </div>
+);

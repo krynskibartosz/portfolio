@@ -1,6 +1,6 @@
 import React from "react";
 
-export const TranslationIcon = () => {
+export const TranslationIcon = ({ ...rest }: any) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -8,6 +8,7 @@ export const TranslationIcon = () => {
       height="24"
       fill="none"
       viewBox="0 0 24 24"
+      {...rest}
     >
       <path
         stroke="#858585"

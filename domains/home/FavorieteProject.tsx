@@ -7,8 +7,6 @@ import useTranslation from "next-translate/useTranslation";
 export const FavorieteProject = ({ ...rest }) => {
   const { t } = useTranslation("home");
 
-  // todo: bottom text position
-  // todo: éclaircire les cards
   return (
     <Section title={`${t("BiggestProject")} 😍`} {...rest}>
       <>
@@ -16,7 +14,7 @@ export const FavorieteProject = ({ ...rest }) => {
           {/* animation need to be outisde of the swipper */}
           <Blob className="bg-[#38BCF8] w-[550px] h-[400px] -left-32  dark:opacity-40 -top-5" />
           <Blob className="bg-purple-400  w-[550px] h-[500px] top-24 -left-28  dark:opacity-40 animation-delay-1000" />
-          <Blob className="bg-blue-400  w-[550px] h-[500px] top-32 left-64  dark:opacity-40 animation-delay-2000" />
+          <Blob className="bg-blue-400  w-[550px] h-[500px] top-32 left-64  dark:opacity-40 animation-delay-1000" />
           <Blob className="bg-pink-300 w-[550px] h-[400px] -top-5 left-1/2  dark:opacity-40 animation-delay-4000" />
 
           <Swiper
@@ -25,7 +23,7 @@ export const FavorieteProject = ({ ...rest }) => {
             className="w-full mt-24 relative mySwiper h-[500px]"
           >
             {/* UMENGO */}
-            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black">
+            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black">
               <Column
                 positionX="center"
                 className="justify-center w-full h-full "
@@ -37,7 +35,7 @@ export const FavorieteProject = ({ ...rest }) => {
               </Column>
             </SwiperSlide>
             {/* DESCRIPTION */}
-            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black ">
+            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black ">
               <Column className="w-full h-full p-10 pt-24">
                 <h2 className="mb-5 text-3xl font-semibold text-gray-900 dark:text-white">
                   {t("WhatsUmengo")}
@@ -52,7 +50,7 @@ export const FavorieteProject = ({ ...rest }) => {
               </Column>
             </SwiperSlide>
             {/* AUTH */}
-            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black ">
+            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black ">
               <Column
                 positionX="center"
                 className="justify-center w-full h-full "
@@ -68,7 +66,7 @@ export const FavorieteProject = ({ ...rest }) => {
               </Column>
             </SwiperSlide>
             {/* SIGNUP */}
-            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
+            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
               <Column
                 positionX="center"
                 className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
@@ -84,12 +82,12 @@ export const FavorieteProject = ({ ...rest }) => {
                   src="/img/umengo/auth-signup.jpg"
                 />
               </div>
-              <span className="absolute z-20 text-xs text-gray-500 right-5 bottom-5 ">
+              <span className="absolute z-10 text-xs text-gray-500 right-5 bottom-5 ">
                 3
               </span>
             </SwiperSlide>
             {/* SIGNIN */}
-            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
+            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
               <Column
                 positionX="center"
                 className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
@@ -105,12 +103,12 @@ export const FavorieteProject = ({ ...rest }) => {
                   src="/img/umengo/auth-signin.jpg"
                 />
               </div>
-              <span className="absolute z-20 text-xs text-gray-500 right-5 bottom-5 ">
+              <span className="absolute z-10 text-xs text-gray-500 right-5 bottom-5 ">
                 4
               </span>
             </SwiperSlide>
             {/* USER PROFILE */}
-            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
+            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
               <Column
                 positionX="center"
                 className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
@@ -126,17 +124,17 @@ export const FavorieteProject = ({ ...rest }) => {
                   src="/img/umengo/user-profile.jpg"
                 />
               </div>
-              <span className="absolute z-20 text-xs text-gray-500 right-5 bottom-5 ">
+              <span className="absolute z-10 text-xs text-gray-500 right-5 bottom-5 ">
                 5
               </span>
             </SwiperSlide>
             {/* CRUD */}
-            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black ">
+            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black ">
               <Column
                 positionX="center"
                 className="justify-center w-full h-full "
               >
-                <h2 className="mb-5 text-4xl font-semibold text-gray-900 dark:text-white">
+                <h2 className="text-4xl font-semibold text-gray-900 dark:text-white">
                   CRUD
                 </h2>
 
@@ -148,7 +146,7 @@ export const FavorieteProject = ({ ...rest }) => {
             </SwiperSlide>
 
             {/* CREATE */}
-            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
+            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
               <Column
                 positionX="center"
                 className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
@@ -164,12 +162,12 @@ export const FavorieteProject = ({ ...rest }) => {
                   src="/img/umengo/create-mission.jpg"
                 />
               </div>
-              <span className="absolute z-20 text-xs text-gray-500 right-5 bottom-5">
+              <span className="absolute z-10 text-xs text-gray-500 right-5 bottom-5">
                 7
               </span>
             </SwiperSlide>
             {/* READ */}
-            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
+            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
               <Column
                 positionX="center"
                 className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
@@ -185,16 +183,16 @@ export const FavorieteProject = ({ ...rest }) => {
                   src="/img/umengo/applications.jpg"
                 />
               </div>
-              <span className="absolute z-20 text-xs text-gray-500 right-5 bottom-5 ">
+              <span className="absolute z-10 text-xs text-gray-500 right-5 bottom-5 ">
                 8
               </span>
             </SwiperSlide>
 
             {/* UPDATE */}
-            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
+            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
               <Column
                 positionX="center"
-                className="absolute bottom-0 left-0 z-10 justify-center w-full h-20 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+                className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
               >
                 <p className="text-lg font-semibold text-center text-white ">
                   UPDATE
@@ -207,12 +205,12 @@ export const FavorieteProject = ({ ...rest }) => {
                   src="/img/umengo/user-edit-profile.jpg"
                 />
               </div>
-              <span className="absolute z-20 text-xs text-white right-5 bottom-5 ">
+              <span className="absolute z-10 text-xs text-white right-5 bottom-5 ">
                 9
               </span>
             </SwiperSlide>
             {/* DELETE */}
-            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
+            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
               <Column
                 positionX="center"
                 className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
@@ -228,11 +226,11 @@ export const FavorieteProject = ({ ...rest }) => {
                   src="/img/umengo/delete.jpg"
                 />
               </div>
-              <span className="absolute z-20 text-xs text-white right-5 bottom-5 ">
+              <span className="absolute z-10 text-xs text-white right-5 bottom-5 ">
                 10
               </span>
             </SwiperSlide>
-            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black ">
+            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black ">
               <Column
                 positionX="center"
                 className="justify-center w-full h-full "
@@ -248,10 +246,10 @@ export const FavorieteProject = ({ ...rest }) => {
               </Column>
             </SwiperSlide>
             {/* MESSENGER */}
-            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
+            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
               <Column
                 positionX="center"
-                className="absolute bottom-0 left-0 z-10 justify-center w-full h-20 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+                className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
               >
                 <p className="text-lg font-semibold text-center text-gray-800 ">
                   Messenger
@@ -264,15 +262,15 @@ export const FavorieteProject = ({ ...rest }) => {
                   src="/img/umengo/messenger2.jpg"
                 />
               </div>
-              <span className="absolute z-20 text-xs text-gray-500 right-5 bottom-5 ">
+              <span className="absolute z-10 text-xs text-gray-500 right-5 bottom-5 ">
                 12
               </span>
             </SwiperSlide>
             {/* NOTIFICATION */}
-            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
+            <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
               <Column
                 positionX="center"
-                className="absolute bottom-0 left-0 z-10 justify-center w-full h-20 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+                className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
               >
                 <p className="text-lg font-semibold text-center text-gray-800 ">
                   {t("Notification")}
@@ -285,7 +283,7 @@ export const FavorieteProject = ({ ...rest }) => {
                   src="/img/umengo/socket.jpg"
                 />
               </div>
-              <span className="absolute z-20 text-xs text-gray-500 right-5 bottom-5 ">
+              <span className="absolute z-10 text-xs text-gray-500 right-5 bottom-5 ">
                 13
               </span>
             </SwiperSlide>

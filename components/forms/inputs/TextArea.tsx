@@ -22,11 +22,11 @@ export const TextAreaInput = ({
   };
 
   const [focused, setFocused] = useState(false);
-  const borderColor = focused
-    ? "!border-[#38BCF8]"
+  const borderC = focused
+    ? "!border-[#38BCF8] dark:!border-gray-600"
     : error
-    ? "!border-red"
-    : "border-gray-300 dark:border-black ";
+    ? "!border-red`"
+    : "border-gray-300 dark:border-gray-700 dark:hover:!border-gray-600 hover:border-[#38BCF8]";
 
   return (
     <Column className={`w-full`}>
@@ -39,7 +39,7 @@ export const TextAreaInput = ({
         </label>
       )}
       <div
-        className={`border min-h-[200px] dark:border-none    w-full rounded-xl bg-gray-50 dark:bg-black ${borderColor} `}
+        className={`border w-full rounded-xl bg-gray-50 dark:bg-gray-800  min-h-[200px] ${borderC} `}
       >
         <textarea
           id={id}

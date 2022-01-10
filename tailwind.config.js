@@ -1,5 +1,3 @@
-// todo: check how to organize color
-
 module.exports = {
   mode: "jit",
   purge: [
@@ -12,6 +10,14 @@ module.exports = {
     extend: {
       boxShadow: {
         main: "0px 0px 10px 2px rgba(0, 0, 0, 0.05)",
+      },
+      backgroundSize: {
+        "size-200": "200% 200%",
+        "size-100": "100% 100%",
+      },
+      backgroundPosition: {
+        "pos-0": "0% 0%",
+        "pos-100": "100% 100%",
       },
       screens: {
         "max-2xl": { max: "1535px" },

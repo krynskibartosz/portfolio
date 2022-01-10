@@ -18,8 +18,8 @@
     "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "test.js"],
-  "exclude": ["node_modules", "neo/classes-backup"],
+  "exclude": ["node_modules", ""],
   "paths": {
-    "components": ["components/*"]
+    "components": ["components/*", "domains/*", "libraries/*"]
   }
 }

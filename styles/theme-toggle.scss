@@ -7,7 +7,7 @@
   --color-primary-light: #152640;
   --color-secondary: #858585;
 
-  &.theme--night {
+  &.dark {
     --color-primary: #1c1c1c;
     --color-primary-light: #1c1c1c;
     --color-secondary: rgb(229, 231, 235);
@@ -63,7 +63,7 @@
   transform-origin: right;
 }
 
-.theme--night {
+.dark {
   .theme-toggle {
     background-color: var(--color-primary);
   }

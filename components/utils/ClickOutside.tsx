@@ -1,12 +1,11 @@
 import { useRef, useEffect, MouseEvent, cloneElement } from "react";
 
 interface ClickOutsideProps {
-  active?: boolean;
   onClick: (e?: MouseEvent) => void;
   children: JSX.Element;
+  active?: boolean;
   log?: boolean;
 }
-// todo:
 
 const isInDOM = (obj: any) => {
   return Boolean(obj.closest("body"));

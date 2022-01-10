@@ -55,14 +55,17 @@ export const Section = ({
   children,
   className,
 }: {
-  title: string;
   children: JSX.Element;
+  title?: string;
   className?: string;
 }) => (
   <section className={`w-full max-w-2xl mx-auto relative ${className}`}>
-    <h2 className="mb-8 text-3xl font-semibold text-gray-900 ma dark:text-white">
-      {title}
-    </h2>
+    {title && (
+      <h2 className="mb-8 text-3xl font-semibold text-gray-900 ma dark:text-white">
+        {title}
+      </h2>
+    )}
+
     {children}
   </section>
 );

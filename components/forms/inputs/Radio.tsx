@@ -22,8 +22,6 @@ export const Radio = ({
     }
   };
 
-  // todo: add hover on radio
-
   return (
     <Column className="gap-y-3">
       {label && (
@@ -32,40 +30,45 @@ export const Radio = ({
         </p>
       )}
 
-      {options.map((el, i) => (
-        <Row key={i} className="items-center gap-x-2">
-          <div className="relative grid w-full h-full place-items-center ">
-            <input
-              type="radio"
-              value={el.value}
-              checked={value === el.value}
-              style={{ minWidth: 24, minHeight: 24 }}
-              className="w-6 h-6 transition-all  border-gray-300 appearance-none cursor-pointer hover:border-[#38BCF8] checked:bg-purple checked:border-[#38BCF8] border-2 dark:checked:border-yellow-400 dark:hover:border-yellow-400 rounded-xl bg-gray-50 "
-              onChange={handleChange}
-              id={`radio-${i}`}
-              {...rest}
-            />
-            {value === el.value && (
-              <Row
-                positionX="center"
-                positionY="center"
-                className="absolute top-0 w-6 h-6 pb-1 pr-1 rounded-full"
-              >
-                <CheckIcon className="z-20 w-4 h-4 " />
-              </Row>
-            )}
-          </div>
-          <label
-            key={i}
-            htmlFor={`radio-${i}`}
-            className={` font-semibold cursor-pointer   first-letter:uppercase text-gray-800 dark:text-gray-400 ${
-              value === el.label ? "!text-gray-900" : ""
-            }`}
-          >
-            {el.label}
-          </label>
-        </Row>
-      ))}
+      {options.map((el, i) => {
+        const checked = value === el.value;
+        return (
+          <Row key={i} className="items-center group gap-x-2">
+            <div className="relative grid w-full h-full place-items-center ">
+              <input
+                type="radio"
+                value={el.value}
+                checked={checked}
+                style={{ minWidth: 24, minHeight: 24 }}
+                className="w-6 h-6 transition-all  border-gray-300 appearance-none cursor-pointer group-hover:border-[#38BCF8] checked:bg-purple checked:border-[#38BCF8] border-2 dark:checked:border-yellow-400 dark:group-hover:border-yellow-400 rounded-xl bg-gray-50 "
+                onChange={handleChange}
+                id={`radio-${i}`}
+                {...rest}
+              />
+              {checked && (
+                <Row
+                  positionX="center"
+                  positionY="center"
+                  className="absolute top-0 w-6 h-6 pb-1 pr-1 rounded-full"
+                >
+                  <CheckIcon className="z-20 w-4 h-4 " />
+                </Row>
+              )}
+            </div>
+            <label
+              key={i}
+              htmlFor={`radio-${i}`}
+              className={` font-semibold cursor-pointer first-letter:uppercase text-gray-800 dark:text-gray-400 ${
+                checked
+                  ? "!text-gray-900 dark:!text-white"
+                  : "dark:group-hover:text-gray-300"
+              }`}
+            >
+              {el.label}
+            </label>
+          </Row>
+        );
+      })}
     </Column>
   );
 };
