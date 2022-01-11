@@ -1,8 +1,6 @@
 import { Layout, Link, Section, Image } from "components";
 
 const Page404 = () => {
-  // todo: create a component card with illustration for all the links
-
   const config = [
     {
       name: "Accueil",
@@ -36,7 +34,7 @@ const Page404 = () => {
           </p>
           <ul className="grid grid-cols-12 gap-5">
             {config.map((el, i) => (
-              <Card el={el} />
+              <Card key={i} el={el} />
             ))}
           </ul>
         </>
@@ -57,7 +55,7 @@ const Card = ({ el: { img, name, url } }: any) => {
           {name}
         </p>
         <div className="w-1/2 h-1/2">
-          <Image layout="fill" src={img} />
+          <Image alt="" layout="fill" src={img} />
         </div>
       </div>
     </Link>
