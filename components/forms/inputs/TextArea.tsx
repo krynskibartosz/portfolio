@@ -21,12 +21,13 @@ export const TextAreaInput = ({
     setValue(e.target.value);
   };
 
+  // todo: create a hooks to get borderC (getBorderColor) and reuse him on textinput too
   const [focused, setFocused] = useState(false);
   const borderC = focused
-    ? "!border-[#38BCF8] dark:!border-gray-600"
+    ? "!border-gray-900 dark:!border-gray-600"
     : error
     ? "!border-red`"
-    : "border-gray-300 dark:border-gray-700 dark:hover:!border-gray-600 hover:border-[#38BCF8]";
+    : "border-gray-300 dark:border-gray-700 dark:hover:!border-gray-600 hover:border-gray-900";
 
   return (
     <Column className={`w-full`}>

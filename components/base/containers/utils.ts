@@ -35,6 +35,7 @@ export const ColumnY: any = {
   stretch: "justify-stretch",
 };
 
+// todo: rework on this
 export const setAlignement = ({
   positionX,
   positionY,

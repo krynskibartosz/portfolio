@@ -37,10 +37,10 @@ export const TextInput = ({
 
   //! the border is handle on the parent div of the input cause on mobile there's an uggly native border
   const borderC = focused
-    ? "!border-[#38BCF8] dark:!border-gray-600"
+    ? "!border-gray-900 dark:!border-gray-600"
     : error
     ? "!border-red`"
-    : "border-gray-300 dark:border-gray-700 dark:hover:!border-gray-600 hover:border-[#38BCF8]";
+    : "border-gray-300 dark:border-gray-700 dark:hover:!border-gray-600 hover:border-gray-900";
 
   return (
     <Column className={`w-full`}>

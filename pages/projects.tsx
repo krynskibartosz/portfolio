@@ -1,4 +1,4 @@
-import { Layout } from "components";
+import { Layout, Section } from "components";
 
 const Home = () => {
   return (
@@ -9,7 +9,11 @@ const Home = () => {
       title="Projects"
       description="A Selection of projects that I'm not too ashamed of"
     >
-      <p className="h-20 text-gray-900 dark:text-white">Projects</p>
+      <Section>
+        <p className="text-3xl text-center text-gray-900 dark:text-white">
+          Coming soon
+        </p>
+      </Section>
     </Layout>
   );
 };

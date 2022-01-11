@@ -73,16 +73,17 @@ const Card = ({
   };
 
   return (
-    <div className={`z-10  w-full h-[250px] overflow-hidden card`}>
+    <div className={`z-10  w-full h-[250px] group overflow-hidden card`}>
       <Row className="w-full h-full">
         {direction === "left" && (
-          <div className="relative  w-[400px] h-full">
+          <div className="relative group-hover:brightness-100 brightness-90    w-[400px] h-full overflow-hidden transition-all ease-in-out duration-300">
             <Image
               placeholder="blur"
               blurDataURL={blurDataUrl}
               objectFit="cover"
               layout="fill"
               src={url}
+              className="transition-all duration-500 ease-in-out scale-100 group-hover:scale-105"
             />
           </div>
         )}
@@ -117,13 +118,17 @@ const Card = ({
           </Row>
         </Column>
         {direction === "right" && (
-          <div className="relative w-[400px] h-full">
+          <div
+            className="relative 
+          group-hover:brightness-100 transition-all ease-in-out duration-300 brightness-90 overflow-hidden   w-[400px] h-full"
+          >
             <Image
               placeholder="blur"
               blurDataURL={blurDataUrl}
               objectFit="cover"
               layout="fill"
               src={url}
+              className="transition-transform duration-500 ease-in-out scale-100 group-hover:scale-105"
             />
           </div>
         )}
