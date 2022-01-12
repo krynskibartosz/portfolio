@@ -1,14 +1,16 @@
 import { Layout, Section } from "components";
+import useTranslation from "next-translate/useTranslation";
 
 // todo: start by Startup World
-const Home = () => {
+const Projects = () => {
+  const { t } = useTranslation("projects");
   return (
     <Layout
-      headTitle="Bartosz Home"
+      headTitle="Bartosz Projects"
       seoTitle="Front-end Développeur Bartosz"
       seoDescription="" // todo:
-      title="Projects"
-      description="A Selection of projects that I'm not too ashamed of"
+      title={t("Projects")}
+      description={t("ASelectionOfProjectsThatImNotTooAshamedOf")}
     >
       <Section>
         <p className="text-3xl text-center text-gray-900 dark:text-white">
@@ -19,4 +21,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Projects;

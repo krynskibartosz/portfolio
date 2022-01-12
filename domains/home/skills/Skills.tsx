@@ -26,7 +26,7 @@ export const Skills = () => {
   );
 };
 
-// add more bubble on mobile
+//todo: add more bubble on mobile
 
 const Card = ({
   el: {
@@ -115,8 +115,8 @@ const Card = ({
               </p>
             </Row>
             <ul className="flex flex-col pl-5 ">
-              {description?.map((el) => (
-                <li className={`${getColor().text} list-disc`}>
+              {description?.map((el, i) => (
+                <li key={i} className={`${getColor().text} list-disc`}>
                   <p className="text-xs text-gray-800 -translate-y-[1.3px] dark:text-gray-400">
                     {el}.
                   </p>

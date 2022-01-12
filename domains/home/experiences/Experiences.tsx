@@ -12,8 +12,8 @@ export const Experiences = () => {
       title={`${t("MyProfessionalExperiences")} 💼`}
     >
       <div className="grid grid-cols-12 md:gap-x-10 gap-y-10 ">
-        {experiences(t).map((el) => (
-          <Card el={el} />
+        {experiences(t).map((el, i) => (
+          <Card key={i} el={el} />
         ))}
       </div>
     </Section>

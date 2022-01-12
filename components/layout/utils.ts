@@ -2,21 +2,21 @@ import { HomeIcon } from "../base/Icons/Home";
 import { FolderIcon } from "../base/Icons/Folder";
 import { ContactIcon } from "../base/Icons/Contact";
 
-export const links = [
+export const links = (translation: any) => [
   {
-    label: "Home",
+    label: translation("Home"),
     value: "home",
     url: "",
     Icon: HomeIcon,
   },
   {
-    label: "Projects",
+    label: translation("Projects"),
     value: "projects",
     url: "projects",
     Icon: FolderIcon,
   },
   {
-    label: "Contact",
+    label: translation("Contact"),
     value: "contact",
     url: "contact",
     Icon: ContactIcon,

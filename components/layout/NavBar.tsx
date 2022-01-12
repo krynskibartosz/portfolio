@@ -14,7 +14,7 @@ import useTranslation from "next-translate/useTranslation";
 import { Tooltip } from "components/base/Tooltip";
 
 export const NavBar = () => {
-  const { t } = useTranslation("home");
+  const { t } = useTranslation("global");
 
   const lng = [
     {
@@ -122,11 +122,14 @@ export const NavBar = () => {
               transitionProperty: "width",
             }}
           >
-            {links.map((el, i) => {
+            {links(t).map((el, i) => {
               const copy = [...animationConfig];
               const isActive = pathname === `/${el.url}`;
               return (
-                <div className="relative h-full has-tooltip min-w-min group">
+                <div
+                  key={`tooltip-${i}`}
+                  className="relative h-full has-tooltip min-w-min group"
+                >
                   {/* <div className="absolute w-full bg-red-500 -top-full">
                     <p className="text-xs text-center">Home</p>
                   </div> */}

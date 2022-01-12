@@ -7,11 +7,14 @@ import {
   TextInput,
 } from "components";
 import { Form } from "components/forms/Form";
+import useTranslation from "next-translate/useTranslation";
 import { useState } from "react";
 
 const Home = () => {
   const loading = false;
   const [reset, setReset] = useState(false);
+
+  const { t } = useTranslation("contact");
 
   const submit = (body: any) => {
     fetch("/api/mail", {
@@ -26,10 +29,12 @@ const Home = () => {
       headTitle="Bartosz Home"
       seoTitle="Front-end Développeur Bartosz"
       seoDescription="" // todo:
-      title="Contact"
-      description="You want to trust me with a mission or recruit me, everything happens here!"
+      title={t("Contact")}
+      description={`${t(
+        "YouWantToTrustMeWithAMissionOrRecruitMeEverythingHappensHere"
+      )} !`}
     >
-      <Section className="max-md:px-5">
+      <Section className="z-10 max-md:px-5">
         <Form
           form="contact"
           id="contact"
@@ -55,13 +60,13 @@ const Home = () => {
                     <TextInput
                       {...inputProps("email")}
                       placeholder="jhon-doe@gmail.com"
-                      label="Email"
+                      label={t("Email")}
                       required={true}
                       type="email"
                     />
                     <TextInput
                       placeholder="John Doe"
-                      label="Name"
+                      label={t("Name")}
                       maxLength={30}
                       required
                       {...inputProps("name")}
@@ -69,8 +74,8 @@ const Home = () => {
                   </Row>
 
                   <CounterInput
-                    placeholder="Description"
-                    label="Description"
+                    placeholder={t("Description")}
+                    label={t("Description")}
                     required
                     maxLength={300}
                     {...inputProps("description")}
@@ -79,7 +84,7 @@ const Home = () => {
                 <Row className="w-full h-full" positionX="right">
                   <input
                     type="submit"
-                    value="Register"
+                    value={t("Send")}
                     accessKey="Enter"
                     className="px-6 py-2 mt-5 text-white transition-colors duration-300 ease-in-out bg-gray-900 border border-gray-200 appearance-none cursor-pointer hover:bg-gray-800 text-uppercase dark:text-white dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-min whitespace-nowrap rounded-xl max-md:px-4"
                     form="contact"

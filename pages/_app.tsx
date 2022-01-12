@@ -32,16 +32,17 @@ function App({ Component, pageProps }: any) {
   return (
     <div className="relative overflow-x-hidden">
       <Component id="root" {...pageProps} />
-      <Row
-        positionX="right"
-        className="absolute top-0 left-0 w-screen h-0 mt-10 max-lg:hidden "
-      >
-        <div className="relative h-[450px] w-[410px]">
-          <Blob className="top-0 w-64 h-64 bg-pink-300 -left-4 dark:opacity-40" />
-          <Blob className="top-0 w-64 h-64 bg-indigo-400 -right-4 animation-delay-2000 dark:opacity-40" />
-          <Blob className="w-64 h-64 bg-[#38BCF8] dark:opacity-90 animation-delay-4000 -bottom-8 left-20" />
+      <div className="absolute top-0 left-0 w-screen h-0 mt-10 max-lg:hidden ">
+        <div className="w-full mx-auto max-w-7xl">
+          <Row positionX="right" className="w-full">
+            <div className="relative h-[450px] w-[410px]">
+              <Blob className="top-0 w-64 h-64 bg-pink-300 -left-4 dark:opacity-40" />
+              <Blob className="top-0 w-64 h-64 bg-indigo-400 -right-4 animation-delay-2000 dark:opacity-40" />
+              <Blob className="w-64 h-64 bg-[#38BCF8] dark:opacity-90 animation-delay-4000 -bottom-8 left-20" />
+            </div>
+          </Row>
         </div>
-      </Row>
+      </div>
       <div className="fixed left-10 top-10 max-md:hidden">
         <Row positionY="center">
           <Avatar size={12} src="/img/Peeegs.jpg" />
