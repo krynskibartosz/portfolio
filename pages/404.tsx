@@ -27,7 +27,7 @@ const Page404 = () => {
       title="Page 4O4"
       description="Oups tu t'es gourré de lien"
     >
-      <Section>
+      <Section className="max-md:px-5">
         <>
           <p className="mb-5 text-xl font-semibold text-gray-800 dark:text-gray-400">
             Voici une liste de liens que tu aurais voulu consulter

@@ -15,7 +15,7 @@ export const experiences = (translation: (e?: any) => string): COMPANIES => {
   return [
     {
       Icon: () => (
-        <DigitaluIcon className="!w-80 !h-80 max-md:w-60 max-md:!h-60" />
+        <DigitaluIcon className="w-80 h-80 max-md:w-60 max-md:h-60" />
       ),
       post: translation("FrontEndDeveloper"),
       description: translation(

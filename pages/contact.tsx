@@ -29,7 +29,7 @@ const Home = () => {
       title="Contact"
       description="You want to trust me with a mission or recruit me, everything happens here!"
     >
-      <Section>
+      <Section className="max-md:px-5">
         <Form
           form="contact"
           id="contact"
@@ -48,7 +48,10 @@ const Home = () => {
                 {/* INPUTS */}
 
                 <Column className="w-full gap-5">
-                  <Row positionY="center" className="w-full gap-5">
+                  <Row
+                    positionY="center"
+                    className="w-full gap-5 max-md:flex-col"
+                  >
                     <TextInput
                       {...inputProps("email")}
                       placeholder="jhon-doe@gmail.com"
@@ -72,14 +75,16 @@ const Home = () => {
                     maxLength={300}
                     {...inputProps("description")}
                   />
+                </Column>
+                <Row className="w-full h-full" positionX="right">
                   <input
                     type="submit"
                     value="Register"
                     accessKey="Enter"
-                    className="self-end px-6 py-2 mt-5 text-white transition-colors duration-300 ease-in-out bg-gray-900 border border-gray-200 appearance-none cursor-pointer hover:bg-gray-800 text-uppercase dark:text-white dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-min whitespace-nowrap rounded-xl max-md:py-2 max-md:px-3 "
+                    className="px-6 py-2 mt-5 text-white transition-colors duration-300 ease-in-out bg-gray-900 border border-gray-200 appearance-none cursor-pointer  hover:bg-gray-800 text-uppercase dark:text-white dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-min whitespace-nowrap rounded-xl max-md:py-2 max-md:px-3"
                     form="contact"
                   />
-                </Column>
+                </Row>
               </>
             );
           }}

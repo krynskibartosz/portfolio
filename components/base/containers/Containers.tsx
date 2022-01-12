@@ -61,7 +61,7 @@ export const Section = ({
 }) => (
   <section className={`w-full max-w-2xl mx-auto relative ${className}`}>
     {title && (
-      <h2 className="mb-8 text-3xl font-semibold text-gray-900 ma dark:text-white">
+      <h2 className="mb-8 text-3xl font-semibold text-gray-900 max-md:mb-5 whitespace-nowrap max-md:text-xl ma dark:text-white">
         {title}
       </h2>
     )}

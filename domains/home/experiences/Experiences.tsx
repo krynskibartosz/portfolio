@@ -7,8 +7,11 @@ export const Experiences = () => {
   const { t } = useTranslation("home");
 
   return (
-    <Section title={`${t("MyProfessionalExperiences")} 💼`}>
-      <div className="grid grid-cols-12 gap-10 ">
+    <Section
+      className="max-md:px-5"
+      title={`${t("MyProfessionalExperiences")} 💼`}
+    >
+      <div className="grid grid-cols-12 md:gap-x-10 gap-y-10 ">
         {experiences(t).map((el) => (
           <Card el={el} />
         ))}
@@ -24,7 +27,7 @@ const Card = ({
 }) => {
   return (
     <div
-      className={`z-10 grid overflow-hidden  max-md:col-span-full h-[350px] max-md:w-full place-items-center relative group card ${className}`}
+      className={`z-10 grid overflow-hidden  max-md:col-span-full h-[350px] max-md:w-full place-items-center  relative group card ${className}`}
     >
       <Icon className={`w-40 h-40 `} />
       <div className="absolute bottom-0 z-20 w-full h-10 transition-transform duration-500 ease-in-out delay-500 bg-opacity-10 group-hover:-translate-y-16 ">

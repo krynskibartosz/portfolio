@@ -1,3 +1,5 @@
+import { useRouter } from "next/dist/client/router";
+
 export type SKILL = {
   name: string;
   description: string[];
@@ -5,7 +7,7 @@ export type SKILL = {
     blur: string;
     url: `/${string}`;
   };
-  badges: string[];
+  badges: string[] | any[];
   color: string;
   direction: "left" | "right";
 };
@@ -13,6 +15,8 @@ export type SKILL = {
 type SKILLS = SKILL[];
 
 export const skills = (translation: (e?: any) => string): SKILLS => {
+  const { locale } = useRouter();
+
   return [
     {
       name: translation("FrameworkAndLibrairies"),
@@ -63,7 +67,7 @@ export const skills = (translation: (e?: any) => string): SKILLS => {
         translation("Confidence"),
         translation("Empathy"),
         translation("Friendly"),
-        translation("Reagent"),
+        locale === "fr" ? translation("Reagent") : "",
       ],
       color: "purple",
       direction: "left",
@@ -80,7 +84,7 @@ export const skills = (translation: (e?: any) => string): SKILLS => {
         blur: "LLEVTx4.-;S2~BIV-pof%zVtxus:",
         url: "/img/skills/design.jpg",
       },
-      badges: ["Figma", "Zeplin", "Tailwind", "CSS", "HTML"],
+      badges: ["HTML", "CSS", "Tailwind", "Figma", "Zeplin"],
       color: "pink",
       direction: "right",
     },

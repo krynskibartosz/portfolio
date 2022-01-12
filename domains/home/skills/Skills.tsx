@@ -15,8 +15,8 @@ export const Skills = () => {
           <Blob className="left-0 w-64 h-64 bg-pink-400 dark:opacity-90 animation-delay-4000 -bottom-5" />
         </div>
       </div>
-      <Section title={`${t("ProfessionalSkills")} 💪🏻`}>
-        <Column className="gap-y-5">
+      <Section className="max-md:px-5" title={`${t("ProfessionalSkills")} 💪🏻`}>
+        <Column className="gap-y-5 ">
           {skills(t).map((el, i) => (
             <Card key={i} el={el} />
           ))}
@@ -25,6 +25,8 @@ export const Skills = () => {
     </div>
   );
 };
+
+// todo: rajouter le polonais anglais et francais comme langue connu
 
 const Card = ({
   el: {
@@ -72,11 +74,15 @@ const Card = ({
     return initialColor;
   };
 
+  const sortedBadges = [...badges];
+
   return (
-    <div className={`z-10  w-full h-[250px] group overflow-hidden card`}>
-      <Row className="w-full h-full">
+    <div
+      className={`z-10  w-full max-md:h-min h-[250px] group overflow-hidden card`}
+    >
+      <Row className="w-full h-full ">
         {direction === "left" && (
-          <div className="relative group-hover:brightness-100 brightness-90    w-[400px] h-full overflow-hidden transition-all ease-in-out duration-300">
+          <div className="relative group-hover:brightness-100 brightness-90    w-[400px] max-md:hidden h-full overflow-hidden transition-all ease-in-out duration-300">
             <Image
               placeholder="blur"
               blurDataURL={blurDataUrl}
@@ -88,11 +94,26 @@ const Card = ({
           </div>
         )}
 
-        <Column className="justify-between w-full h-full p-5 ">
+        <Column className="justify-between w-full h-full p-5 max-md:p-4">
           <Column className="">
-            <p className="mb-2 text-xl font-semibold text-gray-900 dark:text-gray-300">
-              {name}
-            </p>
+            <Row className="w-full mb-2 max-md:mb-3" positionY="center">
+              <div
+                className={`relative  overflow-hidden rounded-full cursor-pointer mr-2 w-10 h-10 min-w-[40px] min-h-[40px] md:hidden`}
+              >
+                <Image
+                  placeholder="blur"
+                  blurDataURL={blurDataUrl}
+                  objectFit="cover"
+                  layout="fill"
+                  className="rounded-full"
+                  alt=""
+                  src={url}
+                />
+              </div>
+              <p className="text-xl font-semibold text-gray-900 dark:text-gray-300">
+                {name}
+              </p>
+            </Row>
             <ul className="flex flex-col pl-5 ">
               {description?.map((el) => (
                 <li className={`${getColor().text} list-disc`}>
@@ -103,32 +124,38 @@ const Card = ({
               ))}
             </ul>
           </Column>
-          <Row className="gap-x-2">
-            {badges?.map((el, i) => (
-              <Row
-                key={i}
-                positionY="center"
-                className={`px-3 text-xs text-white whitespace-nowrap  bg h-7 rounded-xl ${
-                  getColor().bg
-                }`}
-              >
-                {el}
-              </Row>
-            ))}
+          <Row as="ul" className="gap-x-2 max-md:pt-5">
+            {sortedBadges?.map(
+              (el, i) =>
+                i < 4 &&
+                el.length > 0 && (
+                  <Row
+                    as="li"
+                    key={i}
+                    positionY="center"
+                    className={`px-3 text-xs text-white whitespace-nowrap  bg h-7 rounded-xl ${
+                      getColor().bg
+                    }`}
+                  >
+                    {el}
+                  </Row>
+                )
+            )}
           </Row>
         </Column>
         {direction === "right" && (
           <div
             className="relative 
-          group-hover:brightness-100 transition-all ease-in-out duration-300 brightness-90 overflow-hidden   w-[400px] h-full"
+          group-hover:brightness-100 transition-all ease-in-out duration-300 brightness-90 overflow-hidden    w-[400px] max-md:hidden h-full"
           >
             <Image
               placeholder="blur"
               blurDataURL={blurDataUrl}
               objectFit="cover"
               layout="fill"
-              src={url}
               className="transition-transform duration-500 ease-in-out scale-100 group-hover:scale-105"
+              src={url}
+              alt=""
             />
           </div>
         )}

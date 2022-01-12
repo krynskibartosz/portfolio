@@ -10,6 +10,7 @@ import { links, toggleTheme } from "./utils";
 import setNextLanguage from "next-translate/setLanguage";
 import { Form } from "components/forms/Form";
 import { Radio } from "components/forms/inputs/Radio";
+import { NativeSelect } from "components/forms/Mobile";
 
 const lng = [
   {
@@ -46,6 +47,15 @@ export const NavBar = () => {
   const isAtLeastOnElementHovered = animationConfig.some(
     (el) => el.isHovered === true
   );
+
+  useEffect(() => {
+    const copy = [...animationConfig];
+    copy.forEach((el) => {
+      el.isHovered = false;
+    });
+    setAnimationConfig(copy);
+    setNavHover(false);
+  }, [pathname]);
 
   //  hover animation managment
   useEffect(() => {
@@ -87,7 +97,7 @@ export const NavBar = () => {
             positionY="center"
             onMouseEnter={() => setNavHover(true)}
             onMouseLeave={() => setNavHover(false)}
-            className="py-1 duration-500 ease-in-out bg-white border border-gray-100 dark:bg-black bg-opacity-70 backdrop-blur-sm rounded-2xl max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none dark:border-none"
+            className="py-1 duration-500 ease-in-out bg-white border border-gray-100 dark:bg-black bg-opacity-70 backdrop-blur-sm rounded-2xl dark:border-gray-900 max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none max-md:bg-none max-md:backdrop-blur-0 max-md:bg-opacity-0"
             style={{
               width: isNavHover ? 380 : 320,
               transitionProperty: "width",
@@ -107,6 +117,9 @@ export const NavBar = () => {
                         zIndex: 28,
                       };
 
+                      setAnimationConfig(copy);
+                    }}
+                    onClick={() => {
                       setAnimationConfig(copy);
                     }}
                     onMouseLeave={() => {
@@ -145,7 +158,7 @@ export const NavBar = () => {
             })}
             <Row className="gap-x-2">
               <div
-                className={`pl-2 border-l border-gray-100 dark:border-[#1c1c1c]  ${
+                className={`pl-2 border-l border-gray-100 max-md:border-gray-200 dark:border-[#1c1c1c]  ${
                   isAtLeastOnElementHovered ? "border-none" : ""
                 }`}
               >
@@ -215,17 +228,33 @@ export const NavBar = () => {
                         ? animationConfig[4]?.style
                         : {}
                     }
-                    onClick={() => setOpen(!open)}
+                    onClick={() => {
+                      const copy = [...animationConfig];
+                      copy.forEach((el) => {
+                        el.isHovered = false;
+                      });
+                      setAnimationConfig(copy);
+                      setNavHover(false);
+                      setOpen(!open);
+                    }}
                     className={`bg-gradient-to-br dark:from-[#1c1c1c] dark:to-[#1c1c1c]  relative from-gray-50 to-gray-200`}
                   >
                     {open ? (
                       <div
-                        className={`absolute flex flex-col w-full gap-5 p-2 duration-500 ease-in-out transition-transform  bg-white border border-gray-100 min-w-min dark:bg-black bg-opacity-70 backdrop-blur-sm rounded-2xl max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none dark:border-none -top-[90px] ${
+                        className={`absolute max-md:hidden flex flex-col w-full gap-5 p-2 duration-500 ease-in-out transition-transform  bg-white border border-gray-100 min-w-min dark:bg-black bg-opacity-70 backdrop-blur-sm rounded-2xl max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none dark:border-none -top-[90px] ${
                           isNavHover && isAtLeastOnElementHovered
                             ? "scale-[0.60]"
                             : "scale-[0.80]"
                         }`}
-                        onClick={(e) => e.stopPropagation()}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          const copy = [...animationConfig];
+                          copy.forEach((el) => {
+                            el.isHovered = false;
+                          });
+                          setAnimationConfig(copy);
+                          setNavHover(false);
+                        }}
                       >
                         <Form
                           submit={() => null}
@@ -234,22 +263,48 @@ export const NavBar = () => {
                           id="lng"
                           form="lng"
                           children={({ inputProps, body }) => (
-                            <Radio
-                              {...inputProps("lng")}
-                              onChange={() => {
-                                setNavHover(false);
-                                changeLanguage(body.lng);
-                                setOpen(false);
-                              }}
-                              options={lng}
-                            />
+                            <div>
+                              <Radio
+                                {...inputProps("lng")}
+                                onChange={() => {
+                                  setNavHover(false);
+                                  changeLanguage(body.lng);
+                                  setOpen(false);
+                                }}
+                                options={lng}
+                              />
+                            </div>
                           )}
                         />
                       </div>
                     ) : (
                       <></>
                     )}
-                    <TranslationIcon />
+                    <Form
+                      submit={() => null}
+                      initialBody={{ lng: locale }}
+                      name="lng"
+                      id="lng"
+                      form="lng"
+                      className="absolute top-0 h-full "
+                      children={({ inputProps, body }) => (
+                        <Row
+                          positionX="center"
+                          positionY="center"
+                          className="relative h-full"
+                        >
+                          <NativeSelect
+                            options={lng}
+                            onChange={() => {
+                              setNavHover(false);
+                              changeLanguage(body.lng);
+                            }}
+                            {...inputProps("lng")}
+                          />
+                          <TranslationIcon />
+                        </Row>
+                      )}
+                    />
                   </Card>
                 </div>
               </ClickOutside>

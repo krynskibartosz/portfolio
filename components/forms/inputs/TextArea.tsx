@@ -101,7 +101,7 @@ export const CounterInput = ({
       )}
       <Row positionY="center" positionX="right" className="mt-2 ml-auto">
         <p
-          className={`border-gray-200 text-gray-500 mb-2 
+          className={`border-gray-200 text-gray-500  
             `}
         >
           <span className={valueLength > maxLength ? "text-red" : ""}>

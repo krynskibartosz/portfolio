@@ -1,12 +1,9 @@
-import { Column, Layout, Blob } from "components";
+import { Column, Layout } from "components";
 
-import { FavorieteProject } from "domains/home/FavorieteProject";
-import SwiperCore, { EffectCards } from "swiper";
 import useTranslation from "next-translate/useTranslation";
 import { Skills } from "domains/home/skills/Skills";
 import { Experiences } from "domains/home/experiences/Experiences";
-
-SwiperCore.use([EffectCards]);
+import { FavorieteProject } from "domains/home/projects/FavorieteProject";
 
 const Home = () => {
   const { t } = useTranslation("home");
@@ -21,12 +18,12 @@ const Home = () => {
         "AFrontEndDeveloperThatllBuildYourNextDreamWebAndMobileApplication"
       )}
     >
-      <Column className="w-full gap-y-20">
+      <Column className="w-full gap-y-20 max-md:gap-y-5">
         <Experiences />
-        <FavorieteProject className="my-20" />
+        <FavorieteProject className="my-20 " />
         <Skills />
-        <section className="relative w-full ">
-          <div className="max-w-2xl mx-auto">
+        <section className="relative w-full max-md:mt-10 ">
+          <div className="max-w-2xl mx-auto max-md:px-5">
             <h2 className="mb-8 text-3xl font-semibold text-gray-900 dark:text-white">
               {t("WhoIam")} ? 🧐
             </h2>

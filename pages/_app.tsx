@@ -1,8 +1,6 @@
 import "../styles/globals.css";
 import "../styles/theme-toggle.scss";
 import "swiper/css/bundle";
-import "swiper/css";
-import "swiper/css/effect-cards";
 
 import i18nConfig from "../i18n";
 import appWithI18n from "next-translate/appWithI18n";

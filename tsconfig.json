@@ -20,6 +20,9 @@
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "test.js"],
   "exclude": ["node_modules", ""],
   "paths": {
-    "components": ["components/*", "domains/*", "libraries/*"]
+    "components": ["components/*"],
+    "domains": ["domains/*"],
+    "libraries": ["libraries/*"],
+    "hooks": ["hooks/*"]
   }
 }
