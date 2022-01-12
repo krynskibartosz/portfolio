@@ -7,8 +7,8 @@ export const Skills = () => {
   const { t } = useTranslation("home");
 
   return (
-    <div className="relative w-full ">
-      <div className="absolute bottom-0">
+    <div className="relative w-full mx-auto max-w-7xl">
+      <div className="absolute bottom-0 ">
         <div className="relative h-[450px] w-[410px]">
           <Blob className="top-0 w-64 h-64 bg-yellow-400 -left-4 dark:opacity-40" />
           <Blob className="top-0 w-64 h-64 bg-purple-400 -right-4 animation-delay-2000 dark:opacity-40" />
@@ -25,6 +25,8 @@ export const Skills = () => {
     </div>
   );
 };
+
+// add more bubble on mobile
 
 const Card = ({
   el: {
@@ -76,7 +78,7 @@ const Card = ({
 
   return (
     <div
-      className={`z-10   w-full max-md:h-min h-[250px] group overflow-hidden card`}
+      className={`z-10 w-full max-md:h-min h-[250px] group overflow-hidden card`}
     >
       <Row className="w-full h-full ">
         {direction === "left" && (

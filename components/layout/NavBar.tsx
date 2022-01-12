@@ -1,5 +1,3 @@
-// todo: add tooltip to element that indicate the path
-
 import { Row, Link, ClickOutside } from "components";
 
 import { TranslationIcon } from "components/base/Icons/Translation";
@@ -13,6 +11,7 @@ import { Radio } from "components/forms/inputs/Radio";
 import { NativeSelect } from "components/forms/NativeSelect";
 import { useMediaQuery } from "hooks";
 import useTranslation from "next-translate/useTranslation";
+import { Tooltip } from "components/base/Tooltip";
 
 export const NavBar = () => {
   const { t } = useTranslation("home");
@@ -127,56 +126,64 @@ export const NavBar = () => {
               const copy = [...animationConfig];
               const isActive = pathname === `/${el.url}`;
               return (
-                <Link key={i} href={`/${el.url}`}>
-                  <Card
-                    onMouseEnter={() => {
-                      if (maxMd) return;
-                      copy[i].isHovered = true;
-                      copy[i].style = {
-                        transform: "scale(1.6) translateY(-10px)",
-                        margin: "0 20px",
-                        zIndex: 28,
-                      };
+                <div className="relative h-full has-tooltip min-w-min group">
+                  {/* <div className="absolute w-full bg-red-500 -top-full">
+                    <p className="text-xs text-center">Home</p>
+                  </div> */}
+                  <Tooltip className="max-md:hidden" position="top">
+                    {el.label}
+                  </Tooltip>
+                  <Link key={i} href={`/${el.url}`}>
+                    <Card
+                      onMouseEnter={() => {
+                        if (maxMd) return;
+                        copy[i].isHovered = true;
+                        copy[i].style = {
+                          transform: "scale(1.6) translateY(-10px)",
+                          margin: "0 20px",
+                          zIndex: 28,
+                        };
 
-                      setAnimationConfig(copy);
-                    }}
-                    onClick={() => {
-                      if (maxMd) return;
-                      setAnimationConfig(copy);
-                    }}
-                    onMouseLeave={() => {
-                      if (maxMd) return;
-                      copy[i].isHovered = false;
-                      if (isNavHover) {
-                        copy[i].style = {
-                          transform: "scale(1.3) translateY(-10px)",
-                        };
-                      } else {
-                        copy[i].style = {
-                          transform: "scale(1) translateY(-10px)",
-                        };
+                        setAnimationConfig(copy);
+                      }}
+                      onClick={() => {
+                        if (maxMd) return;
+                        setAnimationConfig(copy);
+                      }}
+                      onMouseLeave={() => {
+                        if (maxMd) return;
+                        copy[i].isHovered = false;
+                        if (isNavHover) {
+                          copy[i].style = {
+                            transform: "scale(1.3) translateY(-10px)",
+                          };
+                        } else {
+                          copy[i].style = {
+                            transform: "scale(1) translateY(-10px)",
+                          };
+                        }
+                        setAnimationConfig(copy);
+                      }}
+                      style={
+                        isNavHover && isAtLeastOnElementHovered
+                          ? {
+                              ...animationConfig[i]?.style,
+                              transitionProperty: "transform, margin",
+                            }
+                          : {}
                       }
-                      setAnimationConfig(copy);
-                    }}
-                    style={
-                      isNavHover && isAtLeastOnElementHovered
-                        ? {
-                            ...animationConfig[i]?.style,
-                            transitionProperty: "transform, margin",
-                          }
-                        : {}
-                    }
-                    className={`${
-                      isActive
-                        ? "bg-gray-800  dark:bg-gray-200"
-                        : "bg-gradient-to-br max-md:border border-white dark:border-none from-gray-50 to-gray-100 dark:from-[#1c1c1c] dark:to-[#1c1c1c]"
-                    } ${el.value === "projects" ? "z-50" : ""}`}
-                  >
-                    <div>
-                      <el.Icon />
-                    </div>
-                  </Card>
-                </Link>
+                      className={`${
+                        isActive
+                          ? "bg-gray-800  dark:bg-gray-200"
+                          : "bg-gradient-to-br max-md:border border-white dark:border-none from-gray-50 to-gray-100 dark:from-[#1c1c1c] dark:to-[#1c1c1c]"
+                      } ${el.value === "projects" ? "z-50" : ""}`}
+                    >
+                      <div>
+                        <el.Icon />
+                      </div>
+                    </Card>
+                  </Link>
+                </div>
               );
             })}
             <Row className="gap-x-2">

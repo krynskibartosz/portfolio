@@ -29,7 +29,7 @@ export const Layout = ({
       </Head>
 
       <div className="relative w-screen min-h-screen bg-white dark:bg-gray-900">
-        <div className="h-full pb-28 pt-28 max-md:pt-10 max-md:mx-0 ">
+        <div className="h-full  pb-28 pt-28 max-md:pt-10 max-md:mx-0">
           <Column as="section" className="max-w-2xl mx-auto max-md:px-5">
             <h1 className="mb-2 text-4xl font-bold text-gray-900 max-md:text-2xl dark:text-white">
               {title}

@@ -1,5 +1,6 @@
 import { Layout, Section } from "components";
 
+// todo: start by Startup World
 const Home = () => {
   return (
     <Layout
