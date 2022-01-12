@@ -1,12 +1,11 @@
-import { Column } from "components";
 import { INPUT } from "components/forms/Form";
 import { onChangeHandler } from "./utils";
 
 type MULTIPLE_SELECT = {
   options: { value: string; label: string }[];
   id: string;
-  label: string;
   required?: boolean;
+  onChange?: (e?: any) => void;
 };
 
 export const NativeSelect = ({
@@ -17,7 +16,7 @@ export const NativeSelect = ({
   required = false,
   form,
   onChange,
-}: any) => {
+}: MULTIPLE_SELECT & INPUT) => {
   return (
     <select
       size={5}

@@ -7,6 +7,7 @@ import appWithI18n from "next-translate/appWithI18n";
 import { NavBar } from "components/layout/NavBar";
 import { Row, Image, Blob } from "components";
 import { useEffect } from "react";
+import { NextWebVitalsMetric } from "next/dist/shared/lib/utils";
 
 function App({ Component, pageProps }: any) {
   i18nConfig.defaultLocale = "fr";
@@ -74,3 +75,7 @@ const Avatar = ({ size, src }: { size: number; src: `/${string}` }) => {
 export default appWithI18n(App, {
   ...i18nConfig,
 });
+
+export function reportWebVitals(metric: NextWebVitalsMetric) {
+  console.log(metric);
+}

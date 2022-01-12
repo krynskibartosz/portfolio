@@ -26,8 +26,6 @@ export const Skills = () => {
   );
 };
 
-// todo: rajouter le polonais anglais et francais comme langue connu
-
 const Card = ({
   el: {
     direction = "left",
@@ -78,7 +76,7 @@ const Card = ({
 
   return (
     <div
-      className={`z-10  w-full max-md:h-min h-[250px] group overflow-hidden card`}
+      className={`z-10   w-full max-md:h-min h-[250px] group overflow-hidden card`}
     >
       <Row className="w-full h-full ">
         {direction === "left" && (
@@ -110,7 +108,7 @@ const Card = ({
                   src={url}
                 />
               </div>
-              <p className="text-xl font-semibold text-gray-900 dark:text-gray-300">
+              <p className="text-xl font-semibold text-gray-900 max-md:text-lg dark:text-gray-300">
                 {name}
               </p>
             </Row>

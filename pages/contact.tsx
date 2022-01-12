@@ -81,7 +81,7 @@ const Home = () => {
                     type="submit"
                     value="Register"
                     accessKey="Enter"
-                    className="px-6 py-2 mt-5 text-white transition-colors duration-300 ease-in-out bg-gray-900 border border-gray-200 appearance-none cursor-pointer  hover:bg-gray-800 text-uppercase dark:text-white dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-min whitespace-nowrap rounded-xl max-md:py-2 max-md:px-3"
+                    className="px-6 py-2 mt-5 text-white transition-colors duration-300 ease-in-out bg-gray-900 border border-gray-200 appearance-none cursor-pointer hover:bg-gray-800 text-uppercase dark:text-white dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-min whitespace-nowrap rounded-xl max-md:px-4"
                     form="contact"
                   />
                 </Row>

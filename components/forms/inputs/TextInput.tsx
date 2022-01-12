@@ -1,6 +1,7 @@
 import { Column } from "components";
 import { ChangeEvent, InputHTMLAttributes, useState } from "react";
 import { INPUT } from "../Form";
+import { getBorderColor } from "../utils";
 
 //* Intersting props
 // disabled?: boolean;
@@ -36,11 +37,6 @@ export const TextInput = ({
   const [focused, setFocused] = useState(false);
 
   //! the border is handle on the parent div of the input cause on mobile there's an uggly native border
-  const borderC = focused
-    ? "!border-gray-900 dark:!border-gray-600"
-    : error
-    ? "!border-red`"
-    : "border-gray-300 dark:border-gray-700 dark:hover:!border-gray-600 hover:border-gray-900";
 
   return (
     <Column className={`w-full`}>
@@ -54,7 +50,7 @@ export const TextInput = ({
       )}
       <div
         className={`border w-full rounded-xl bg-gray-50 dark:bg-gray-800  ${
-          borderColor || borderC
+          borderColor || getBorderColor(error, focused)
         }`}
       >
         <input

@@ -10,26 +10,46 @@ import { links, toggleTheme } from "./utils";
 import setNextLanguage from "next-translate/setLanguage";
 import { Form } from "components/forms/Form";
 import { Radio } from "components/forms/inputs/Radio";
-import { NativeSelect } from "components/forms/Mobile";
-
-const lng = [
-  {
-    label: "Fr",
-    value: "fr",
-  },
-  {
-    label: "En",
-    value: "en",
-  },
-
-  {
-    label: "Pl",
-    value: "pl",
-  },
-];
+import { NativeSelect } from "components/forms/NativeSelect";
+import { useMediaQuery } from "hooks";
+import useTranslation from "next-translate/useTranslation";
 
 export const NavBar = () => {
+  const { t } = useTranslation("home");
+
+  const lng = [
+    {
+      label: "Fr",
+      value: "fr",
+    },
+    {
+      label: "En",
+      value: "en",
+    },
+
+    {
+      label: "Pl",
+      value: "pl",
+    },
+  ];
+  const lngLong = [
+    {
+      label: t("French"),
+      value: "fr",
+    },
+    {
+      label: t("English"),
+      value: "en",
+    },
+
+    {
+      label: t("Polish"),
+      value: "pl",
+    },
+  ];
+
   const { pathname } = useRouter();
+  const { maxMd } = useMediaQuery();
 
   const [isNavHover, setNavHover] = useState(false);
 
@@ -97,9 +117,9 @@ export const NavBar = () => {
             positionY="center"
             onMouseEnter={() => setNavHover(true)}
             onMouseLeave={() => setNavHover(false)}
-            className="py-1 duration-500 ease-in-out bg-white border border-gray-100 dark:bg-black bg-opacity-70 backdrop-blur-sm rounded-2xl dark:border-gray-900 max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none max-md:bg-none max-md:backdrop-blur-0 max-md:bg-opacity-0"
+            className="py-1 duration-500 ease-in-out bg-white border border-gray-100 dark:bg-black bg-opacity-70 backdrop-blur-sm rounded-2xl dark:border-gray-900 max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none max-md:bg-none max-md:backdrop-blur-0 max-md:bg-opacity-0 dark:max-md:bg-transparent"
             style={{
-              width: isNavHover ? 380 : 320,
+              width: !maxMd && isNavHover ? 380 : 320,
               transitionProperty: "width",
             }}
           >
@@ -110,6 +130,7 @@ export const NavBar = () => {
                 <Link key={i} href={`/${el.url}`}>
                   <Card
                     onMouseEnter={() => {
+                      if (maxMd) return;
                       copy[i].isHovered = true;
                       copy[i].style = {
                         transform: "scale(1.6) translateY(-10px)",
@@ -120,9 +141,11 @@ export const NavBar = () => {
                       setAnimationConfig(copy);
                     }}
                     onClick={() => {
+                      if (maxMd) return;
                       setAnimationConfig(copy);
                     }}
                     onMouseLeave={() => {
+                      if (maxMd) return;
                       copy[i].isHovered = false;
                       if (isNavHover) {
                         copy[i].style = {
@@ -146,7 +169,7 @@ export const NavBar = () => {
                     className={`${
                       isActive
                         ? "bg-gray-800  dark:bg-gray-200"
-                        : "bg-gradient-to-br from-gray-50 to-gray-100 dark:from-[#1c1c1c] dark:to-[#1c1c1c]"
+                        : "bg-gradient-to-br max-md:border border-white dark:border-none from-gray-50 to-gray-100 dark:from-[#1c1c1c] dark:to-[#1c1c1c]"
                     } ${el.value === "projects" ? "z-50" : ""}`}
                   >
                     <div>
@@ -165,8 +188,16 @@ export const NavBar = () => {
                 <Card
                   onClick={() => {
                     toggleTheme();
+                    if (maxMd) return;
+                    const copy = [...animationConfig];
+                    copy.forEach((el) => {
+                      el.isHovered = false;
+                    });
+                    setAnimationConfig(copy);
+                    setNavHover(false);
                   }}
                   onMouseEnter={() => {
+                    if (maxMd) return;
                     const copy = [...animationConfig];
 
                     copy[3].isHovered = true;
@@ -178,6 +209,7 @@ export const NavBar = () => {
                     setAnimationConfig(copy);
                   }}
                   onMouseLeave={() => {
+                    if (maxMd) return;
                     const copy = [...animationConfig];
                     copy[3].isHovered = false;
                     if (isNavHover) {
@@ -194,7 +226,7 @@ export const NavBar = () => {
                       ? animationConfig[3]?.style
                       : {}
                   }
-                  className={`bg-gradient-to-br dark:from-[#1c1c1c] dark:to-[#1c1c1c] relative from-gray-50 to-gray-200`}
+                  className={`bg-gradient-to-br border-white max-md:border dark:border-none dark:from-[#1c1c1c] dark:to-[#1c1c1c] relative from-gray-50 to-gray-200`}
                 >
                   <ThemeIcon />
                 </Card>
@@ -237,9 +269,9 @@ export const NavBar = () => {
                       setNavHover(false);
                       setOpen(!open);
                     }}
-                    className={`bg-gradient-to-br dark:from-[#1c1c1c] dark:to-[#1c1c1c]  relative from-gray-50 to-gray-200`}
+                    className={`bg-gradient-to-br max-md:border border-white dark:border-none dark:from-[#1c1c1c] dark:to-[#1c1c1c]  relative from-gray-50 to-gray-200`}
                   >
-                    {open ? (
+                    {open && (
                       <div
                         className={`absolute max-md:hidden flex flex-col w-full gap-5 p-2 duration-500 ease-in-out transition-transform  bg-white border border-gray-100 min-w-min dark:bg-black bg-opacity-70 backdrop-blur-sm rounded-2xl max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none dark:border-none -top-[90px] ${
                           isNavHover && isAtLeastOnElementHovered
@@ -277,8 +309,6 @@ export const NavBar = () => {
                           )}
                         />
                       </div>
-                    ) : (
-                      <></>
                     )}
                     <Form
                       submit={() => null}
@@ -286,7 +316,7 @@ export const NavBar = () => {
                       name="lng"
                       id="lng"
                       form="lng"
-                      className="absolute top-0 h-full "
+                      className="absolute top-0 h-full md:hidden"
                       children={({ inputProps, body }) => (
                         <Row
                           positionX="center"
@@ -294,7 +324,8 @@ export const NavBar = () => {
                           className="relative h-full"
                         >
                           <NativeSelect
-                            options={lng}
+                            id="lng"
+                            options={lngLong}
                             onChange={() => {
                               setNavHover(false);
                               changeLanguage(body.lng);
@@ -305,6 +336,7 @@ export const NavBar = () => {
                         </Row>
                       )}
                     />
+                    <TranslationIcon className="max-md:hidden" />
                   </Card>
                 </div>
               </ClickOutside>
@@ -323,7 +355,7 @@ const Card = ({
 }: HTMLAttributes<HTMLDivElement>) => (
   <div
     {...rest}
-    className={`grid w-12 h-12 transition-all  duration-500 ease-in-out  cursor-pointer  place-items-center   rounded-xl ${className}`}
+    className={`grid w-12 h-12 transition-all  duration-500 ease-in-out  cursor-pointer  place-items-center max-md:!transform-none max-md:!margin-0   rounded-xl ${className}`}
   >
     {children}
   </div>

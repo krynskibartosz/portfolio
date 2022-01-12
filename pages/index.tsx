@@ -27,6 +27,7 @@ const Home = () => {
             <h2 className="mb-8 text-3xl font-semibold text-gray-900 dark:text-white">
               {t("WhoIam")} ? 🧐
             </h2>
+            {/* // todo: rajouter le polonais anglais et francais comme langue connu */}
           </div>
         </section>
       </Column>

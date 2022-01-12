@@ -1,6 +1,7 @@
 import { Column, Row, TextInput } from "components";
 import { INPUT } from "components/forms/Form";
 import { ChangeEvent, InputHTMLAttributes, useState } from "react";
+import { getBorderColor } from "../utils";
 
 interface TEXT_INPUT_PROPS extends INPUT {
   label: string;
@@ -21,13 +22,7 @@ export const TextAreaInput = ({
     setValue(e.target.value);
   };
 
-  // todo: create a hooks to get borderC (getBorderColor) and reuse him on textinput too
   const [focused, setFocused] = useState(false);
-  const borderC = focused
-    ? "!border-gray-900 dark:!border-gray-600"
-    : error
-    ? "!border-red`"
-    : "border-gray-300 dark:border-gray-700 dark:hover:!border-gray-600 hover:border-gray-900";
 
   return (
     <Column className={`w-full`}>
@@ -40,7 +35,10 @@ export const TextAreaInput = ({
         </label>
       )}
       <div
-        className={`border w-full rounded-xl bg-gray-50 dark:bg-gray-800  min-h-[200px] ${borderC} `}
+        className={`border w-full rounded-xl bg-gray-50 dark:bg-gray-800  min-h-[200px] ${getBorderColor(
+          error,
+          focused
+        )} `}
       >
         <textarea
           id={id}

@@ -59,7 +59,7 @@
 
 /* todo: change background */
 ::selection {
-  background: #d852fd;
+  background: rgb(236, 72, 153);
   color: white;
 }
 
@@ -82,4 +82,12 @@ body {
 
 html {
   height: -webkit-fill-available;
+}
+
+.swiper-pagination-fraction {
+  /* transform: translateY(-30px) !important; */
+  text-align: right !important;
+  width: 100% !important;
+  position: relative !important;
+  color: rgb(107, 114, 128) !important;
 }

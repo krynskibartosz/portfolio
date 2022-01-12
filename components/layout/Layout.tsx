@@ -34,7 +34,7 @@ export const Layout = ({
             <h1 className="mb-2 text-4xl font-bold text-gray-900 max-md:text-2xl dark:text-white">
               {title}
             </h1>
-            <p className="max-w-xl pb-5 text-lg text-gray-800 max-md:text-base dark:text-gray-400">
+            <p className="max-w-xl pb-5 text-lg text-gray-800 max-md:text-sm dark:text-gray-400">
               {description}
             </p>
             <div className="w-full h-px bg-gray-100 "></div>
