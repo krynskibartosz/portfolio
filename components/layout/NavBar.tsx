@@ -1,3 +1,5 @@
+// @ts-ignore
+// @ts-ignore
 import { Row, Link, ClickOutside } from "components";
 
 import { TranslationIcon } from "components/base/Icons/Translation";

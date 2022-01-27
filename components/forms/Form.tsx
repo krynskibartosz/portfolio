@@ -1,3 +1,4 @@
+// @ts-ignore
 import { useState, useEffect, FormEvent, ReactNode } from "react";
 import { deepGet, deepSet } from "libraries/dash";
 import { deepCopy, isEmpty, objectTester } from "libraries/dash/object";
