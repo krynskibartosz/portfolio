@@ -281,6 +281,7 @@ export const NavBar = () => {
                     }}
                     className={`bg-gradient-to-br max-md:border border-white dark:border-none dark:from-[#1c1c1c] dark:to-[#1c1c1c]  relative from-gray-50 to-gray-200`}
                   >
+                    {/* //todo: create an hoverwithin on desktop to open the form  */}
                     {open && (
                       <div
                         className={`absolute max-md:hidden flex flex-col w-full gap-5 p-2 duration-500 ease-in-out transition-transform  bg-white border border-gray-100 min-w-min dark:bg-black bg-opacity-70 backdrop-blur-sm rounded-2xl max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none dark:border-none -top-[90px] ${

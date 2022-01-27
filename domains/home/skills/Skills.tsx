@@ -28,6 +28,45 @@ export const Skills = () => {
 
 //todo: add more bubble on mobile
 
+const getColor = (color: string) => {
+  let initialColor = {
+    bg: "",
+    text: "",
+    selection: "",
+  };
+  switch (color) {
+    case "yellow":
+      initialColor.bg = "bg-yellow-500 selection:bg-yellow-500";
+      initialColor.text = "text-yellow-500 ";
+      initialColor.selection = " selection:bg-yellow-500";
+      break;
+
+    case "red":
+      initialColor.bg = "bg-red-500 selection:bg-red-500";
+      initialColor.text = "text-red-500 ";
+      initialColor.selection = " selection:bg-red-500";
+      break;
+
+    case "purple":
+      initialColor.bg = "bg-purple-500 selection:bg-purple-500";
+      initialColor.text = "text-purple-500 ";
+      initialColor.selection = " selection:bg-purple-500";
+
+      break;
+
+    case "pink":
+      initialColor.bg = "bg-pink-500 selection:bg-pink-500";
+      initialColor.text = "text-pink-500 ";
+      initialColor.selection = "selection:bg-pink-500";
+
+      break;
+
+    default:
+      break;
+  }
+  return initialColor;
+};
+
 const Card = ({
   el: {
     direction = "left",
@@ -42,38 +81,6 @@ const Card = ({
 }) => {
   const [blurDataUrl] = useNextBlurhash(blur);
 
-  const getColor = () => {
-    let initialColor = {
-      bg: "",
-      text: "",
-    };
-    switch (color) {
-      case "yellow":
-        initialColor.bg = "bg-yellow-500";
-        initialColor.text = "text-yellow-500";
-        break;
-
-      case "red":
-        initialColor.bg = "bg-red-500";
-        initialColor.text = "text-red-500";
-        break;
-
-      case "purple":
-        initialColor.bg = "bg-purple-500";
-        initialColor.text = "text-purple-500";
-        break;
-
-      case "pink":
-        initialColor.bg = "bg-pink-500";
-        initialColor.text = "text-pink-500";
-        break;
-
-      default:
-        break;
-    }
-    return initialColor;
-  };
-
   const sortedBadges = [...badges];
 
   return (
@@ -82,7 +89,11 @@ const Card = ({
     >
       <Row className="w-full h-full ">
         {direction === "left" && (
-          <div className="relative group-hover:brightness-100 brightness-90    w-[400px] max-md:hidden h-full overflow-hidden transition-all ease-in-out duration-300">
+          <div
+            className={`relative group-hover:brightness-100 brightness-90 w-[400px] max-md:hidden h-full overflow-hidden transition-all ease-in-out duration-300 ${
+              getColor(color).selection
+            }`}
+          >
             <Image
               placeholder="blur"
               blurDataURL={blurDataUrl}
@@ -98,7 +109,7 @@ const Card = ({
           <Column className="">
             <Row className="w-full mb-2 max-md:mb-3" positionY="center">
               <div
-                className={`relative  overflow-hidden rounded-full cursor-pointer mr-2 w-10 h-10 min-w-[40px] min-h-[40px] md:hidden`}
+                className={`relative  overflow-hidden rounded-full cursor-pointer mr-2 w-10 h-10 min-w-[40px] min-h-[40px] md:hidden `}
               >
                 <Image
                   placeholder="blur"
@@ -110,14 +121,27 @@ const Card = ({
                   src={url}
                 />
               </div>
-              <p className="text-xl font-semibold text-gray-900 max-md:text-lg dark:text-gray-300">
+              <p
+                className={`text-xl font-semibold text-gray-900 max-md:text-lg dark:text-gray-300 ${
+                  getColor(color).selection
+                }`}
+              >
                 {name}
               </p>
             </Row>
-            <ul className="flex flex-col pl-5 ">
+            <ul className="flex flex-col pl-5 gap-y-2 ">
               {description?.map((el, i) => (
-                <li key={i} className={`${getColor().text} list-disc`}>
-                  <p className="text-xs text-gray-800 -translate-y-[1.3px] dark:text-gray-400">
+                <li
+                  key={i}
+                  className={`${getColor(color).text} ${
+                    getColor(color).selection
+                  } max-md:text-xs text-xs  list-disc`}
+                >
+                  <p
+                    className={`text-gray-800 dark:text-gray-400 ${
+                      getColor(color).selection
+                    }`}
+                  >
                     {el}.
                   </p>
                 </li>
@@ -134,7 +158,7 @@ const Card = ({
                     key={i}
                     positionY="center"
                     className={`px-3 text-xs text-white whitespace-nowrap  bg h-7 rounded-xl ${
-                      getColor().bg
+                      getColor(color).bg
                     }`}
                   >
                     {el}
@@ -145,8 +169,10 @@ const Card = ({
         </Column>
         {direction === "right" && (
           <div
-            className="relative 
-          group-hover:brightness-100 transition-all ease-in-out duration-300 brightness-90 overflow-hidden    w-[400px] max-md:hidden h-full"
+            className={`relative 
+          group-hover:brightness-100 transition-all ease-in-out duration-300 brightness-90 overflow-hidden    w-[400px] max-md:hidden h-full ${
+            getColor(color).selection
+          }`}
           >
             <Image
               placeholder="blur"

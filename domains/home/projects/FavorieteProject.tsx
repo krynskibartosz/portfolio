@@ -9,6 +9,13 @@ import { CarouselMobile } from "./CarouselMobile";
 
 SwiperCore.use([EffectCards, Pagination]);
 
+// todo: create different component of the carousel
+
+// 1: ProjectCard (image + name)
+// 2: Presentation (logo top + text)
+// 3: Feature (theme = 'light' | 'dark)
+// 4: create a config handler
+
 export const FavorieteProject = ({ className, ...rest }: any) => {
   const { t } = useTranslation("home");
 
