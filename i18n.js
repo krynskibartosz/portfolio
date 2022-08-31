@@ -2,7 +2,7 @@ module.exports = {
   locales: ["en", "fr", "pl"],
   defaultLocale: "fr",
   pages: {
-    "*": ["home", "contact", "global", "404", "projects", "/"],
+    "*": ["home", "contact", "global", "404", "projects"],
   },
   loader: false,
   loadLocaleFrom: (lang, ns) =>

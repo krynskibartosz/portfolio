@@ -16,31 +16,43 @@
     @apply z-50 visible opacity-100;
   }
   @font-face {
-    font-family: FreightSans;
+    font-family: Roboto;
+    font-weight: 300;
+    src: local("Roboto"),
+      url("../public/fonts/roboto/Roboto-Thin.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: Roboto;
+    font-weight: 300;
+    src: local("Roboto"),
+      url("../public/fonts/roboto/Roboto-Light.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: Roboto;
     font-weight: 400;
-    src: local("FreightSans"),
-      url("/fonts/FreightSansProMedium-Regular.ttf") format("truetype");
+    src: local("Roboto"),
+      url("../public/fonts/roboto/Roboto-Regular.ttf") format("truetype");
   }
 
   @font-face {
-    font-family: FreightSans;
+    font-family: Roboto;
     font-weight: 500;
-    src: local("FreightSans"),
-      url("/fonts/FreightSansProMedium-Medium.ttf") format("truetype");
+    src: local("Roboto"),
+      url("../public/fonts/roboto/Roboto-Medium.ttf") format("truetype");
   }
-
+  /* semibold */
   @font-face {
-    font-family: FreightSans;
+    font-family: Roboto;
     font-weight: 600;
-    src: local("FreightSans"),
-      url("/fonts/FreightSansProSemibold-Regular.ttf") format("truetype");
+    src: local("Roboto"),
+      url("../public/fonts/roboto/Roboto-Bold.ttf") format("truetype");
   }
-
+  /* bold */
   @font-face {
-    font-family: FreightSans;
+    font-family: Roboto;
     font-weight: 700;
-    src: local("FreightSans"),
-      url("/fonts/FreightSansProBold-Regular.ttf") format("truetype");
+    src: local("Roboto"),
+      url("../public/fonts/roboto/Roboto-Black.ttf") format("truetype");
   }
 }
 
@@ -73,9 +85,8 @@ body {
   padding: 0;
   margin: 0;
 
-  font-family: "FreightSansProMedium", -apple-system, BlinkMacSystemFont,
-    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-    Helvetica Neue, sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 body {

@@ -1,6 +1,6 @@
-import { BecodeIcon } from "components/base/Icons/Becode";
-import { DigitaluIcon } from "components/base/Icons/Digitalu";
-import { UtopixIcon } from "components/base/Icons/Utopix";
+import { BecodeIcon } from 'components/base/Icons/Becode';
+import { DigitaluIcon } from 'components/base/Icons/Digitalu';
+import { UtopixIcon } from 'components/base/Icons/Utopix';
 
 export type COMPANY = {
   post: string;
@@ -17,27 +17,27 @@ export const experiences = (translation: (e?: any) => string): COMPANIES => {
       Icon: () => (
         <DigitaluIcon className="w-80 h-80 max-md:w-60 max-md:h-60" />
       ),
-      post: translation("FrontEndDeveloper"),
+      post: translation('FrontEndDeveloper'),
       description: translation(
-        "CreationAndMaintenanceOfSeveralWebAndMobileApplicationsUsingHighPerformanceTechnologies"
+        'CreationAndMaintenanceOfSeveralWebAndMobileApplicationsUsingHighPerformanceTechnologies'
       ),
-      className: "col-span-full",
+      className: 'col-span-full',
     },
     {
       Icon: () => (
         <UtopixIcon className="w-40 h-40 fill-black dark:fill-white" />
       ),
-      post: translation("InternshipInWebDevelopment"),
-      description: translation("DevelopmentOfAManagementPlatform"),
-      className: "col-span-6",
+      post: translation('InternshipInWebDevelopment'),
+      description: translation('DevelopmentOfAManagementPlatform'),
+      className: 'col-span-6',
     },
     {
       Icon: BecodeIcon,
-      post: translation("TrainingInWebDevelopment"),
+      post: translation('TrainingInWebDevelopment'),
       description: translation(
-        "7MonthsTrainingInFrontEndWebDevelopmentAndBackEndDevelopment"
+        '7MonthsTrainingInFrontEndWebDevelopmentAndBackEndDevelopment'
       ),
-      className: "col-span-6",
+      className: 'col-span-6',
     },
   ];
 };

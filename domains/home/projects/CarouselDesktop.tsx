@@ -1,11 +1,11 @@
-import { Column, Image } from "components";
+import { Column, Image } from 'components';
 
-import { SwiperSlide, Swiper } from "swiper/react";
-import { UmengoIcon } from "components/base/Icons/Umengo";
+import { SwiperSlide, Swiper } from 'swiper/react';
+import { UmengoIcon } from 'components/base/Icons/Umengo';
 
 export const CarouselDesktop = ({ t, className }: any) => (
   <Swiper
-    effect={"cards"}
+    effect={'cards'}
     grabCursor={true}
     className={`w-full  mt-24 relative mySwiper h-[500px] ${className}`}
   >
@@ -22,10 +22,10 @@ export const CarouselDesktop = ({ t, className }: any) => (
     <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black ">
       <Column className="w-full h-full p-10 pt-24">
         <h2 className="mb-5 text-3xl font-semibold text-gray-900 dark:text-white">
-          {t("WhatsUmengo")}
+          {t('WhatsUmengo')}
         </h2>
         <p className="text-sm font-light text-gray-800 dark:text-gray-400">
-          {t("UmengoDescription")}
+          {t('UmengoDescription')}
         </p>
         <UmengoIcon className="absolute w-10 h-10 left-5 top-5 " />
         <span className="absolute text-xs text-gray-600 right-5 bottom-5 dark:text-gray-500">
@@ -37,7 +37,7 @@ export const CarouselDesktop = ({ t, className }: any) => (
     <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black ">
       <Column positionX="center" className="justify-center w-full h-full ">
         <h2 className="mb-5 text-4xl font-semibold text-gray-900 dark:text-white">
-          {t("Authentification")}
+          {t('Authentification')}
         </h2>
 
         <UmengoIcon className="absolute w-10 h-10 left-5 top-5 " />
@@ -50,10 +50,10 @@ export const CarouselDesktop = ({ t, className }: any) => (
     <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
       <Column
         positionX="center"
-        className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+        className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 bg-gray-50"
       >
         <p className="text-lg font-semibold text-center text-gray-800 ">
-          {t("Signup")}
+          {t('Signup')}
         </p>
       </Column>
       <div className="relative w-full h-full">
@@ -71,10 +71,10 @@ export const CarouselDesktop = ({ t, className }: any) => (
     <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
       <Column
         positionX="center"
-        className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+        className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 bg-gray-50"
       >
         <p className="text-lg font-semibold text-center text-gray-800 ">
-          {t("Signin")}
+          {t('Signin')}
         </p>
       </Column>
       <div className="relative w-full h-full">
@@ -92,10 +92,10 @@ export const CarouselDesktop = ({ t, className }: any) => (
     <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
       <Column
         positionX="center"
-        className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+        className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 bg-gray-50"
       >
         <p className="text-lg font-semibold text-center text-gray-800 ">
-          {t("UserProfile")}
+          {t('UserProfile')}
         </p>
       </Column>
       <div className="relative w-full h-full">
@@ -127,7 +127,7 @@ export const CarouselDesktop = ({ t, className }: any) => (
     <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
       <Column
         positionX="center"
-        className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+        className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 bg-gray-50"
       >
         <p className="text-lg font-semibold text-center text-gray-800 ">
           CREATE
@@ -148,7 +148,7 @@ export const CarouselDesktop = ({ t, className }: any) => (
     <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
       <Column
         positionX="center"
-        className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+        className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 bg-gray-50"
       >
         <p className="text-lg font-semibold text-center text-gray-800 ">READ</p>
       </Column>
@@ -168,7 +168,7 @@ export const CarouselDesktop = ({ t, className }: any) => (
     <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
       <Column
         positionX="center"
-        className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+        className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 "
       >
         <p className="text-lg font-semibold text-center text-white ">UPDATE</p>
       </Column>
@@ -187,7 +187,7 @@ export const CarouselDesktop = ({ t, className }: any) => (
     <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
       <Column
         positionX="center"
-        className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+        className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 "
       >
         <p className="text-lg font-semibold text-center text-white ">DELETE</p>
       </Column>
@@ -214,7 +214,7 @@ export const CarouselDesktop = ({ t, className }: any) => (
     <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
       <Column
         positionX="center"
-        className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+        className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 bg-gray-50"
       >
         <p className="text-lg font-semibold text-center text-gray-800 ">
           Messenger
@@ -235,10 +235,10 @@ export const CarouselDesktop = ({ t, className }: any) => (
     <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
       <Column
         positionX="center"
-        className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+        className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 bg-gray-50"
       >
         <p className="text-lg font-semibold text-center text-gray-800 ">
-          {t("Notification")}
+          {t('Notification')}
         </p>
       </Column>
       <div className="relative w-full h-full bg-white">
@@ -246,6 +246,27 @@ export const CarouselDesktop = ({ t, className }: any) => (
       </div>
       <span className="absolute z-10 text-xs text-gray-500 right-5 bottom-5 ">
         13
+      </span>
+    </SwiperSlide>
+    {/* MOBILE */}
+    <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br from-black to-black !bg-black rounded-xl shadow-main dark:shadow-lg dark:shadow-black dark:from-black dark:to-black group">
+      <Column
+        positionX="center"
+        className="absolute bottom-0 left-0 z-10 justify-center w-full h-10 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 bg-gray-50"
+      >
+        <p className="text-lg font-semibold text-center text-gray-800 ">
+          {"Et bien sûr, c'est totalement responsive"}
+        </p>
+      </Column>
+      <div className="relative w-full h-full bg-white">
+        <Image
+          objectFit="contain"
+          layout="fill"
+          src="/img/umengo/responsive.jpg"
+        />
+      </div>
+      <span className="absolute z-10 text-xs text-gray-500 right-5 bottom-5 ">
+        14
       </span>
     </SwiperSlide>
   </Swiper>

@@ -1,41 +1,41 @@
-import { Layout, Link, Section, Image } from "components";
-import useTranslation from "next-translate/useTranslation";
+import { Layout, Link, Section, Image } from 'components';
+import useTranslation from 'next-translate/useTranslation';
 
 const Page404 = () => {
-  const { t: globalTranslation } = useTranslation("global");
+  const { t: globalTranslation } = useTranslation('global');
 
   const config = [
     {
-      name: globalTranslation("Home"),
-      url: "/",
-      img: "/img/illustration/CV.svg",
+      name: globalTranslation('Home'),
+      url: '/',
+      img: '/img/illustration/CV.svg',
     },
     {
-      name: globalTranslation("Projects"),
-      url: "/projects",
-      img: "/img/illustration/folder.svg",
+      name: globalTranslation('Projects'),
+      url: '/projects',
+      img: '/img/illustration/folder.svg',
     },
     {
-      name: globalTranslation("Contact"),
-      url: "/contact",
-      img: "/img/illustration/contact.svg",
+      name: globalTranslation('Contact'),
+      url: '/contact',
+      img: '/img/illustration/contact.svg',
     },
   ];
 
-  const { t } = useTranslation("404");
+  const { t } = useTranslation('404');
 
   return (
     <Layout
       headTitle="Bartosz Home"
-      seoTitle="Front-end Développeur Bartosz"
+      seoTitle="Frontend Développeur Bartosz"
       seoDescription="" // todo:
-      title={t("404Page")}
-      description={`${t("OopsYouGotTheWrongLink")} 💩`}
+      title={t('404Page')}
+      description={`${t('OopsYouGotTheWrongLink')} 💩`}
     >
       <Section className="max-md:px-5">
         <>
           <p className="mb-5 text-xl font-semibold text-gray-800 dark:text-gray-400">
-            {t("HereIsAListOfLinksYouMightWantToCheckOut")}
+            {t('HereIsAListOfLinksYouMightWantToCheckOut')}
           </p>
           <ul className="grid grid-cols-12 gap-5">
             {config.map((el, i) => (

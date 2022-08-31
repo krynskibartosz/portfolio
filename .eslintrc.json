@@ -1,7 +1,16 @@
 {
-  "extends": "next/core-web-vitals",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
   "rules": {
-    "react/no-children-prop": "off",
-    "react-hooks/exhaustive-deps": "off"
+    // You can just turn off some rules if you want...
+    // "prefer-const": "off"
+    // I suggest you add those two rules:
+
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "error"
   }
 }

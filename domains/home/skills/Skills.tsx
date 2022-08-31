@@ -1,10 +1,10 @@
-import { Column, Section, Image, Row, Blob } from "components";
-import useTranslation from "next-translate/useTranslation";
-import useNextBlurhash from "use-next-blurhash";
-import { SKILL, skills } from "./config";
+import { Column, Section, Image, Row, Blob } from 'components';
+import useTranslation from 'next-translate/useTranslation';
+import useNextBlurhash from 'use-next-blurhash';
+import { SKILL, skills } from './config';
 
 export const Skills = () => {
-  const { t } = useTranslation("home");
+  const { t } = useTranslation('home');
 
   return (
     <div className="relative w-full mx-auto max-w-7xl">
@@ -15,7 +15,7 @@ export const Skills = () => {
           <Blob className="left-0 w-64 h-64 bg-pink-400 dark:opacity-90 animation-delay-4000 -bottom-5" />
         </div>
       </div>
-      <Section className="max-md:px-5" title={`${t("ProfessionalSkills")} 💪🏻`}>
+      <Section className="max-md:px-5" title={`${t('ProfessionalSkills')} 💪🏻`}>
         <Column className="gap-y-5 ">
           {skills(t).map((el, i) => (
             <Card key={i} el={el} />
@@ -29,35 +29,35 @@ export const Skills = () => {
 //todo: add more bubble on mobile
 
 const getColor = (color: string) => {
-  let initialColor = {
-    bg: "",
-    text: "",
-    selection: "",
+  const initialColor = {
+    bg: '',
+    text: '',
+    selection: '',
   };
   switch (color) {
-    case "yellow":
-      initialColor.bg = "bg-yellow-500 selection:bg-yellow-500";
-      initialColor.text = "text-yellow-500 ";
-      initialColor.selection = " selection:bg-yellow-500";
+    case 'yellow':
+      initialColor.bg = 'bg-yellow-500 selection:bg-yellow-500';
+      initialColor.text = 'text-yellow-500 ';
+      initialColor.selection = ' selection:bg-yellow-500';
       break;
 
-    case "red":
-      initialColor.bg = "bg-red-500 selection:bg-red-500";
-      initialColor.text = "text-red-500 ";
-      initialColor.selection = " selection:bg-red-500";
+    case 'red':
+      initialColor.bg = 'bg-red-500 selection:bg-red-500';
+      initialColor.text = 'text-red-500 ';
+      initialColor.selection = ' selection:bg-red-500';
       break;
 
-    case "purple":
-      initialColor.bg = "bg-purple-500 selection:bg-purple-500";
-      initialColor.text = "text-purple-500 ";
-      initialColor.selection = " selection:bg-purple-500";
+    case 'purple':
+      initialColor.bg = 'bg-purple-500 selection:bg-purple-500';
+      initialColor.text = 'text-purple-500 ';
+      initialColor.selection = ' selection:bg-purple-500';
 
       break;
 
-    case "pink":
-      initialColor.bg = "bg-pink-500 selection:bg-pink-500";
-      initialColor.text = "text-pink-500 ";
-      initialColor.selection = "selection:bg-pink-500";
+    case 'pink':
+      initialColor.bg = 'bg-pink-500 selection:bg-pink-500';
+      initialColor.text = 'text-pink-500 ';
+      initialColor.selection = 'selection:bg-pink-500';
 
       break;
 
@@ -69,7 +69,7 @@ const getColor = (color: string) => {
 
 const Card = ({
   el: {
-    direction = "left",
+    direction = 'left',
     name,
     description,
     img: { blur, url },
@@ -79,7 +79,9 @@ const Card = ({
 }: {
   el: SKILL;
 }) => {
+  console.log('🚀 ~ file: Skills.tsx ~ line 82 ~ blur', blur);
   const [blurDataUrl] = useNextBlurhash(blur);
+  console.log('🚀 ~ file: Skills.tsx ~ line 83 ~ blurDataUrl', blurDataUrl);
 
   const sortedBadges = [...badges];
 
@@ -88,7 +90,7 @@ const Card = ({
       className={`z-10 w-full max-md:h-min h-[250px] group overflow-hidden card`}
     >
       <Row className="w-full h-full ">
-        {direction === "left" && (
+        {direction === 'left' && (
           <div
             className={`relative group-hover:brightness-100 brightness-90 w-[400px] max-md:hidden h-full overflow-hidden transition-all ease-in-out duration-300 ${
               getColor(color).selection
@@ -96,10 +98,11 @@ const Card = ({
           >
             <Image
               placeholder="blur"
-              blurDataURL={blurDataUrl}
+              blurDataURL={blurDataUrl ?? blur}
               objectFit="cover"
               layout="fill"
               src={url}
+              alt={`${name}`}
               className="transition-all duration-500 ease-in-out scale-100 group-hover:scale-105"
             />
           </div>
@@ -112,13 +115,13 @@ const Card = ({
                 className={`relative  overflow-hidden rounded-full cursor-pointer mr-2 w-10 h-10 min-w-[40px] min-h-[40px] md:hidden `}
               >
                 <Image
-                  placeholder="blur"
-                  blurDataURL={blurDataUrl}
+                  // placeholder="blur"
+                  // blurDataURL={blurDataUrl ?? blur}
                   objectFit="cover"
                   layout="fill"
                   className="rounded-full"
-                  alt=""
                   src={url}
+                  alt={`${name}`}
                 />
               </div>
               <p
@@ -157,7 +160,7 @@ const Card = ({
                     as="li"
                     key={i}
                     positionY="center"
-                    className={`px-3 text-xs text-white whitespace-nowrap  bg h-7 rounded-xl ${
+                    className={`px-3 text-xs text-white whitespace-nowrap   h-7 rounded-xl ${
                       getColor(color).bg
                     }`}
                   >
@@ -167,7 +170,7 @@ const Card = ({
             )}
           </Row>
         </Column>
-        {direction === "right" && (
+        {direction === 'right' && (
           <div
             className={`relative 
           group-hover:brightness-100 transition-all ease-in-out duration-300 brightness-90 overflow-hidden    w-[400px] max-md:hidden h-full ${
@@ -176,12 +179,12 @@ const Card = ({
           >
             <Image
               placeholder="blur"
-              blurDataURL={blurDataUrl}
+              blurDataURL={blurDataUrl ?? blur}
               objectFit="cover"
               layout="fill"
               className="transition-transform duration-500 ease-in-out scale-100 group-hover:scale-105"
               src={url}
-              alt=""
+              alt={`${name}`}
             />
           </div>
         )}

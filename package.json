@@ -11,29 +11,31 @@
     "pre-commit": "npm run lint"
   },
   "dependencies": {
-    "@heroicons/react": "^1.0.5",
-    "@tailwindcss/line-clamp": "^0.2.2",
-    "next": "12.0.2",
+    "@heroicons/react": "^2.0.10",
+    "@tailwindcss/line-clamp": "^0.4.0",
+    "next": "12.2.5",
     "next-compose-plugins": "^2.2.1",
     "next-optimized-images": "^2.6.2",
-    "next-seo": "^4.28.1",
-    "next-translate": "^1.2.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "sass": "^1.45.2",
-    "swiper": "^7.4.1",
-    "use-next-blurhash": "^1.0.2"
+    "next-seo": "^5.5.0",
+    "next-translate": "^1.5.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "^1.54.7",
+    "swiper": "^8.3.2",
+    "use-next-blurhash": "^1.0.3"
   },
   "devDependencies": {
-    "@types/node": "16.11.6",
-    "@types/react": "17.0.34",
-    "@types/react-dom": "^17.0.11",
-    "autoprefixer": "^10.4.0",
-    "eslint": "7.32.0",
-    "eslint-config-next": "12.0.2",
-    "husky": "^7.0.4",
-    "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.2",
-    "typescript": "4.4.4"
+    "@types/node": "18.7.14",
+    "@types/react": "18.0.18",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "autoprefixer": "^10.4.8",
+    "eslint": "8.23.0",
+    "eslint-config-next": "12.2.5",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.1",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8",
+    "typescript": "4.8.2"
   }
 }

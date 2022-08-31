@@ -36,11 +36,7 @@ module.exports = {
         7: "7 7 0%",
         8: "8 8 0%",
       },
-      fontFamily: {
-        sans: ["FreightSans"],
-        display: ["FreightSans"],
-        body: ["FreightSans"],
-      },
+
       animation: {
         blob: "blob 7s infinite",
       },
