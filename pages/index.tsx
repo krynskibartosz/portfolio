@@ -10,10 +10,10 @@ const Home = () => {
 
   return (
     <Layout
-      headTitle="Bartosz Portfolio Home"
+      headTitle="Bartek Portfolio"
       seoTitle="Frontend Développeur"
       seoDescription="" // todo:
-      title={`${t('Hey')}! 👋🏻 ${t('Iam')} Bartosz`}
+      title={`${t('Hey')}! 👋🏻 ${t('Iam')} Bartek`}
       description={t(
         'AFrontEndDeveloperThatllBuildYourNextDreamWebAndMobileApplication'
       )}
@@ -22,14 +22,14 @@ const Home = () => {
         <Experiences />
         <FavorieteProject className="my-20 " />
         <Skills />
-        <section className="relative w-full max-md:mt-10 ">
+        {/* //todo: rajouter le polonais anglais et francais comme langue connu */}
+        {/* <section className="relative w-full max-md:mt-10 ">
           <div className="max-w-2xl mx-auto max-md:px-5">
             <h2 className="mb-8 text-3xl font-semibold text-gray-900 dark:text-white">
               {t('WhoIam')} ? 🧐
             </h2>
-            {/* // rajouter le polonais anglais et francais comme langue connu */}
           </div>
-        </section>
+        </section> */}
       </Column>
     </Layout>
   );

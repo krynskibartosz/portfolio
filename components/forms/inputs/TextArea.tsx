@@ -1,7 +1,7 @@
-import { Column, Row, TextInput } from "components";
-import { INPUT } from "components/forms/Form";
-import { ChangeEvent, InputHTMLAttributes, useState } from "react";
-import { getBorderColor } from "../utils";
+import { Column, Row, TextInput } from 'components';
+import { INPUT } from 'components/forms/Form';
+import { ChangeEvent, InputHTMLAttributes, useState } from 'react';
+import { getBorderColor } from '../utils';
 
 interface TEXT_INPUT_PROPS extends INPUT {
   label: string;
@@ -29,7 +29,7 @@ export const TextAreaInput = ({
       {label && (
         <label
           htmlFor={id}
-          className="mb-2 text-sm font-semibold text-gray-800 dark:text-gray-400 first-letter:uppercase"
+          className="mb-2 text-sm md:text-base font-semibold text-gray-800 dark:text-gray-400 first-letter:uppercase"
         >
           {label}
         </label>
@@ -42,10 +42,10 @@ export const TextAreaInput = ({
       >
         <textarea
           id={id}
-          className={`text-input bg-transparent sm:text-sm w-full p-2.5 h-full min-h-[200px] outline-none rounded-xl max-h-96 resize-none`}
+          className={`text-input bg-transparent   w-full p-2.5 h-full min-h-[200px] outline-none rounded-xl max-h-96 resize-none`}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
-          value={value || ""}
+          value={value || ''}
           onChange={setText}
           maxLength={maxLength}
           {...rest}
@@ -57,13 +57,13 @@ export const TextAreaInput = ({
 
 export type COUNTER_INPUT = {
   maxLength: number;
-  type?: "input" | "textArea";
+  type?: 'input' | 'textArea';
   style?: any;
 } & TEXT_INPUT_PROPS;
 
 export const CounterInput = ({
   maxLength = 300,
-  type = "textArea",
+  type = 'textArea',
   placeholder,
   setValue,
   label,
@@ -74,14 +74,14 @@ export const CounterInput = ({
   const valueLength = rest.value?.length;
 
   const setText = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    if (typeof setText === "function") {
+    if (typeof setText === 'function') {
       setValue(e);
     }
   };
 
   return (
     <Column className="w-full ">
-      {type === "input" ? (
+      {type === 'input' ? (
         <TextInput
           label={label}
           placeholder={placeholder}
@@ -102,7 +102,7 @@ export const CounterInput = ({
           className={`border-gray-200 text-gray-500  
             `}
         >
-          <span className={valueLength > maxLength ? "text-red" : ""}>
+          <span className={valueLength > maxLength ? 'text-red' : ''}>
             {valueLength || 0}
           </span>
           /{maxLength}

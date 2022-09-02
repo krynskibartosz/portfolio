@@ -1,51 +1,53 @@
 // @ts-ignore
 // @ts-ignore
-import { Row, Link, ClickOutside } from "components";
+import { Row, Link, ClickOutside } from 'components';
 
-import { TranslationIcon } from "components/base/Icons/Translation";
-import { HTMLAttributes, useEffect, useState } from "react";
+import { TranslationIcon } from 'components/base/Icons/Translation';
+import { HTMLAttributes, useEffect, useState } from 'react';
 
-import { useRouter } from "next/dist/client/router";
-import { links, toggleTheme } from "./utils";
-import setNextLanguage from "next-translate/setLanguage";
-import { Form } from "components/forms/Form";
-import { Radio } from "components/forms/inputs/Radio";
-import { NativeSelect } from "components/forms/NativeSelect";
-import { useMediaQuery } from "hooks";
-import useTranslation from "next-translate/useTranslation";
-import { Tooltip } from "components/base/Tooltip";
+import { useRouter } from 'next/dist/client/router';
+import { links, toggleTheme } from './utils';
+import setNextLanguage from 'next-translate/setLanguage';
+import { Form } from 'components/forms/Form';
+import { Radio } from 'components/forms/inputs/Radio';
+import { NativeSelect } from 'components/forms/NativeSelect';
+import { useMediaQuery } from 'hooks';
+import useTranslation from 'next-translate/useTranslation';
+import { Tooltip } from 'components/base/Tooltip';
 
 export const NavBar = () => {
-  const { t } = useTranslation("global");
+  const { t } = useTranslation('global');
+  const windows = typeof window !== 'undefined';
+  const dark = windows && localStorage.theme === 'dark';
 
   const lng = [
     {
-      label: "Fr",
-      value: "fr",
+      label: 'Fr',
+      value: 'fr',
     },
     {
-      label: "En",
-      value: "en",
+      label: 'En',
+      value: 'en',
     },
 
     {
-      label: "Pl",
-      value: "pl",
+      label: 'Pl',
+      value: 'pl',
     },
   ];
   const lngLong = [
     {
-      label: t("French"),
-      value: "fr",
+      label: t('French'),
+      value: 'fr',
     },
     {
-      label: t("English"),
-      value: "en",
+      label: t('English'),
+      value: 'en',
     },
 
     {
-      label: t("Polish"),
-      value: "pl",
+      label: t('Polish'),
+      value: 'pl',
     },
   ];
 
@@ -59,11 +61,11 @@ export const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   const [animationConfig, setAnimationConfig] = useState([
-    { name: "home", isHovered: false, style: {} },
-    { name: "projects", isHovered: false, style: {} },
-    { name: "contact", isHovered: false, style: {} },
-    { name: "theme", isHovered: false, style: {} },
-    { name: "language", isHovered: false, style: {} },
+    { name: 'home', isHovered: false, style: {} },
+    { name: 'projects', isHovered: false, style: {} },
+    { name: 'contact', isHovered: false, style: {} },
+    { name: 'theme', isHovered: false, style: {} },
+    { name: 'language', isHovered: false, style: {} },
   ]);
   const isAtLeastOnElementHovered = animationConfig.some(
     (el) => el.isHovered === true
@@ -88,19 +90,19 @@ export const NavBar = () => {
 
     notHovered.forEach((element) => {
       element.style = {
-        transform: "scale(1.3) translateY(-10px)",
+        transform: 'scale(1.2) translateY(-10px)',
       };
       // style right buttons
-      if (element.name === "theme") {
+      if (element.name === 'theme') {
         element.style = {
-          marginRight: "20px",
-          transform: "scale(1.3) translateY(-10px)",
+          marginRight: '20px',
+          transform: 'scale(1.2) translateY(-10px)',
         };
       }
-      if (element.name === "contact") {
+      if (element.name === 'contact') {
         element.style = {
-          marginRight: "20px",
-          transform: "scale(1.3) translateY(-10px)",
+          marginRight: '20px',
+          transform: 'scale(1.2) translateY(-10px)',
         };
       }
     });
@@ -118,10 +120,10 @@ export const NavBar = () => {
             positionY="center"
             onMouseEnter={() => setNavHover(true)}
             onMouseLeave={() => setNavHover(false)}
-            className="py-1 duration-500 ease-in-out bg-white border border-gray-100 dark:bg-black bg-opacity-70 backdrop-blur-sm rounded-2xl dark:border-gray-900 max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none max-md:bg-none max-md:backdrop-blur-0 max-md:bg-opacity-0 dark:max-md:bg-transparent"
+            className="py-2 duration-500 ease-in-out bg-white border border-gray-100 dark:bg-black bg-opacity-70 backdrop-blur-sm rounded-2xl dark:border-gray-900 max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none max-md:bg-none max-md:backdrop-blur-0 max-md:bg-opacity-0 dark:max-md:bg-transparent"
             style={{
-              width: !maxMd && isNavHover ? 380 : 320,
-              transitionProperty: "width",
+              width: !maxMd && isNavHover ? 450 : 360,
+              transitionProperty: 'width',
             }}
           >
             {links(t).map((el, i) => {
@@ -144,8 +146,8 @@ export const NavBar = () => {
                         if (maxMd) return;
                         copy[i].isHovered = true;
                         copy[i].style = {
-                          transform: "scale(1.6) translateY(-10px)",
-                          margin: "0 20px",
+                          transform: 'scale(1.3) translateY(-10px)',
+                          margin: '0 20px',
                           zIndex: 28,
                         };
 
@@ -160,11 +162,11 @@ export const NavBar = () => {
                         copy[i].isHovered = false;
                         if (isNavHover) {
                           copy[i].style = {
-                            transform: "scale(1.3) translateY(-10px)",
+                            transform: 'scale(1.2) translateY(-10px)',
                           };
                         } else {
                           copy[i].style = {
-                            transform: "scale(1) translateY(-10px)",
+                            transform: 'scale(1) translateY(-10px)',
                           };
                         }
                         setAnimationConfig(copy);
@@ -173,15 +175,15 @@ export const NavBar = () => {
                         isNavHover && isAtLeastOnElementHovered
                           ? {
                               ...animationConfig[i]?.style,
-                              transitionProperty: "transform, margin",
+                              transitionProperty: 'transform, margin',
                             }
                           : {}
                       }
                       className={`${
                         isActive
-                          ? "bg-gray-800  dark:bg-gray-200"
-                          : "bg-gradient-to-br max-md:border border-white dark:border-none from-gray-50 to-gray-100 dark:from-[#1c1c1c] dark:to-[#1c1c1c]"
-                      } ${el.value === "projects" ? "z-50" : ""}`}
+                          ? 'bg-gray-700  dark:bg-gray-200'
+                          : 'bg-gradient-to-br max-md:border border-white dark:border-none from-gray-50 to-gray-100 dark:from-[#1c1c1c] dark:to-[#1c1c1c]'
+                      } ${el.value === 'projects' ? 'z-50' : ''}`}
                     >
                       <div>
                         <el.Icon />
@@ -193,10 +195,13 @@ export const NavBar = () => {
             })}
             <Row className="gap-x-2">
               <div
-                className={`pl-2 border-l border-gray-100 max-md:border-gray-200 dark:border-[#1c1c1c]  ${
-                  isAtLeastOnElementHovered ? "border-none" : ""
+                className={`pl-2 border-l relative has-tooltip border-gray-100 max-md:border-gray-200 dark:border-[#1c1c1c]  ${
+                  isAtLeastOnElementHovered ? 'border-none' : ''
                 }`}
               >
+                <Tooltip className="max-md:hidden ml-1 " position="top">
+                  {dark ? 'Clair' : 'Sombre'}
+                </Tooltip>
                 <Card
                   onClick={() => {
                     toggleTheme();
@@ -214,8 +219,8 @@ export const NavBar = () => {
 
                     copy[3].isHovered = true;
                     copy[3].style = {
-                      transform: "scale(1.6) translateY(-10px)",
-                      margin: "0 20px",
+                      transform: 'scale(1.3) translateY(-10px)',
+                      margin: '0 20px',
                       zIndex: 28,
                     };
                     setAnimationConfig(copy);
@@ -226,10 +231,10 @@ export const NavBar = () => {
                     copy[3].isHovered = false;
                     if (isNavHover) {
                       copy[3].style = {
-                        transform: "scale(1.3) translateY(-10px)",
+                        transform: 'scale(1.2) translateY(-10px)',
                       };
                     } else {
-                      copy[3].style = { transform: "scale(1)" };
+                      copy[3].style = { transform: 'scale(1)' };
                     }
                     setAnimationConfig(copy);
                   }}
@@ -243,6 +248,7 @@ export const NavBar = () => {
                   <ThemeIcon />
                 </Card>
               </div>
+
               <ClickOutside onClick={() => setOpen(false)}>
                 <div className="relative">
                   <Card
@@ -250,7 +256,7 @@ export const NavBar = () => {
                       const copy = [...animationConfig];
                       copy[4].isHovered = true;
                       copy[4].style = {
-                        transform: "scale(1.6) translateY(-10px)",
+                        transform: 'scale(1.3) translateY(-10px)',
                         zIndex: 28,
                       };
                       setAnimationConfig(copy);
@@ -260,10 +266,10 @@ export const NavBar = () => {
                       copy[4].isHovered = false;
                       if (isNavHover) {
                         copy[4].style = {
-                          transform: "scale(1.3) translateY(-10px)",
+                          transform: 'scale(1.2) translateY(-10px)',
                         };
                       } else {
-                        copy[4].style = { transform: "scale(1)" };
+                        copy[4].style = { transform: 'scale(1)' };
                       }
                       setAnimationConfig(copy);
                     }}
@@ -283,13 +289,12 @@ export const NavBar = () => {
                     }}
                     className={`bg-gradient-to-br max-md:border border-white dark:border-none dark:from-[#1c1c1c] dark:to-[#1c1c1c]  relative from-gray-50 to-gray-200`}
                   >
-                    {/* //todo: create an hoverwithin on desktop to open the form  */}
                     {open && (
                       <div
                         className={`absolute max-md:hidden flex flex-col w-full gap-5 p-2 duration-500 ease-in-out transition-transform  bg-white border border-gray-100 min-w-min dark:bg-black bg-opacity-70 backdrop-blur-sm rounded-2xl max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none dark:border-none -top-[90px] ${
                           isNavHover && isAtLeastOnElementHovered
-                            ? "scale-[0.60]"
-                            : "scale-[0.80]"
+                            ? 'scale-[0.60]'
+                            : 'scale-[0.80]'
                         }`}
                         onClick={(e) => {
                           e.stopPropagation();
@@ -310,7 +315,7 @@ export const NavBar = () => {
                           children={({ inputProps, body }) => (
                             <div>
                               <Radio
-                                {...inputProps("lng")}
+                                {...inputProps('lng')}
                                 onChange={() => {
                                   setNavHover(false);
                                   changeLanguage(body.lng);
@@ -343,7 +348,7 @@ export const NavBar = () => {
                               setNavHover(false);
                               changeLanguage(body.lng);
                             }}
-                            {...inputProps("lng")}
+                            {...inputProps('lng')}
                           />
                           <TranslationIcon />
                         </Row>
@@ -368,7 +373,7 @@ const Card = ({
 }: HTMLAttributes<HTMLDivElement>) => (
   <div
     {...rest}
-    className={`grid w-12 h-12 transition-all  duration-500 ease-in-out  cursor-pointer  place-items-center max-md:!transform-none max-md:!margin-0   rounded-xl ${className}`}
+    className={`grid w-14 h-14 transition-all  duration-500 ease-in-out  cursor-pointer  place-items-center max-md:!transform-none max-md:!margin-0   rounded-xl ${className}`}
   >
     {children}
   </div>

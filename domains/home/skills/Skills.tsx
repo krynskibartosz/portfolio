@@ -15,8 +15,8 @@ export const Skills = () => {
           <Blob className="left-0 w-64 h-64 bg-pink-400 dark:opacity-90 animation-delay-4000 -bottom-5" />
         </div>
       </div>
-      <Section className="max-md:px-5" title={`${t('ProfessionalSkills')} 💪🏻`}>
-        <Column className="gap-y-5 ">
+      <Section className="max-md:px-5 " title={`${t('ProfessionalSkills')} 🚀`}>
+        <Column className="gap-y-10 mt-10">
           {skills(t).map((el, i) => (
             <Card key={i} el={el} />
           ))}
@@ -27,6 +27,8 @@ export const Skills = () => {
 };
 
 //todo: add more bubble on mobile
+
+// refactor: change this to object pattern
 
 const getColor = (color: string) => {
   const initialColor = {
@@ -41,17 +43,16 @@ const getColor = (color: string) => {
       initialColor.selection = ' selection:bg-yellow-500';
       break;
 
-    case 'red':
-      initialColor.bg = 'bg-red-500 selection:bg-red-500';
-      initialColor.text = 'text-red-500 ';
-      initialColor.selection = ' selection:bg-red-500';
+    case 'green':
+      initialColor.bg = 'bg-green-500 selection:bg-green-500';
+      initialColor.text = 'text-green-500 ';
+      initialColor.selection = ' selection:bg-green-500';
       break;
 
     case 'purple':
       initialColor.bg = 'bg-purple-500 selection:bg-purple-500';
       initialColor.text = 'text-purple-500 ';
       initialColor.selection = ' selection:bg-purple-500';
-
       break;
 
     case 'pink':
@@ -67,6 +68,7 @@ const getColor = (color: string) => {
   return initialColor;
 };
 
+// todo: check si useNExtBlurHash utilise une requete pour savoir comment le gerer parce qu'au début il est undefined
 const Card = ({
   el: {
     direction = 'left',
@@ -79,7 +81,6 @@ const Card = ({
 }: {
   el: SKILL;
 }) => {
-  console.log('🚀 ~ file: Skills.tsx ~ line 82 ~ blur', blur);
   const [blurDataUrl] = useNextBlurhash(blur);
   console.log('🚀 ~ file: Skills.tsx ~ line 83 ~ blurDataUrl', blurDataUrl);
 
@@ -87,12 +88,12 @@ const Card = ({
 
   return (
     <div
-      className={`z-10 w-full max-md:h-min h-[250px] group overflow-hidden card`}
+      className={`z-10 w-full max-md:h-min h-min group overflow-hidden card`}
     >
       <Row className="w-full h-full ">
         {direction === 'left' && (
           <div
-            className={`relative group-hover:brightness-100 brightness-90 w-[400px] max-md:hidden h-full overflow-hidden transition-all ease-in-out duration-300 ${
+            className={`relative group-hover:brightness-100 brightness-90 min-w-[300px] max-w-[300px] min-h-[340px] h-full max-md:hidden  overflow-hidden transition-all ease-in-out duration-300 ${
               getColor(color).selection
             }`}
           >
@@ -115,8 +116,8 @@ const Card = ({
                 className={`relative  overflow-hidden rounded-full cursor-pointer mr-2 w-10 h-10 min-w-[40px] min-h-[40px] md:hidden `}
               >
                 <Image
-                  // placeholder="blur"
-                  // blurDataURL={blurDataUrl ?? blur}
+                  placeholder="blur"
+                  blurDataURL={blurDataUrl ?? blur}
                   objectFit="cover"
                   layout="fill"
                   className="rounded-full"
@@ -125,7 +126,7 @@ const Card = ({
                 />
               </div>
               <p
-                className={`text-xl font-semibold text-gray-900 max-md:text-lg dark:text-gray-300 ${
+                className={`md:text-xl xl:text-2xl  font-semibold text-gray-900 text-lg dark:text-gray-300 ${
                   getColor(color).selection
                 }`}
               >
@@ -138,10 +139,10 @@ const Card = ({
                   key={i}
                   className={`${getColor(color).text} ${
                     getColor(color).selection
-                  } max-md:text-xs text-xs  list-disc`}
+                  }  text-xs md:text-sm xl:text-base  list-disc`}
                 >
                   <p
-                    className={`text-gray-800 dark:text-gray-400 ${
+                    className={`text-gray-800 first-letter:uppercase dark:text-gray-400 ${
                       getColor(color).selection
                     }`}
                   >
@@ -151,7 +152,7 @@ const Card = ({
               ))}
             </ul>
           </Column>
-          <Row as="ul" className="gap-x-2 max-md:pt-5">
+          <Row as="ul" className="gap-x-2 translate-y-10">
             {sortedBadges?.map(
               (el, i) =>
                 i < 4 &&
@@ -160,11 +161,11 @@ const Card = ({
                     as="li"
                     key={i}
                     positionY="center"
-                    className={`px-3 text-xs text-white whitespace-nowrap   h-7 rounded-xl ${
+                    className={`px-3 text-xs xl:text-sm text-white whitespace-nowrap   h-7 rounded-xl ${
                       getColor(color).bg
                     }`}
                   >
-                    {el}
+                    #{el}
                   </Row>
                 )
             )}
@@ -173,7 +174,7 @@ const Card = ({
         {direction === 'right' && (
           <div
             className={`relative 
-          group-hover:brightness-100 transition-all ease-in-out duration-300 brightness-90 overflow-hidden    w-[400px] max-md:hidden h-full ${
+          group-hover:brightness-100 transition-all ease-in-out duration-300 brightness-90 overflow-hidden    min-w-[300px] max-w-[300px] min-h-[296px] max-md:hidden  ${
             getColor(color).selection
           }`}
           >

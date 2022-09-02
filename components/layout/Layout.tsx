@@ -1,7 +1,7 @@
-import Head from "next/head";
+import Head from 'next/head';
 
-import { NextSeo } from "next-seo";
-import { Column } from "components";
+import { NextSeo } from 'next-seo';
+import { Column } from 'components';
 
 export type LAYOUT = {
   children: JSX.Element | JSX.Element[];
@@ -29,17 +29,17 @@ export const Layout = ({
       </Head>
 
       <div className="relative w-screen min-h-screen bg-white dark:bg-gray-900">
-        <div className="h-full  pb-28 pt-28 max-md:pt-10 max-md:mx-0">
-          <Column as="section" className="max-w-2xl mx-auto max-md:px-5">
-            <h1 className="mb-2 text-4xl font-bold text-gray-900 max-md:text-2xl dark:text-white">
+        <div className="h-full  pb-28 pt-32 max-md:pt-10 max-md:mx-0">
+          <Column as="section" className="max-w-3xl mx-auto max-md:px-5">
+            <h1 className="mb-2 md:text-4xl xl:text-5xl font-bold text-gray-900 text-2xl dark:text-white">
               {title}
             </h1>
-            <p className="max-w-xl pb-5 text-lg text-gray-800 max-md:text-sm dark:text-gray-400">
+            <p className="max-w-xl pb-3 md:text-lg xl:text-2xl text-gray-800 text-sm dark:text-gray-400">
               {description}
             </p>
-            <div className="w-full h-px bg-gray-100 "></div>
+            <div className="w-full h-px bg-gray-300 dark:bg-gray-600 "></div>
           </Column>
-          <div className="pt-10 max-md:pt-7 ">{children}</div>
+          <div className="pt-10 xl:pt-12 max-md:pt-7 ">{children}</div>
         </div>
       </div>
     </>

@@ -1,13 +1,12 @@
 import { Layout, Section } from 'components';
 import useTranslation from 'next-translate/useTranslation';
 
-// todo: start by Startup World
 const Projects = () => {
   const { t } = useTranslation('projects');
   return (
     <Layout
-      headTitle="Bartosz Projects"
-      seoTitle="Frontend Développeur Bartosz"
+      headTitle="Bartek Projects"
+      seoTitle="Frontend Développeur Bartek"
       seoDescription="" // todo:
       title={t('Projects')}
       description={t('ASelectionOfProjectsThatImNotTooAshamedOf')}

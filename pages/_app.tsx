@@ -1,31 +1,31 @@
-import "../styles/globals.css";
-import "../styles/theme-toggle.scss";
-import "swiper/css/bundle";
+import '../styles/globals.css';
+import '../styles/theme-toggle.scss';
+import 'swiper/css/bundle';
 
-import i18nConfig from "../i18n";
-import appWithI18n from "next-translate/appWithI18n";
-import { NavBar } from "components/layout/NavBar";
-import { Row, Image, Blob } from "components";
-import { useEffect } from "react";
-import { NextWebVitalsMetric } from "next/dist/shared/lib/utils";
+import i18nConfig from '../i18n';
+import appWithI18n from 'next-translate/appWithI18n';
+import { NavBar } from 'components/layout/NavBar';
+import { Row, Image, Blob } from 'components';
+import { useEffect } from 'react';
+import { NextWebVitalsMetric } from 'next/dist/shared/lib/utils';
 
 function App({ Component, pageProps }: any) {
-  i18nConfig.defaultLocale = "fr";
+  i18nConfig.defaultLocale = 'fr';
 
   useEffect(() => {
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-    const dark = localStorage.theme === "dark";
+    const dark = localStorage.theme === 'dark';
 
     if (
       dark ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-      document.documentElement.classList.add("dark");
-      localStorage.theme = "light";
+      document.documentElement.classList.add('dark');
+      localStorage.theme = 'light';
     } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.theme = "dark";
+      document.documentElement.classList.remove('dark');
+      localStorage.theme = 'dark';
     }
   }, []);
 
@@ -43,11 +43,11 @@ function App({ Component, pageProps }: any) {
           </Row>
         </div>
       </div>
-      <div className="fixed left-10 top-10 max-md:hidden">
+      <div className="fixed left-10 top-10 max-md:hidden z-50">
         <Row positionY="center">
-          <Avatar size={12} src="/img/Peeegs.jpg" />
-          <p className="ml-2 font-bold text-gray-900 dark:text-white ">
-            Krynski Bartosz
+          <Avatar size={12} src="/img/bartosz-orange.png" />
+          <p className="ml-2 text-lg font-bold text-orange-400">
+            Krynski Bartek
           </p>
         </Row>
       </div>
@@ -60,12 +60,10 @@ function App({ Component, pageProps }: any) {
 const Avatar = ({ size, src }: { size: number; src: `/${string}` }) => {
   return (
     <div
-      className={`grid  w-${size + 2} h-${
-        size + 2
-      } border-2 rounded-full border-gray-800 dark:border-yellow-400 place-items-center`}
+      className={`grid  w-[67px] h-[67px] border-2 rounded-full  border-orange-400 place-items-center`}
     >
       <div
-        className={`relative m-0.5 overflow-hidden rounded-full cursor-pointer w-${size} h-${size} `}
+        className={`relative m-0.5 overflow-hidden rounded-full cursor-pointer w-14 h-14 `}
       >
         <Image layout="fill" alt="my head" objectFit="cover" src={src} />
       </div>

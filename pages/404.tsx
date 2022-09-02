@@ -26,8 +26,8 @@ const Page404 = () => {
 
   return (
     <Layout
-      headTitle="Bartosz Home"
-      seoTitle="Frontend Développeur Bartosz"
+      headTitle="Bartek Home"
+      seoTitle="Frontend Développeur Bartek"
       seoDescription="" // todo:
       title={t('404Page')}
       description={`${t('OopsYouGotTheWrongLink')} 💩`}

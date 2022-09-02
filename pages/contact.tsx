@@ -26,8 +26,8 @@ const Contact = () => {
 
   return (
     <Layout
-      headTitle="Bartosz Contact"
-      seoTitle="Frontend Développeur Bartosz"
+      headTitle="Bartek Contact"
+      seoTitle="Frontend Développeur Bartek"
       seoDescription="" // todo:
       title={t('Contact')}
       description={`${t(

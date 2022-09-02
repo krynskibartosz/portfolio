@@ -1,7 +1,7 @@
-import { Column } from "components";
-import { ChangeEvent, InputHTMLAttributes, useState } from "react";
-import { INPUT } from "../Form";
-import { getBorderColor } from "../utils";
+import { Column } from 'components';
+import { ChangeEvent, InputHTMLAttributes, useState } from 'react';
+import { INPUT } from '../Form';
+import { getBorderColor } from '../utils';
 
 //* Intersting props
 // disabled?: boolean;
@@ -25,7 +25,7 @@ export const TextInput = ({
   setValue,
   label,
   placeholder,
-  type = "text",
+  type = 'text',
   id,
   borderColor,
   ...rest
@@ -43,7 +43,7 @@ export const TextInput = ({
       {label && (
         <label
           htmlFor={id}
-          className="mb-2 text-sm font-semibold text-gray-800 dark:text-gray-400 first-letter:uppercase"
+          className="mb-2 text-sm md:text-base font-semibold text-gray-800 dark:text-gray-400 first-letter:uppercase"
         >
           {label}
         </label>
@@ -55,10 +55,10 @@ export const TextInput = ({
       >
         <input
           id={id}
-          className={`rounded-xl  bg-transparent outline-none w-full p-2.5 text-input`}
+          className={`rounded-xl    bg-transparent outline-none w-full p-2.5 text-input`}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
-          value={value || ""}
+          value={value || ''}
           onChange={setText}
           type={type}
           placeholder={placeholder}

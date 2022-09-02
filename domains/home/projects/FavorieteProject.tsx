@@ -1,11 +1,11 @@
-import { Section, Blob } from "components";
+import { Section, Blob } from 'components';
 
-import useTranslation from "next-translate/useTranslation";
-import "swiper/css";
-import "swiper/css/effect-cards";
-import SwiperCore, { EffectCards, Pagination } from "swiper";
-import { CarouselDesktop } from "./CarouselDesktop";
-import { CarouselMobile } from "./CarouselMobile";
+import useTranslation from 'next-translate/useTranslation';
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+import SwiperCore, { EffectCards, Pagination } from 'swiper';
+import { CarouselDesktop } from './CarouselDesktop';
+import { CarouselMobile } from './CarouselMobile';
 
 SwiperCore.use([EffectCards, Pagination]);
 
@@ -17,11 +17,11 @@ SwiperCore.use([EffectCards, Pagination]);
 // 4: create a config handler
 
 export const FavorieteProject = ({ className, ...rest }: any) => {
-  const { t } = useTranslation("home");
+  const { t } = useTranslation('home');
 
   return (
     <Section
-      title={`${t("BiggestProject")} 😍`}
+      title={`${t('BiggestProject')}  💯`}
       className={`max-md:px-5 ${className}`}
       {...rest}
     >
