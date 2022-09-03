@@ -1,8 +1,8 @@
 import { Layout, Link, Section, Image } from 'components';
-import useTranslation from 'next-translate/useTranslation';
+import { useTranslation } from 'next-i18next';
 
 const Page404 = () => {
-  const { t: globalTranslation } = useTranslation('global');
+  const { t: globalTranslation } = useTranslation('');
 
   const config = [
     {
@@ -22,7 +22,7 @@ const Page404 = () => {
     },
   ];
 
-  const { t } = useTranslation('404');
+  const { t } = useTranslation('');
 
   return (
     <Layout

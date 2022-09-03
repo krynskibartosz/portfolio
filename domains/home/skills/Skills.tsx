@@ -1,10 +1,10 @@
 import { Column, Section, Image, Row, Blob } from 'components';
-import useTranslation from 'next-translate/useTranslation';
+import { useTranslation } from 'next-i18next';
 import useNextBlurhash from 'use-next-blurhash';
 import { SKILL, skills } from './config';
 
 export const Skills = () => {
-  const { t } = useTranslation('home');
+  const { t } = useTranslation('');
 
   return (
     <div className="relative w-full mx-auto max-w-7xl">
@@ -18,7 +18,13 @@ export const Skills = () => {
       <Section className="max-md:px-5 " title={`${t('ProfessionalSkills')} 🚀`}>
         <Column className="gap-y-10 mt-10">
           {skills(t).map((el, i) => (
-            <Card key={i} el={el} />
+            // <Card
+            //   style={{
+            //     shadow: 'none',
+            //   }}
+            // >
+            <Card2 key={i} el={el} />
+            // </Card>
           ))}
         </Column>
       </Section>
@@ -69,7 +75,7 @@ const getColor = (color: string) => {
 };
 
 // todo: check si useNExtBlurHash utilise une requete pour savoir comment le gerer parce qu'au début il est undefined
-const Card = ({
+const Card2 = ({
   el: {
     direction = 'left',
     name,

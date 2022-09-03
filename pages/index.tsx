@@ -1,12 +1,23 @@
 import { Column, Layout } from 'components';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import nextI18NextConfig from 'next-i18next.config';
 
-import useTranslation from 'next-translate/useTranslation';
+// import { useTranslation } from 'next-i18next';
 import { Skills } from 'domains/home/skills/Skills';
 import { Experiences } from 'domains/home/experiences/Experiences';
 import { FavorieteProject } from 'domains/home/projects/FavorieteProject';
+import { useTranslation } from 'next-i18next';
+
+export const getStaticProps = async ({ locale }: { locale: string }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
+    },
+  };
+};
 
 const Home = () => {
-  const { t } = useTranslation('home');
+  const { t } = useTranslation('');
 
   return (
     <Layout

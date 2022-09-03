@@ -1,5 +1,3 @@
-// @ts-ignore
-// @ts-ignore
 import { Row, Link, ClickOutside } from 'components';
 
 import { TranslationIcon } from 'components/base/Icons/Translation';
@@ -7,16 +5,15 @@ import { HTMLAttributes, useEffect, useState } from 'react';
 
 import { useRouter } from 'next/dist/client/router';
 import { links, toggleTheme } from './utils';
-import setNextLanguage from 'next-translate/setLanguage';
 import { Form } from 'components/forms/Form';
 import { Radio } from 'components/forms/inputs/Radio';
 import { NativeSelect } from 'components/forms/NativeSelect';
 import { useMediaQuery } from 'hooks';
-import useTranslation from 'next-translate/useTranslation';
 import { Tooltip } from 'components/base/Tooltip';
+import { i18n, useTranslation } from 'next-i18next';
 
 export const NavBar = () => {
-  const { t } = useTranslation('global');
+  const { t } = useTranslation('');
   const windows = typeof window !== 'undefined';
   const dark = windows && localStorage.theme === 'dark';
 
@@ -107,6 +104,12 @@ export const NavBar = () => {
       }
     });
   }, [animationConfig]);
+
+  const router = useRouter();
+  const onToggleLanguageClick = (newLocale) => {
+    const { pathname, asPath, query } = router;
+    router.push({ pathname, query }, asPath, { locale: newLocale });
+  };
 
   return (
     <>
@@ -318,7 +321,13 @@ export const NavBar = () => {
                                 {...inputProps('lng')}
                                 onChange={() => {
                                   setNavHover(false);
-                                  changeLanguage(body.lng);
+                                  // changeLanguage(body.lng);
+                                  router.push(router.asPath, undefined, {
+                                    locale: body.lng,
+                                  });
+                                  persistLocaleCookie(body.lng);
+                                  // i18n.changeLanguage(body.lng);
+                                  // onToggleLanguageClick(body.lng);
                                   setOpen(false);
                                 }}
                                 options={lng}
@@ -346,7 +355,12 @@ export const NavBar = () => {
                             options={lngLong}
                             onChange={() => {
                               setNavHover(false);
-                              changeLanguage(body.lng);
+                              // changeLanguage(body.lng);
+                              router.push(router.asPath, undefined, {
+                                locale: body.lng,
+                              });
+                              persistLocaleCookie(body.lng);
+                              // onToggleLanguageClick(body.lng);
                             }}
                             {...inputProps('lng')}
                           />
@@ -380,15 +394,15 @@ const Card = ({
 );
 
 const persistLocaleCookie = (language: string) => {
-  const date = new Date();
-  const expireMs = 100 * 365 * 24 * 60 * 60 * 1000; // 100 days
-  date.setTime(date.getTime() + expireMs);
-  document.cookie = `NEXT_LOCALE=${language};expires=${date.toUTCString()};path=/`;
-};
-
-const changeLanguage = (language: string) => {
-  setNextLanguage(language);
-  persistLocaleCookie(language);
+  const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0, 200));
+  const options = {
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    timeZoneName: 'short',
+  };
+  const newDate = new Intl.DateTimeFormat('sv-SE', options).format(date);
+  document.cookie = `NEXT_LOCALE=${language};expires=${newDate};path=/`;
 };
 
 const ThemeIcon = () => (

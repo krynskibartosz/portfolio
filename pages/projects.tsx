@@ -1,8 +1,8 @@
 import { Layout, Section } from 'components';
-import useTranslation from 'next-translate/useTranslation';
+import { useTranslation } from 'next-i18next';
 
 const Projects = () => {
-  const { t } = useTranslation('projects');
+  const { t } = useTranslation('');
   return (
     <Layout
       headTitle="Bartek Projects"

@@ -1,6 +1,6 @@
 import { Section, Blob } from 'components';
 
-import useTranslation from 'next-translate/useTranslation';
+import { useTranslation } from 'next-i18next';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import SwiperCore, { EffectCards, Pagination } from 'swiper';
@@ -17,7 +17,7 @@ SwiperCore.use([EffectCards, Pagination]);
 // 4: create a config handler
 
 export const FavorieteProject = ({ className, ...rest }: any) => {
-  const { t } = useTranslation('home');
+  const { t } = useTranslation('');
 
   return (
     <Section

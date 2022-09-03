@@ -2,32 +2,44 @@ import '../styles/globals.css';
 import '../styles/theme-toggle.scss';
 import 'swiper/css/bundle';
 
-import i18nConfig from '../i18n';
-import appWithI18n from 'next-translate/appWithI18n';
+// import i18nConfig from '../i18n';
+// import appWithI18n from 'next-translate/appWithI18n';
 import { NavBar } from 'components/layout/NavBar';
 import { Row, Image, Blob } from 'components';
 import { useEffect } from 'react';
 import { NextWebVitalsMetric } from 'next/dist/shared/lib/utils';
 
+import { appWithTranslation } from 'next-i18next';
+import nextI18NextConfig from '../next-i18next.config';
+import { useRouter } from 'next/router';
+
 function App({ Component, pageProps }: any) {
-  i18nConfig.defaultLocale = 'fr';
+  // i18nConfig.defaultLocale = 'fr';
+  // const router = useRouter();
+  // useEffect(() => {
+  //   if (router.locale !== 'fr') {
+  //     router.push(router.asPath, undefined, {
+  //       locale: 'en',
+  //     });
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-    const dark = localStorage.theme === 'dark';
+  // useEffect(() => {
+  //   // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+  //   const dark = localStorage.theme === 'dark';
 
-    if (
-      dark ||
-      (!('theme' in localStorage) &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
-      document.documentElement.classList.add('dark');
-      localStorage.theme = 'light';
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.theme = 'dark';
-    }
-  }, []);
+  //   if (
+  //     dark ||
+  //     (!('theme' in localStorage) &&
+  //       window.matchMedia('(prefers-color-scheme: dark)').matches)
+  //   ) {
+  //     document.documentElement.classList.add('dark');
+  //     localStorage.theme = 'light';
+  //   } else {
+  //     document.documentElement.classList.remove('dark');
+  //     localStorage.theme = 'dark';
+  //   }
+  // }, []);
 
   return (
     <div className="relative overflow-x-hidden">
@@ -71,9 +83,10 @@ const Avatar = ({ size, src }: { size: number; src: `/${string}` }) => {
   );
 };
 
-export default appWithI18n(App, {
-  ...i18nConfig,
-});
+// export default appWithI18n(App, {
+//   ...i18nConfig,
+// });
+export default appWithTranslation(App, nextI18NextConfig);
 
 export function reportWebVitals(metric: NextWebVitalsMetric) {
   console.log(metric);

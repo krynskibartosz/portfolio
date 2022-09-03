@@ -1,10 +1,10 @@
 import { Section } from 'components/base/containers/Containers';
+import { useTranslation } from 'next-i18next';
 
-import useTranslation from 'next-translate/useTranslation';
 import { COMPANY, experiences, formations } from './config';
 
 export const Experiences = () => {
-  const { t } = useTranslation('home');
+  const { t } = useTranslation('');
 
   return (
     <>

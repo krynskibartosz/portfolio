@@ -7,14 +7,14 @@ import {
   TextInput,
 } from 'components';
 import { Form } from 'components/forms/Form';
-import useTranslation from 'next-translate/useTranslation';
+import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 
 const Contact = () => {
   const loading = false;
   const [reset, setReset] = useState(false);
 
-  const { t } = useTranslation('contact');
+  const { t } = useTranslation('');
 
   const submit = (body: any) => {
     fetch('/api/mail', {

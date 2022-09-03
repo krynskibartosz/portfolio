@@ -1,4 +1,4 @@
-import { Column, Image, Link } from 'components';
+import { Column, Image, Link, Row } from 'components';
 
 import { SwiperSlide, Swiper } from 'swiper/react';
 import { UmengoIcon } from 'components/base/Icons/Umengo';
@@ -11,7 +11,7 @@ import { TailwindIcon } from 'components/base/Icons/Tailwind';
 
 export const CarouselDesktop = ({ t, className }: any) => {
   const technoUsed = ['TypeScript', 'Next.js', 'Redux', 'Tailwind'];
-
+  // todo: rajouter un lien sur l'icone d'Umengo
   return (
     <Swiper
       effect={'cards'}
@@ -231,43 +231,93 @@ export const CarouselDesktop = ({ t, className }: any) => {
       </SwiperSlide>
       <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-xl shadow-main dark:shadow-lg dark:shadow-black from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] ">
         <Column className=" w-full h-full p-6 pt-8 gap-y-5">
-          <Column>
-            <h2 className=" md:text-xl font-semibold text-white">
-              Projet réalisé avec{' '}
+          <Column className="w-full">
+            <h2 className=" md:text-3xl pt-5 w-full text-center mb-4 font-semibold text-white">
+              Technologies utilisées
             </h2>
-            {/* //todo: Séparer le texte en deux et mettre un lien sur le nom Digitalu */}
-          </Column>
-          <Column>
-            <h2 className=" md:text-xl font-semibold text-white">
-              Techno utilisée:
-            </h2>
-            <ul className="dark:text-white pl-5 flex flex-wrap">
-              {/* //todo: Changer la liste des éléments par des images */}
-              {/* {technoUsed.map((el, i) => (
-                <li className="list-disc" key={i}>
-                  {el}
+            <ul className="dark:text-white pl-5 flex flex-wrap gap-3 justify-center">
+              <div className="px-4  border-2 border-gray-700 hover:bg-gray-700 bg-white group  rounded-xl transition-colors duration-300 ease-in-out ">
+                <NextJSIcon
+                  className="w-20 h-10 "
+                  pathClassName="fill-black transition-colors duration-300 ease-in-out group-hover:fill-white"
+                />
+              </div>
+              <div className="px-4 transition-colors duration-300 ease-in-out hover:bg-gray-700 group  border-2 flex items-center border-gray-700 bg-white  rounded-xl ">
+                <Row className="items-center">
+                  <SocketIOIcon
+                    circleClassName="group-hover:stroke-white transition-colors duration-300 ease-in-out"
+                    pathClassName="group-hover:fill-white transition-colors duration-300 ease-in-out"
+                    className=" h-8 mr-1 "
+                  />
+                  <p className="text-black group-hover:text-white font-semibold transition-colors duration-300 ease-in-out">
+                    Socket.IO
+                  </p>
+                </Row>
+              </div>
+              <div className="px-4  border-2 hover:bg-[#774BBC] transition-colors duration-300 ease-in-out border-[#774BBC] bg-white group  rounded-xl ">
+                <Row className="items-center">
+                  <ReduxIcon
+                    colorClassName="group-hover:fill-white transition-colors duration-300 ease-in-out"
+                    className=" h-10 mr-1 "
+                  />
+                  <p className="text-[#774BBC] font-semibold group-hover:text-white transition-colors duration-300 ease-in-out">
+                    Redux
+                  </p>
+                </Row>
+              </div>
+              <div className="group px-4  border-2 border-[#027ACC] hover:bg-[#027ACC] transition-colors duration-300 ease-in-out bg-white  rounded-xl ">
+                <TypeScriptIcon
+                  colorClassName="group-hover:fill-white transition-colors duration-300 fill-[#027ACC] ease-in-out"
+                  className="w-20 h-10"
+                />
+              </div>
 
-                </li>
-              ))} */}
-              <TypeScriptIcon className="w-20" />
-              <NextJSIcon className="w-20" />
-              <SassIcon className="w-20" />
-              <SocketIOIcon className="w-20 h-20" />
-              <ReduxIcon className="w-20" />
-              <TailwindIcon className="w-20" />
+              <div className="px-4 group  border-2 hover:bg-[#38bdf8] transition-colors duration-300 ease-in-out border-[#38bdf8] bg-white  rounded-xl ">
+                <TailwindIcon
+                  pathClassName="fill-[#38bdf8] group-hover:fill-white transition-colors duration-300  ease-in-out"
+                  className="w-28 text-[#38bdf8] h-10  group-hover:text-white transition-colors duration-300  ease-in-out"
+                />
+              </div>
+              <div className="px-4 group h-10 flex items-center  border-2 border-[#CE649A] bg-white hover:bg-[#CE649A] transition-colors duration-300 ease-in-out  rounded-xl ">
+                <SassIcon
+                  pathClassName="fill-[#CF649A] group-hover:fill-white transition-colors duration-300  ease-in-out"
+                  className="w-20 h-7"
+                />
+              </div>
             </ul>
           </Column>
-          <Column>
-            <h2 className=" md:text-xl font-semibold text-white">
-              Lien vers le site web:
+          <Column className="w-full">
+            <h2 className=" md:text-3xl  w-full text-center mb-4 font-semibold text-white">
+              Lien vers le site web
             </h2>
+
             {/* //todo: Changer le liens du site web par une image de l'accueil de umengo */}
-            <a
+            {/* //todo: + img du qrcode */}
+            <Row positionX="between" className="w-full px-10">
+              <div className="relative  w-[305px] h-48 rounded-xl  overflow-hidden">
+                <Image
+                  layout="fill"
+                  className="rounded-md"
+                  objectFit="contain"
+                  src="/img/umengo/umengo-home.jpg"
+                />
+              </div>
+              {/* //todo: add an overlay that say open the link */}
+              <div className="relative hover:scale-110 transition-transform duration-300 ease-in-out  w-[305px] h-48 rounded-xl shadow-main overflow-hidden">
+                <Image
+                  layout="fill"
+                  className="rounded-md"
+                  objectFit="contain"
+                  src="/img/umengo/umengo-home.jpg"
+                />
+              </div>
+            </Row>
+            {/* <a
               className="dark:text-white underline"
               href="https://www.umengo.org/"
             >
               https://www.umengo.org
-            </a>
+            </a> */}
           </Column>
         </Column>
       </SwiperSlide>
