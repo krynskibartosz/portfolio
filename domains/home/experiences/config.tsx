@@ -31,7 +31,9 @@ export const experiences = (translation: (e?: any) => string): COMPANIES => {
             )}
             .
             <Link passHref href="/projects">
-              <span className={`text-[#9abe36] pl-1 underline cursor-pointer`}>
+              <span
+                className={`text-[#9abe36] hover:brightness-125 transition-all duration-300 ease-in-out pl-1 underline cursor-pointer`}
+              >
                 Découvrir le projet
               </span>
             </Link>
@@ -56,7 +58,7 @@ export const experiences = (translation: (e?: any) => string): COMPANIES => {
             )}
             .
             <Link passHref href="/projects">
-              <span className="relative text-transparent pl-1 bg-clip-text cursor-pointer bg-gradient-to-r from-[#448FFF] to-[#F81444] underline">
+              <span className="relative hover:brightness-125 transition-all duration-300 ease-in-out text-transparent pl-1 bg-clip-text cursor-pointer bg-gradient-to-r from-[#448FFF] to-[#F81444] underline">
                 Découvrir les projets
                 <span className="absolute  left-1 min-h-[1px] max-h-[1px] top-full bg-gradient-to-r text-transparent from-[#448FFF] to-[#F81444]">
                   Découvrir les projets
@@ -89,7 +91,9 @@ export const formations = (translation: (e?: any) => string): FORMATIONS => {
           <p>
             {translation('DevelopmentOfAManagementPlatform')}.{' '}
             <a target="_blank" href="https://www.utopix.com/" rel="noreferrer">
-              <span className={`dark:text-white pl-1 underline cursor-pointer`}>
+              <span
+                className={`dark:text-white hover:brightness-125 transition-all duration-300 ease-in-out  underline cursor-pointer`}
+              >
                 Voir le site
               </span>
             </a>
@@ -102,7 +106,7 @@ export const formations = (translation: (e?: any) => string): FORMATIONS => {
       Icon: BecodeIcon,
       post: translation('TrainingInWebDevelopment'),
 
-      className: 'col-span-6  selection:!bg-[#5ABEC9]',
+      className: 'col-span-6   selection:!bg-[#5ABEC9]',
 
       description: (
         <div className="flex-wrap">
@@ -112,7 +116,9 @@ export const formations = (translation: (e?: any) => string): FORMATIONS => {
             )}
             .
             <a target="_blank" href="https://becode.org/" rel="noreferrer">
-              <span className={`text-[#5ABEC9] pl-1 underline cursor-pointer`}>
+              <span
+                className={`text-[#5ABEC9] hover:brightness-125 transition-all duration-300 ease-in-out pl-1 underline cursor-pointer`}
+              >
                 Découvrir la formation
               </span>
             </a>

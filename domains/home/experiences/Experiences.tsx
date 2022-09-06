@@ -39,7 +39,7 @@ const Card = ({
     <div
       className={`z-10 grid overflow-hidden  max-md:col-span-full h-[400px] max-md:w-full  place-items-center  relative group card ${className}`}
     >
-      <p className="absolute z-20 top-5 right-5">{date}</p>
+      <div className="absolute z-20 top-5 right-5">{date}</div>
       <Icon className={`w-40 h-40 `} />
       <div className="absolute bottom-0 z-20 w-full h-16 transition-transform duration-500 ease-in-out delay-500 bg-opacity-10 group-hover:-translate-y-16 ">
         <div className="px-5">

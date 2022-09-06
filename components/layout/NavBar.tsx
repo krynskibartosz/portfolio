@@ -11,6 +11,7 @@ import { NativeSelect } from 'components/forms/NativeSelect';
 import { useMediaQuery } from 'hooks';
 import { Tooltip } from 'components/base/Tooltip';
 import { useTranslation } from 'next-i18next';
+import { LinktreeIcon } from 'components/base/Icons/Linktree';
 
 export const NavBar = () => {
   const { t } = useTranslation('');
@@ -63,6 +64,7 @@ export const NavBar = () => {
     { name: 'contact', isHovered: false, style: {} },
     { name: 'theme', isHovered: false, style: {} },
     { name: 'language', isHovered: false, style: {} },
+    { name: 'linktree', isHovered: false, style: {} },
   ]);
   const isAtLeastOnElementHovered = animationConfig.some(
     (el) => el.isHovered === true
@@ -117,15 +119,15 @@ export const NavBar = () => {
         className="fixed w-full bottom-5 max-md:bottom-3"
         style={{ zIndex: 999 }}
       >
-        <Row className="max-w-3xl mx-auto max-md:mp-5" positionX="center">
+        <Row className="max-w-5xl mx-auto max-md:p-5" positionX="center">
           <Row
             positionX="center"
             positionY="center"
             onMouseEnter={() => setNavHover(true)}
             onMouseLeave={() => setNavHover(false)}
-            className="py-2 duration-500 ease-in-out bg-white border border-gray-100 dark:bg-black bg-opacity-70 backdrop-blur-sm rounded-2xl dark:border-gray-900 max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none max-md:bg-none max-md:backdrop-blur-0 max-md:bg-opacity-0 dark:max-md:bg-transparent"
+            className="py-2 duration-500 ease-in-out bg-white border border-gray-100 dark:bg-gray-800  bg-opacity-60 backdrop-blur-sm rounded-2xl dark:border-gray-800 max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none max-md:bg-none max-md:backdrop-blur-0 max-md:bg-opacity-0 "
             style={{
-              width: !maxMd && isNavHover ? 450 : 360,
+              width: !maxMd && isNavHover ? 450 : 425,
               transitionProperty: 'width',
             }}
           >
@@ -203,7 +205,9 @@ export const NavBar = () => {
                 }`}
               >
                 <Tooltip className="max-md:hidden ml-1 " position="top">
-                  {dark ? 'Clair' : 'Sombre'}
+                  {/* todo: creée une foction qui handle sa */}
+                  {/* {dark ? 'Clair' : 'Sombre'} */}
+                  Theme
                 </Tooltip>
                 <Card
                   onClick={() => {
@@ -255,8 +259,11 @@ export const NavBar = () => {
               <ClickOutside onClick={() => setOpen(false)}>
                 <div className="relative has-tooltip">
                   {!open && (
-                    <Tooltip className="max-md:hidden " position="top">
-                      Langue
+                    <Tooltip
+                      className="max-md:hidden -translate-x-2/3 ml-0.5"
+                      position="top"
+                    >
+                      Langues
                     </Tooltip>
                   )}
                   <Card
@@ -264,7 +271,8 @@ export const NavBar = () => {
                       const copy = [...animationConfig];
                       copy[4].isHovered = true;
                       copy[4].style = {
-                        transform: 'scale(1.3) translateY(-10px)',
+                        transform:
+                          'scale(1.3) translateY(-10px) translateX(-7px)',
                         zIndex: 28,
                       };
                       setAnimationConfig(copy);
@@ -274,7 +282,7 @@ export const NavBar = () => {
                       copy[4].isHovered = false;
                       if (isNavHover) {
                         copy[4].style = {
-                          transform: 'scale(1.2) translateY(-10px)',
+                          transform: 'scale(1.3) translateY(-10px)',
                         };
                       } else {
                         copy[4].style = { transform: 'scale(1)' };
@@ -377,6 +385,74 @@ export const NavBar = () => {
                   </Card>
                 </div>
               </ClickOutside>
+              <a
+                target={'_blank'}
+                href="https://linktr.ee/krynskibartek"
+                rel="noreferrer"
+              >
+                <div
+                  className={` relative has-tooltip    ${
+                    isAtLeastOnElementHovered ? 'border-none' : ''
+                  }`}
+                >
+                  <Tooltip
+                    className="max-md:hidden -translate-x-2/3"
+                    position="top"
+                  >
+                    Linktree
+                  </Tooltip>
+                  <Card
+                    onClick={() => {
+                      if (maxMd) return;
+                      const copy = [...animationConfig];
+                      copy.forEach((el) => {
+                        el.isHovered = false;
+                      });
+                      setAnimationConfig(copy);
+                      setNavHover(false);
+                    }}
+                    onMouseEnter={() => {
+                      if (maxMd) return;
+                      const copy = [...animationConfig];
+
+                      copy[5].isHovered = true;
+                      copy[5].style = {
+                        transform:
+                          'scale(1.3) translateY(-10px) translateX(-10px)',
+                        margin: '0 20px',
+                        zIndex: 28,
+                      };
+                      setAnimationConfig(copy);
+                    }}
+                    onMouseLeave={() => {
+                      if (maxMd) return;
+                      const copy = [...animationConfig];
+                      copy[5].isHovered = false;
+                      if (isNavHover) {
+                        copy[5].style = {
+                          transform: 'scale(1.2) translateY(-10px)',
+                        };
+                      } else {
+                        copy[5].style = { transform: 'scale(1)' };
+                      }
+                      setAnimationConfig(copy);
+                    }}
+                    style={
+                      isNavHover && isAtLeastOnElementHovered
+                        ? animationConfig[5]?.style
+                        : {}
+                    }
+                    className={`bg-gradient-to-br border-white max-md:border dark:border-none dark:from-[#1c1c1c] dark:to-[#1c1c1c] relative from-gray-50 to-gray-200 group `}
+                  >
+                    <LinktreeIcon
+                      pathClassName={
+                        'group-hover:fill-[#43E660] fill-[#858585] transition-colors duration-300 ease-in-out'
+                      }
+                    />
+                    {/* <ThemeIcon /> */}
+                  </Card>
+                </div>
+              </a>
             </Row>
           </Row>
         </Row>

@@ -31,7 +31,10 @@ export const Layout = ({
       <div className="relative w-screen min-h-screen bg-white dark:bg-gray-900 ">
         <div className="h-full  pb-28 pt-28 max-md:pt-10 max-md:mx-0">
           <Column as="section" className="max-w-3xl mx-auto max-md:px-5">
-            <h1 className="mb-2 md:text-4xl xl:text-5xl font-bold text-gray-900 text-2xl dark:text-white">
+            <h1
+              className="mb-2  dark:!z-0 md:text-4xl xl:text-5xl font-bold text-gray-900 text-2xl dark:text-white"
+              style={{ zIndex: 9999 }}
+            >
               {title}
             </h1>
             <p

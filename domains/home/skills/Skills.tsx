@@ -97,6 +97,7 @@ const Card2 = ({
 }: {
   el: SKILL;
 }) => {
+  // todo: fait sa mtn
   const [blurDataUrl] = useNextBlurhash(blur);
 
   const sortedBadges = [...badges];

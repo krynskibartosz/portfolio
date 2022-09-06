@@ -79,6 +79,7 @@ export const skills = (translation: (e?: any) => string): SKILLS => {
         translation('AdvancedSkillsInCSSAndItsEcosystem'),
         translation('AdvancedSkillsInResponsiveWebDesign'),
         translation('ProfessionalAndPersonalExperiencesWithDesignerTools'),
+        translation('Pratique de la conception créative et du remue-méninges'),
       ],
       img: {
         blur: 'LLEVTx4.-;S2~BIV-pof%zVtxus:',
