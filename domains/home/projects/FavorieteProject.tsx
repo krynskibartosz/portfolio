@@ -15,8 +15,13 @@ SwiperCore.use([EffectCards, Pagination]);
 // 2: Presentation (logo top + text)
 // 3: Feature (theme = 'light' | 'dark)
 // 4: create a config handler
-// from-[#FE6B6A] via-[#50CBC3] to-[#4A5256]
-export const FavorieteProject = ({ className, ...rest }: any) => {
+
+export const FavorieteProject = ({
+  className,
+  ...rest
+}: {
+  className?: string;
+}) => {
   const { t } = useTranslation('');
 
   return (
@@ -33,8 +38,8 @@ export const FavorieteProject = ({ className, ...rest }: any) => {
           <Blob className="max-md:hidden  bg-[#FE6B6A]  w-[550px] h-[500px] top-32 left-64  dark:opacity-80 animation-delay-1000" />
           <Blob className="max-md:hidden  bg-[#50CBC3] w-[550px] h-[400px] dark:-top-20 -top-5 left-1/2  dark:opacity-80 animation-delay-4000" />
 
-          <CarouselDesktop className="max-md:hidden" t={t} />
-          <CarouselMobile className="md:hidden" t={t} />
+          <CarouselDesktop className="max-md:hidden" />
+          <CarouselMobile className="md:hidden" />
         </div>
       </>
     </Section>

@@ -8,11 +8,9 @@ import {
 } from 'components';
 import { Form } from 'components/forms/Form';
 import { useTranslation } from 'next-i18next';
-import { useState } from 'react';
 
 const Contact = () => {
-  const loading = false;
-  const [reset, setReset] = useState(false);
+  // const [reset, setReset] = useState(false);
 
   const { t } = useTranslation('');
 
@@ -45,8 +43,9 @@ const Contact = () => {
             description: '',
           }}
           submit={submit}
-          reset={reset}
+          // reset={reset}
           className={'w-full'}
+          // eslint-disable-next-line react/no-children-prop
           children={({ inputProps }) => {
             return (
               <>

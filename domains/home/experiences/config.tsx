@@ -1,29 +1,31 @@
-import { Row } from 'components';
 import { BecodeIcon } from 'components/base/Icons/Becode';
 import { DigitaluIcon } from 'components/base/Icons/Digitalu';
 import { FresheoIcon } from 'components/base/Icons/Fresheo';
 import { UtopixIcon } from 'components/base/Icons/Utopix';
+import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 
-export type COMPANY = {
+export type EXPERIENCE = {
   post: string;
-  Icon: (e?: any) => JSX.Element;
   className?: string;
-  description: JSX.Element;
-  date: JSX.Element;
+  Icon: () => JSX.Element;
+  Description: JSX.Element;
+  Date: JSX.Element;
 };
 
-type FORMATIONS = COMPANY[];
+type FORMATIONS = EXPERIENCE[];
 
-type COMPANIES = COMPANY[];
+type COMPANIES = EXPERIENCE[];
 
-export const experiences = (translation: (e?: any) => string): COMPANIES => {
+export const ExperiencesCardContent = (): COMPANIES => {
+  const { t: translation } = useTranslation('');
+
   return [
     {
       Icon: () => <FresheoIcon className=" fill-black dark:fill-white w-80" />,
       post: translation('Leader frontend et graphiste web'),
       className: 'col-span-full selection:bg-[#9abe36]',
-      description: (
+      Description: (
         <>
           <p>
             {translation(
@@ -40,7 +42,7 @@ export const experiences = (translation: (e?: any) => string): COMPANIES => {
           </p>
         </>
       ),
-      date: <p className="text-[#9abe36] text-lg font-medium">2022</p>,
+      Date: <p className="text-[#9abe36] text-lg font-medium">2022</p>,
     },
     {
       Icon: () => (
@@ -50,7 +52,7 @@ export const experiences = (translation: (e?: any) => string): COMPANIES => {
 
       className: 'col-span-full selection:!bg-[#448FFF]',
 
-      description: (
+      Description: (
         <>
           <p>
             {translation(
@@ -68,7 +70,7 @@ export const experiences = (translation: (e?: any) => string): COMPANIES => {
           </p>
         </>
       ),
-      date: (
+      Date: (
         <p className="bg-gradient-to-r  bg-clip-text from-[#448FFF] to-[#F81444] text-transparent text-lg font-medium">
           2021
         </p>
@@ -76,7 +78,8 @@ export const experiences = (translation: (e?: any) => string): COMPANIES => {
     },
   ];
 };
-export const formations = (translation: (e?: any) => string): FORMATIONS => {
+export const FormationsCardContent = (): FORMATIONS => {
+  const { t: translation } = useTranslation('');
   return [
     {
       Icon: () => (
@@ -86,7 +89,7 @@ export const formations = (translation: (e?: any) => string): FORMATIONS => {
       className:
         'col-span-6  selection:!bg-gray-900 dark:selection:!bg-purple-500',
 
-      description: (
+      Description: (
         <>
           <p>
             {translation('DevelopmentOfAManagementPlatform')}.{' '}
@@ -100,15 +103,15 @@ export const formations = (translation: (e?: any) => string): FORMATIONS => {
           </p>
         </>
       ),
-      date: <p className=" dark:text-white text-base font-medium">2020</p>,
+      Date: <p className=" dark:text-white text-base font-medium">2020</p>,
     },
     {
-      Icon: BecodeIcon,
+      Icon: () => <BecodeIcon className="" />,
       post: translation('TrainingInWebDevelopment'),
 
-      className: 'col-span-6   selection:!bg-[#5ABEC9]',
+      className: 'col-span-6 selection:!bg-[#5ABEC9]',
 
-      description: (
+      Description: (
         <div className="flex-wrap">
           <p>
             {translation(
@@ -125,7 +128,7 @@ export const formations = (translation: (e?: any) => string): FORMATIONS => {
           </p>
         </div>
       ),
-      date: <p className="text-[#5ABEC9] text-base font-medium">2019</p>,
+      Date: <p className="text-[#5ABEC9] text-base font-medium">2019</p>,
     },
   ];
 };

@@ -4,6 +4,10 @@ export function ReactNativeIcon({
   className,
   circleClassName,
   groupClassName,
+}: {
+  circleClassName: string;
+  groupClassName: string;
+  className: string;
 }) {
   return (
     <svg

@@ -1,7 +1,7 @@
-// @ts-ignore
-import { useState, useEffect, FormEvent, ReactNode } from "react";
-import { deepGet, deepSet } from "libraries/dash";
-import { deepCopy, isEmpty, objectTester } from "libraries/dash/object";
+// @ts-nocheck
+import { useState, useEffect, FormEvent, ReactNode } from 'react';
+import { deepGet, deepSet } from 'libraries/dash';
+import { deepCopy, isEmpty, objectTester } from 'libraries/dash/object';
 export type STR_NUM = string | number;
 
 export type INPUT_FCT = (name: STR_NUM | STR_NUM[]) => INPUT;
@@ -63,7 +63,7 @@ export const Form = ({
   initialBody,
   reset,
   noSubmit,
-  className = "",
+  className = '',
   updated,
   showLogs,
   name,
@@ -156,20 +156,10 @@ export const Form = ({
     handleSubmit();
   };
 
-  const add = (name: STR_NUM | STR_NUM[], defaultValue: any) => {
-    setValue(name)([...(deepGet(body, name) || []), defaultValue]);
-  };
-
-  const remove = (name: STR_NUM | STR_NUM[], index: number) => {
-    setValue(name)([
-      ...deepGet(body, name).filter((_: any, i: any) => i !== index),
-    ]);
-  };
-
   return (
     <form
       className={`w-full ${className}`}
-      onSubmit={noSubmit ? () => {} : handleSubmitFromform}
+      onSubmit={noSubmit ? null : handleSubmitFromform}
       name={name}
       id={id}
     >

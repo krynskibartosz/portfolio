@@ -1,6 +1,14 @@
 import React from 'react';
 
-export function SocketIOIcon({ className, circleClassName, pathClassName }) {
+export function SocketIOIcon({
+  className,
+  circleClassName,
+  pathClassName,
+}: {
+  className: string;
+  pathClassName: string;
+  circleClassName: string;
+}) {
   return (
     <svg
       className={className}

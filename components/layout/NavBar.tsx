@@ -15,8 +15,6 @@ import { LinktreeIcon } from 'components/base/Icons/Linktree';
 
 export const NavBar = () => {
   const { t } = useTranslation('');
-  const windows = typeof window !== 'undefined';
-  const dark = windows && localStorage.theme === 'dark';
 
   const lng = [
     {
@@ -84,8 +82,7 @@ export const NavBar = () => {
     if (isAtLeastOnElementHovered) {
       setNavHover(true);
     }
-    let notHovered = [...animationConfig].filter((el) => !el.isHovered);
-    let hovered = [...animationConfig].filter((el) => el.isHovered);
+    const notHovered = [...animationConfig].filter((el) => !el.isHovered);
 
     notHovered.forEach((element) => {
       element.style = {
@@ -108,10 +105,6 @@ export const NavBar = () => {
   }, [animationConfig]);
 
   const router = useRouter();
-  const onToggleLanguageClick = (newLocale) => {
-    const { pathname, asPath, query } = router;
-    router.push({ pathname, query }, asPath, { locale: newLocale });
-  };
 
   return (
     <>
@@ -328,6 +321,7 @@ export const NavBar = () => {
                           name="lng"
                           id="lng"
                           form="lng"
+                          // eslint-disable-next-line react/no-children-prop
                           children={({ inputProps, body }) => (
                             <div>
                               <Radio
@@ -357,6 +351,7 @@ export const NavBar = () => {
                       id="lng"
                       form="lng"
                       className="absolute top-0 h-full md:hidden"
+                      // eslint-disable-next-line react/no-children-prop
                       children={({ inputProps, body }) => (
                         <Row
                           positionX="center"
@@ -449,7 +444,6 @@ export const NavBar = () => {
                         'group-hover:fill-[#43E660] fill-[#858585] transition-colors duration-300 ease-in-out'
                       }
                     />
-                    {/* <ThemeIcon /> */}
                   </Card>
                 </div>
               </a>
@@ -482,13 +476,14 @@ const persistLocaleCookie = (language: string) => {
     second: 'numeric',
     timeZoneName: 'short',
   };
+  // @ts-ignore
   const newDate = new Intl.DateTimeFormat('fr-BE', options).format(date);
   document.cookie = `NEXT_LOCALE=${language};expires=${newDate};path=/`;
 };
 
 const ThemeIcon = () => (
   <div className="dark:relative theme-toggle theme-toggle-js isolate">
-    <span className="moon "></span>
+    <span className="moon"></span>
     <span className="sun"></span>
     <small className="sun__ray"></small>
     <small className="sun__ray"></small>

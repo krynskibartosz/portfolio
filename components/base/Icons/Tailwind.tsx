@@ -1,6 +1,12 @@
 import React from 'react';
 
-export function TailwindIcon({ className, pathClassName }) {
+export function TailwindIcon({
+  className,
+  pathClassName,
+}: {
+  className: string;
+  pathClassName: string;
+}) {
   return (
     <svg className={` w-auto h-5 ${className}`} viewBox="0 0 248 31">
       <path

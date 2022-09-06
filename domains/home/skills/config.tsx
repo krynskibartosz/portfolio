@@ -1,4 +1,7 @@
+import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/dist/client/router';
+
+type DIRECTION = 'left' | 'right';
 
 export type SKILL = {
   name: string;
@@ -7,16 +10,16 @@ export type SKILL = {
     blur: string;
     url: `/${string}`;
   };
-  badges: string[] | any[];
+  badges: string[];
   color: string;
-  direction: 'left' | 'right';
+  direction: DIRECTION;
 };
 
 type SKILLS = SKILL[];
 
-export const skills = (translation: (e?: any) => string): SKILLS => {
+export const SkillsContent = (): SKILLS => {
   const { locale } = useRouter();
-
+  const { t: translation } = useTranslation('');
   return [
     {
       name: translation('FrameworkAndLibrairies'),
@@ -90,4 +93,43 @@ export const skills = (translation: (e?: any) => string): SKILLS => {
       direction: 'right',
     },
   ];
+};
+
+// refactor: change this to object pattern
+export const getColor = (color: string) => {
+  const initialColor = {
+    bg: '',
+    text: '',
+    selection: '',
+  };
+  switch (color) {
+    case 'yellow':
+      initialColor.bg = 'bg-yellow-500 selection:bg-yellow-500';
+      initialColor.text = 'text-yellow-500 ';
+      initialColor.selection = ' selection:bg-yellow-500';
+      break;
+
+    case 'green':
+      initialColor.bg = 'bg-green-500 selection:bg-green-500';
+      initialColor.text = 'text-green-500 ';
+      initialColor.selection = ' selection:bg-green-500';
+      break;
+
+    case 'purple':
+      initialColor.bg = 'bg-purple-500 selection:bg-purple-500';
+      initialColor.text = 'text-purple-500 ';
+      initialColor.selection = ' selection:bg-purple-500';
+      break;
+
+    case 'pink':
+      initialColor.bg = 'bg-pink-500 selection:bg-pink-500';
+      initialColor.text = 'text-pink-500 ';
+      initialColor.selection = 'selection:bg-pink-500';
+
+      break;
+
+    default:
+      break;
+  }
+  return initialColor;
 };

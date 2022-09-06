@@ -1,22 +1,22 @@
-import { CSSProperties, ElementType, ReactNode } from "react";
+import { CSSProperties, ElementType, ReactNode } from 'react';
 
 export type POSITIONX =
-  | "center"
-  | "right"
-  | "left"
-  | "between"
-  | "around"
-  | "evenly"
-  | "stretch";
+  | 'center'
+  | 'right'
+  | 'left'
+  | 'between'
+  | 'around'
+  | 'evenly'
+  | 'stretch';
 
 export type POSITIONY =
-  | "center"
-  | "top"
-  | "bottom"
-  | "between"
-  | "around"
-  | "evenly"
-  | "stretch";
+  | 'center'
+  | 'top'
+  | 'bottom'
+  | 'between'
+  | 'around'
+  | 'evenly'
+  | 'stretch';
 
 export type ColumnAndRow = {
   children?: JSX.Element | JSX.Element[] | ReactNode;
@@ -26,13 +26,13 @@ export type ColumnAndRow = {
   positionX?: POSITIONX;
   as?: ElementType;
   id?: string;
-  onFocus?: (e?: any) => void;
-  onBlur?: (e?: any) => void;
-  onClick?: (e?: any) => void;
+  onFocus?: (e?: EventListener) => void;
+  onBlur?: (e?: EventListener) => void;
+  onClick?: (e?: EventListener) => void;
 };
 
 export type SET_ALIGNEMENT = {
   positionX: POSITIONX;
   positionY: POSITIONY;
-  variant: "col" | "row";
+  variant: 'col' | 'row';
 };

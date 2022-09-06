@@ -2,7 +2,6 @@ import { Column, Layout } from 'components';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import nextI18NextConfig from 'next-i18next.config';
 
-// import { useTranslation } from 'next-i18next';
 import { Skills } from 'domains/home/skills/Skills';
 import { Experiences } from 'domains/home/experiences/Experiences';
 import { FavorieteProject } from 'domains/home/projects/FavorieteProject';
@@ -33,14 +32,6 @@ const Home = () => {
         <Experiences />
         <FavorieteProject className="my-20 xl:mb-56" />
         <Skills />
-        {/* //todo: rajouter le polonais anglais et francais comme langue connu */}
-        {/* <section className="relative w-full max-md:mt-10 ">
-          <div className="max-w-2xl mx-auto max-md:px-5">
-            <h2 className="mb-8 text-3xl font-semibold text-gray-900 dark:text-white">
-              {t('WhoIam')} ? 🧐
-            </h2>
-          </div>
-        </section> */}
       </Column>
     </Layout>
   );

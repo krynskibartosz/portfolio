@@ -1,4 +1,4 @@
-export function BecodeIcon({ ...rest }: any) {
+export function BecodeIcon({ ...rest }: { className: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

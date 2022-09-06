@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-export const TranslationIcon = ({ ...rest }: any) => {
+export const TranslationIcon = ({ ...rest }: { className?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

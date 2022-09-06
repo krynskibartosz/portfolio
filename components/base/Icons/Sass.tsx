@@ -1,6 +1,12 @@
 import React from 'react';
 
-export function SassIcon({ className, pathClassName }) {
+export function SassIcon({
+  className,
+  pathClassName,
+}: {
+  className: string;
+  pathClassName: string;
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,4 +1,4 @@
-import { Column, Image, Link, Row } from 'components';
+import { Column, Image, Row } from 'components';
 
 import { SwiperSlide, Swiper } from 'swiper/react';
 import { UmengoIcon } from 'components/base/Icons/Umengo';
@@ -10,9 +10,10 @@ import { ReduxIcon } from 'components/base/Icons/Redux';
 import { TailwindIcon } from 'components/base/Icons/Tailwind';
 import { ReactNativeIcon } from 'components/base/Icons/ReactNative';
 import { Navigation } from 'swiper';
+import { useTranslation } from 'next-i18next';
 
-export const CarouselDesktop = ({ t, className }: any) => {
-  const technoUsed = ['TypeScript', 'Next.js', 'Redux', 'Tailwind'];
+export const CarouselDesktop = ({ className }: { className?: string }) => {
+  const { t } = useTranslation('');
   // todo: rajouter un lien sur l'icone d'Umengo
   return (
     <Swiper

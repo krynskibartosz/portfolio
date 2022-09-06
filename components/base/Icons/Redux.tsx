@@ -1,6 +1,12 @@
 import React from 'react';
 
-export function ReduxIcon({ className, colorClassName }) {
+export function ReduxIcon({
+  className,
+  colorClassName,
+}: {
+  className: string;
+  colorClassName: string;
+}) {
   return (
     <svg
       className={className}

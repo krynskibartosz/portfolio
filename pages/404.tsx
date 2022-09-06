@@ -50,7 +50,15 @@ const Page404 = () => {
 
 export default Page404;
 
-const Card = ({ el: { img, name, url } }: any) => {
+const Card = ({
+  el: { img, name, url },
+}: {
+  el: {
+    img: string;
+    url: string;
+    name: string;
+  };
+}) => {
   return (
     <Link href={url}>
       <div
