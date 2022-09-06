@@ -15,7 +15,17 @@ export const Skills = () => {
           <Blob className="left-0 w-64 h-64 bg-pink-400 dark:opacity-90 animation-delay-4000 -bottom-5" />
         </div>
       </div>
-      <Section className="max-md:px-5 " title={`${t('ProfessionalSkills')} 🚀`}>
+      <div className="absolute top-[6%] -right-24 ">
+        <div className="relative h-[450px] w-[410px]">
+          <Blob className="top-0 z-20 w-64 h-64 bg-green-400 -left-4 dark:!opacity-80" />
+          <Blob className="top-28  w-64 h-64 bg-yellow-400 -right-10 animation-delay-2000 z-10 dark:!opacity-100" />
+          <Blob className="left-0 w-64 h-64 bg-purple-400 dark:!opacity-90 animation-delay-4000 -bottom-5" />
+        </div>
+      </div>
+      <Section
+        className="max-md:px-5 z-20"
+        title={`${t('ProfessionalSkills')} 🚀`}
+      >
         <Column className="gap-y-10 mt-10">
           {skills(t).map((el, i) => (
             // <Card
@@ -88,18 +98,17 @@ const Card2 = ({
   el: SKILL;
 }) => {
   const [blurDataUrl] = useNextBlurhash(blur);
-  console.log('🚀 ~ file: Skills.tsx ~ line 83 ~ blurDataUrl', blurDataUrl);
 
   const sortedBadges = [...badges];
 
   return (
     <div
-      className={`z-10 w-full max-md:h-min h-min group overflow-hidden card`}
+      className={`z-10 w-full max-md:h-min h-min group overflow-hidden card !border-none group`}
     >
-      <Row className="w-full h-full ">
+      <div className="w-full h-[340px] grid grid-cols-12 grid-rows-6 ">
         {direction === 'left' && (
           <div
-            className={`relative group-hover:brightness-100 brightness-90 min-w-[300px] max-w-[300px] min-h-[340px] h-full max-md:hidden  overflow-hidden transition-all ease-in-out duration-300 ${
+            className={`relative group-hover:brightness-105 col-span-5 row-span-full brightness-90  h-full max-md:hidden  overflow-hidden transition-all ease-in-out duration-300 ${
               getColor(color).selection
             }`}
           >
@@ -115,7 +124,7 @@ const Card2 = ({
           </div>
         )}
 
-        <Column className="justify-between w-full h-full p-5 max-md:p-4">
+        <Column className="justify-between w-[97%]  h-full p-5 max-md:p-4 col-span-7 row-span-full">
           <Column className="">
             <Row className="w-full mb-2 max-md:mb-3" positionY="center">
               <div
@@ -158,7 +167,7 @@ const Card2 = ({
               ))}
             </ul>
           </Column>
-          <Row as="ul" className="gap-x-2 translate-y-10">
+          <Row as="ul" className="gap-x-2 ">
             {sortedBadges?.map(
               (el, i) =>
                 i < 4 &&
@@ -180,7 +189,7 @@ const Card2 = ({
         {direction === 'right' && (
           <div
             className={`relative 
-          group-hover:brightness-100 transition-all ease-in-out duration-300 brightness-90 overflow-hidden    min-w-[300px] max-w-[300px] min-h-[296px] max-md:hidden  ${
+          group-hover:brightness-105 col-span-5 row-span-full transition-all ease-in-out duration-300 brightness-90 overflow-hidden  max-md:hidden  ${
             getColor(color).selection
           }`}
           >
@@ -195,7 +204,7 @@ const Card2 = ({
             />
           </div>
         )}
-      </Row>
+      </div>
     </div>
   );
 };

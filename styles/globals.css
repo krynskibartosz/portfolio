@@ -4,7 +4,7 @@
 
 @layer base {
   .card {
-    @apply transition-transform duration-500 ease-in-out bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black hover:scale-105 dark:from-black dark:to-black max-md:!transform-none;
+    @apply transition-transform dark:border-none border border-gray-50 hover:border hover:border-gray-100 duration-500 ease-in-out bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-main dark:shadow-lg dark:shadow-black hover:scale-105 dark:from-black dark:to-black max-md:!transform-none;
   }
   .text-input {
     @apply text-gray-700 hover:text-gray-800 focus:text-gray-900 sm:text-sm dark:text-gray-400 dark:placeholder:text-gray-700 placeholder:text-gray-200 dark:hover:text-gray-200 dark:focus:text-gray-200;
@@ -79,12 +79,191 @@
   color: white;
 }
 
+.swiper-button-next {
+  color: white !important;
+  mix-blend-mode: difference;
+  transform: translateX(-5px);
+  transition: all 500ms;
+}
+.swiper-button-prev {
+  color: white !important;
+  mix-blend-mode: difference;
+  transform: translateX(5px);
+  transition: all 325ms;
+}
+.swiper-button-prev:hover {
+  transform: translateX(-2px) scale(1.07);
+}
+.swiper-button-next:hover {
+  transform: translateX(2px) scale(1.07);
+}
+
+.border-color-animation {
+  /*NOTE: You can include all these using the shorthand 'animation' property, but some older  browsers require that all the values be in their own property. Additionally, I feel its easier to learn/demonstrate this way*/
+  -webkit-animation-name: border-transition;
+  animation-name: border-transition;
+  -webkit-animation-duration: 100s;
+  animation-duration: 100s;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  /*default value for timing-function is ease, we'll specify linear to keep the same timing through out*/
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+.text-color-animation {
+  /*NOTE: You can include all these using the shorthand 'animation' property, but some older  browsers require that all the values be in their own property. Additionally, I feel its easier to learn/demonstrate this way*/
+  -webkit-animation-name: text-transition;
+  animation-name: text-transition;
+  -webkit-animation-duration: 100s;
+  animation-duration: 100s;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  /*default value for timing-function is ease, we'll specify linear to keep the same timing through out*/
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+.background-color-animation {
+  /*NOTE: You can include all these using the shorthand 'animation' property, but some older  browsers require that all the values be in their own property. Additionally, I feel its easier to learn/demonstrate this way*/
+  -webkit-animation-name: background-transition;
+  animation-name: background-transition;
+  -webkit-animation-duration: 100s;
+  animation-duration: 100s;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  /*default value for timing-function is ease, we'll specify linear to keep the same timing through out*/
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+/*This is the animation used to change colors; In this instance, I made sure to have the same color at 0% as I did at 100% */
+
+@keyframes border-transition {
+  0% {
+    border-color: #9abe36;
+  }
+  9% {
+    border-color: #448fff;
+  }
+  18% {
+    border-color: #f81444;
+  }
+  27% {
+    border-color: hsl(25°, 95%, 53%);
+  }
+  36% {
+    border-color: #5abec9;
+  }
+  45% {
+    border-color: #fe6b6a;
+  }
+  54% {
+    border-color: #50cbc3;
+  }
+  63% {
+    border-color: #21c55d;
+  }
+  72% {
+    border-color: #ebb304;
+  }
+  81% {
+    border-color: #a855f7;
+  }
+  90% {
+    border-color: #50cbc3;
+  }
+  100% {
+    border-color: #eb4999;
+  }
+}
+@keyframes text-transition {
+  0% {
+    color: #9abe36;
+  }
+  9% {
+    color: #448fff;
+  }
+  18% {
+    color: #f81444;
+  }
+  27% {
+    color: hsl(25°, 95%, 53%);
+  }
+  36% {
+    color: #5abec9;
+  }
+  45% {
+    color: #fe6b6a;
+  }
+  54% {
+    color: #50cbc3;
+  }
+  63% {
+    color: #21c55d;
+  }
+  72% {
+    color: #ebb304;
+  }
+  81% {
+    color: #a855f7;
+  }
+  90% {
+    color: #50cbc3;
+  }
+  100% {
+    color: #eb4999;
+  }
+}
+@keyframes background-transition {
+  0% {
+    background-color: #9abe36;
+  }
+  9% {
+    background-color: #448fff;
+  }
+  18% {
+    background-color: #f81444;
+  }
+  /* todo: r */
+  27% {
+    background-color: hsl(25°, 95%, 53%);
+  }
+  36% {
+    background-color: #5abec9;
+  }
+  45% {
+    background-color: #fe6b6a;
+  }
+  54% {
+    background-color: #50cbc3;
+  }
+  63% {
+    background-color: #21c55d;
+  }
+  72% {
+    background-color: #ebb304;
+  }
+  81% {
+    background-color: #a855f7;
+  }
+  90% {
+    background-color: #50cbc3;
+  }
+  100% {
+    background-color: #eb4999;
+  }
+}
+
 html,
 body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-
   font-family: 'Roboto', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }

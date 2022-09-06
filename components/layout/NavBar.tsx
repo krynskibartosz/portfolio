@@ -10,7 +10,7 @@ import { Radio } from 'components/forms/inputs/Radio';
 import { NativeSelect } from 'components/forms/NativeSelect';
 import { useMediaQuery } from 'hooks';
 import { Tooltip } from 'components/base/Tooltip';
-import { i18n, useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 
 export const NavBar = () => {
   const { t } = useTranslation('');
@@ -19,16 +19,16 @@ export const NavBar = () => {
 
   const lng = [
     {
-      label: 'Fr',
+      label: '🇫🇷 FR',
       value: 'fr',
     },
     {
-      label: 'En',
+      label: '🏴󠁧󠁢󠁥󠁮󠁧󠁿 EN',
       value: 'en',
     },
 
     {
-      label: 'Pl',
+      label: '🇵🇱 PL',
       value: 'pl',
     },
   ];
@@ -253,7 +253,12 @@ export const NavBar = () => {
               </div>
 
               <ClickOutside onClick={() => setOpen(false)}>
-                <div className="relative">
+                <div className="relative has-tooltip">
+                  {!open && (
+                    <Tooltip className="max-md:hidden " position="top">
+                      Langue
+                    </Tooltip>
+                  )}
                   <Card
                     onMouseEnter={() => {
                       const copy = [...animationConfig];
@@ -294,7 +299,7 @@ export const NavBar = () => {
                   >
                     {open && (
                       <div
-                        className={`absolute max-md:hidden flex flex-col w-full gap-5 p-2 duration-500 ease-in-out transition-transform  bg-white border border-gray-100 min-w-min dark:bg-black bg-opacity-70 backdrop-blur-sm rounded-2xl max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none dark:border-none -top-[90px] ${
+                        className={`absolute !-translate-y-3 max-md:hidden flex flex-col w-full gap-5 p-2 duration-500 ease-in-out transition-transform  bg-white border border-gray-100 min-w-min dark:bg-black bg-opacity-70 backdrop-blur-sm rounded-2xl max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none dark:border-none -top-[90px] ${
                           isNavHover && isAtLeastOnElementHovered
                             ? 'scale-[0.60]'
                             : 'scale-[0.80]'
@@ -401,7 +406,7 @@ const persistLocaleCookie = (language: string) => {
     second: 'numeric',
     timeZoneName: 'short',
   };
-  const newDate = new Intl.DateTimeFormat('sv-SE', options).format(date);
+  const newDate = new Intl.DateTimeFormat('fr-BE', options).format(date);
   document.cookie = `NEXT_LOCALE=${language};expires=${newDate};path=/`;
 };
 

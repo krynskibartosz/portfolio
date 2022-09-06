@@ -31,7 +31,7 @@ const Home = () => {
     >
       <Column className="w-full gap-y-20 max-md:gap-y-5">
         <Experiences />
-        <FavorieteProject className="my-20 " />
+        <FavorieteProject className="my-20 xl:mb-56" />
         <Skills />
         {/* //todo: rajouter le polonais anglais et francais comme langue connu */}
         {/* <section className="relative w-full max-md:mt-10 ">

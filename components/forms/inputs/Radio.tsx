@@ -1,5 +1,5 @@
-import { Column, Row } from "components";
-import { INPUT } from "../Form";
+import { Column, Row } from 'components';
+import { INPUT } from '../Form';
 
 type RADIO = {
   options: { value: string; label: string }[];
@@ -17,7 +17,7 @@ export const Radio = ({
 }: RADIO) => {
   const handleChange = (event: any) => {
     setValue(event.target.value);
-    if (typeof onChange === "function") {
+    if (typeof onChange === 'function') {
       onChange();
     }
   };
@@ -25,7 +25,7 @@ export const Radio = ({
   return (
     <Column className="gap-y-3">
       {label && (
-        <p className="text-gray-800 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">
+        <p className="text-gray-800 whitespace-nowrap hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">
           {label}
         </p>
       )}
@@ -58,10 +58,10 @@ export const Radio = ({
             <label
               key={i}
               htmlFor={`radio-${i}`}
-              className={` font-semibold cursor-pointer first-letter:uppercase text-gray-800 dark:text-gray-400 ${
+              className={`whitespace-nowrap md:text-lg font-semibold cursor-pointer first-letter:uppercase text-gray-800 dark:text-gray-400 ${
                 checked
-                  ? "!text-gray-900 dark:!text-white"
-                  : "dark:group-hover:text-gray-300"
+                  ? '!text-gray-900 dark:!text-white'
+                  : 'dark:group-hover:text-gray-300'
               }`}
             >
               {el.label}

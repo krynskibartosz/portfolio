@@ -10,6 +10,7 @@ export type COMPANY = {
   Icon: (e?: any) => JSX.Element;
   className?: string;
   description: JSX.Element;
+  date: JSX.Element;
 };
 
 type FORMATIONS = COMPANY[];
@@ -21,7 +22,7 @@ export const experiences = (translation: (e?: any) => string): COMPANIES => {
     {
       Icon: () => <FresheoIcon className=" fill-black dark:fill-white w-80" />,
       post: translation('Leader frontend et graphiste web'),
-      className: 'col-span-full',
+      className: 'col-span-full selection:bg-[#9abe36]',
       description: (
         <>
           <p>
@@ -37,6 +38,7 @@ export const experiences = (translation: (e?: any) => string): COMPANIES => {
           </p>
         </>
       ),
+      date: <p className="text-[#9abe36] text-lg font-medium">2022</p>,
     },
     {
       Icon: () => (
@@ -44,7 +46,7 @@ export const experiences = (translation: (e?: any) => string): COMPANIES => {
       ),
       post: translation('FrontEndDeveloper'),
 
-      className: 'col-span-full',
+      className: 'col-span-full selection:!bg-[#448FFF]',
 
       description: (
         <>
@@ -64,6 +66,11 @@ export const experiences = (translation: (e?: any) => string): COMPANIES => {
           </p>
         </>
       ),
+      date: (
+        <p className="bg-gradient-to-r  bg-clip-text from-[#448FFF] to-[#F81444] text-transparent text-lg font-medium">
+          2021
+        </p>
+      ),
     },
   ];
 };
@@ -74,7 +81,8 @@ export const formations = (translation: (e?: any) => string): FORMATIONS => {
         <UtopixIcon className="w-40 h-40 fill-black dark:fill-white" />
       ),
       post: translation('InternshipInWebDevelopment'),
-      className: 'col-span-6',
+      className:
+        'col-span-6  selection:!bg-gray-900 dark:selection:!bg-purple-500',
 
       description: (
         <>
@@ -88,12 +96,13 @@ export const formations = (translation: (e?: any) => string): FORMATIONS => {
           </p>
         </>
       ),
+      date: <p className=" dark:text-white text-base font-medium">2020</p>,
     },
     {
       Icon: BecodeIcon,
       post: translation('TrainingInWebDevelopment'),
 
-      className: 'col-span-6',
+      className: 'col-span-6  selection:!bg-[#5ABEC9]',
 
       description: (
         <div className="flex-wrap">
@@ -110,6 +119,7 @@ export const formations = (translation: (e?: any) => string): FORMATIONS => {
           </p>
         </div>
       ),
+      date: <p className="text-[#5ABEC9] text-base font-medium">2019</p>,
     },
   ];
 };

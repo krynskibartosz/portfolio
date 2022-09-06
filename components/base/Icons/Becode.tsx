@@ -5,6 +5,7 @@ export function BecodeIcon({ ...rest }: any) {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 2000 2000"
       {...rest}
+      className="w-32 h-32"
     >
       <defs>
         <clipPath>

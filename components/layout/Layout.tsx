@@ -28,18 +28,21 @@ export const Layout = ({
         <link rel="shortcut icon" href="/vercel.svg" />
       </Head>
 
-      <div className="relative w-screen min-h-screen bg-white dark:bg-gray-900">
-        <div className="h-full  pb-28 pt-32 max-md:pt-10 max-md:mx-0">
+      <div className="relative w-screen min-h-screen bg-white dark:bg-gray-900 ">
+        <div className="h-full  pb-28 pt-28 max-md:pt-10 max-md:mx-0">
           <Column as="section" className="max-w-3xl mx-auto max-md:px-5">
             <h1 className="mb-2 md:text-4xl xl:text-5xl font-bold text-gray-900 text-2xl dark:text-white">
               {title}
             </h1>
-            <p className="max-w-xl pb-3 md:text-lg xl:text-2xl text-gray-800 text-sm dark:text-gray-400">
+            <p
+              className="max-w-2xl dark:!z-0 pb-3 md:text-lg xl:text-2xl text-gray-800 text-sm dark:text-gray-400"
+              style={{ zIndex: 9999 }}
+            >
               {description}
             </p>
             <div className="w-full h-px bg-gray-300 dark:bg-gray-600 "></div>
           </Column>
-          <div className="pt-10 xl:pt-12 max-md:pt-7 ">{children}</div>
+          <div className="pt-10 xl:pt-12 max-md:pt-7  ">{children}</div>
         </div>
       </div>
     </>
