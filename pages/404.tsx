@@ -1,28 +1,30 @@
 import { Layout, Link, Section, Image } from 'components';
 import { useTranslation } from 'next-i18next';
+import useNextBlurhash from 'use-next-blurhash';
 
 const Page404 = () => {
-  const { t: globalTranslation } = useTranslation('');
+  const { t } = useTranslation('');
 
   const config = [
     {
-      name: globalTranslation('Home'),
+      name: t('Home'),
       url: '/',
-      img: '/img/illustration/CV.svg',
+      img: '/img/home-1.jpeg',
+      blur: 'LFLg^YQlM|x]~W4TtSZ~pd.9DiWq',
     },
     {
-      name: globalTranslation('Projects'),
+      name: t('Projects'),
       url: '/projects',
-      img: '/img/illustration/folder.svg',
+      img: '/img/project-work.jpeg',
+      blur: 'LbL|$P~qMw9H.TxtNGe=r=IUWFWB',
     },
     {
-      name: globalTranslation('Contact'),
+      name: t('Contact'),
       url: '/contact',
-      img: '/img/illustration/contact.svg',
+      img: '/img/contact-1.jpeg',
+      blur: 'L6FO$5~q0e?b0000?aIU.m^*iw-;',
     },
   ];
-
-  const { t } = useTranslation('');
 
   return (
     <Layout
@@ -51,25 +53,36 @@ const Page404 = () => {
 export default Page404;
 
 const Card = ({
-  el: { img, name, url },
+  el: { img, name, url, blur },
 }: {
   el: {
     img: string;
     url: string;
     name: string;
+    blur: string;
   };
 }) => {
+  const [blurDataUrl] = useNextBlurhash(blur);
+
   return (
     <Link href={url}>
       <div
-        className={`z-10 cursor-pointer grid col-span-6 overflow-hidden  max-md:col-span-full brightness-95 hover:brightness-100 h-[350px] max-md:w-full place-items-center relative group card transition-all duration-300 ease-in-out `}
+        className={`z-10 cursor-pointer grid col-span-6 overflow-hidden  max-md:col-span-full brightness-95 hover:brightness-105 h-[350px] max-md:w-full place-items-center  group card transition-all duration-300 relative ease-in-out `}
       >
-        <p className="absolute z-10 text-xl font-bold text-gray-900 uppercase -translate-x-1/2 -translate-y-1/2 dark:text-pink-400 top-1/2 left-1/2">
+        <p className="absolute z-30 text-xl font-bold text-white uppercase -translate-x-1/2 bottom-14 left-1/2">
           {name}
         </p>
         <div className="w-1/2 h-1/2">
-          <Image alt="" layout="fill" src={img} />
+          <Image
+            placeholder="blur"
+            blurDataURL={blurDataUrl ?? blur}
+            alt=""
+            objectFit="cover"
+            layout="fill"
+            src={img}
+          />
         </div>
+        <div className="absolute rounded-xl bottom-0 h-full bg-gray-900 bg-opacity-20  z-20 w-full"></div>
       </div>
     </Link>
   );
