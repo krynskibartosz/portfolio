@@ -57,14 +57,14 @@ const SkillsCard = ({
                 />
               </div>
               <p
-                className={`md:text-xl xl:text-2xl  font-semibold text-gray-900 text-lg dark:text-gray-300 ${
+                className={`md:text-xl xl:text-2xl  font-semibold text-gray-900 text-lg mb-1 dark:text-gray-300 ${
                   getColor(color).selection
                 }`}
               >
                 {name}
               </p>
             </Row>
-            <ul className="flex flex-col pl-5 gap-y-2 ">
+            <ul className="flex flex-col pl-5 gap-y-3 ">
               {description?.map((el, i) => (
                 <li
                   // eslint-disable-next-line react/no-any-property
@@ -74,7 +74,7 @@ const SkillsCard = ({
                   }  text-xs md:text-sm xl:text-base  list-disc`}
                 >
                   <p
-                    className={`text-gray-800 first-letter:uppercase dark:text-gray-400 ${
+                    className={`text-gray-800 first-letter:uppercase dark:text-gray-400 text-base ${
                       getColor(color).selection
                     }`}
                   >

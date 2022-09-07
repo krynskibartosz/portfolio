@@ -22,9 +22,10 @@ export const ExperiencesCardContent = (): COMPANIES => {
 
   return [
     {
-      Icon: () => <FresheoIcon className=" fill-black dark:fill-white w-80" />,
+      Icon: () => <FresheoIcon className=" fill-white w-80" />,
       post: translation('Leader frontend et graphiste web'),
-      className: 'col-span-full selection:bg-[#9abe36]',
+      className:
+        'col-span-full shadow-lg cardNew from-[#9abe36] to-green-800  selection:bg-[#9abe36]',
       Description: (
         <>
           <p>
@@ -42,7 +43,7 @@ export const ExperiencesCardContent = (): COMPANIES => {
           </p>
         </>
       ),
-      Date: <p className="text-[#9abe36] text-lg font-medium">2022</p>,
+      Date: <p className="text-white text-lg font-medium">2022</p>,
     },
     {
       Icon: () => (
@@ -50,7 +51,8 @@ export const ExperiencesCardContent = (): COMPANIES => {
       ),
       post: translation('home.FrontEndDeveloper'),
 
-      className: 'col-span-full selection:!bg-[#448FFF]',
+      className:
+        'col-span-full shadow-lg cardNew rounded-lg from-[#448FFF] to-[#F81444] selection:!bg-[#448FFF]',
 
       Description: (
         <>
@@ -70,11 +72,7 @@ export const ExperiencesCardContent = (): COMPANIES => {
           </p>
         </>
       ),
-      Date: (
-        <p className="bg-gradient-to-r  bg-clip-text from-[#448FFF] to-[#F81444] text-transparent text-lg font-medium">
-          2021
-        </p>
-      ),
+      Date: <p className="text-white text-lg font-medium">2021</p>,
     },
   ];
 };
@@ -82,12 +80,10 @@ export const FormationsCardContent = (): FORMATIONS => {
   const { t: translation } = useTranslation('');
   return [
     {
-      Icon: () => (
-        <UtopixIcon className="w-40 h-40 fill-black dark:fill-white" />
-      ),
+      Icon: () => <UtopixIcon className="w-40 h-40 fill-white" />,
       post: translation('home.InternshipInWebDevelopment'),
       className:
-        'col-span-6  selection:!bg-gray-900 dark:selection:!bg-purple-500',
+        'col-span-6 cardNew from-[#010101] to-[#1D1D1D] selection:!bg-gray-900 dark:selection:!bg-purple-500',
 
       Description: (
         <>
@@ -103,13 +99,14 @@ export const FormationsCardContent = (): FORMATIONS => {
           </p>
         </>
       ),
-      Date: <p className=" dark:text-white text-base font-medium">2020</p>,
+      Date: <p className=" text-white text-base font-medium">2020</p>,
     },
     {
       Icon: () => <BecodeIcon className="" />,
       post: translation('home.TrainingInWebDevelopment'),
 
-      className: 'col-span-6 selection:!bg-[#5ABEC9]',
+      className:
+        'col-span-6 cardNew from-[#5ABEC9] to-blue-900 selection:!bg-[#5ABEC9]',
 
       Description: (
         <div className="flex-wrap">
@@ -128,7 +125,7 @@ export const FormationsCardContent = (): FORMATIONS => {
           </p>
         </div>
       ),
-      Date: <p className="text-[#5ABEC9] text-base font-medium">2019</p>,
+      Date: <p className="text-white text-base font-medium">2019</p>,
     },
   ];
 };

@@ -118,7 +118,7 @@ export const NavBar = () => {
             positionY="center"
             onMouseEnter={() => setNavHover(true)}
             onMouseLeave={() => setNavHover(false)}
-            className="py-2 duration-500 ease-in-out bg-white border border-gray-100 dark:bg-gray-800  bg-opacity-60 backdrop-blur-sm rounded-2xl dark:border-gray-800 max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none max-md:bg-none max-md:backdrop-blur-0 max-md:bg-opacity-0 "
+            className="py-2 duration-500 ease-in-out bg-white border border-gray-100 dark:bg-[#010101]  bg-opacity-60 backdrop-blur-sm rounded-2xl dark:border-[#010101] max-md:py-0 max-md:px-0 gap-x-2 max-md:border-none max-md:bg-none max-md:backdrop-blur-0 max-md:bg-opacity-0 "
             style={{
               width: !maxMd && isNavHover ? 450 : 425,
               transitionProperty: 'width',
