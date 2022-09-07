@@ -30,7 +30,9 @@ const Home = () => {
     >
       <Column className="w-full gap-y-20 max-md:gap-y-5">
         <Experiences />
-        <FavorieteProject className="my-20 xl:mb-56" />
+        <div className="bg-gradient-to-br from-[#141414] to-[#100F15] w-full">
+          <FavorieteProject className="my-20 xl:mb-56" />
+        </div>
         <Skills />
       </Column>
     </Layout>

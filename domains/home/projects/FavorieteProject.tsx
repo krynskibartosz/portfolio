@@ -26,11 +26,14 @@ export const FavorieteProject = ({
 
   return (
     <Section
-      title={`${t('home.BiggestProject')}  💯`}
-      className={`max-md:px-5 ${className}`}
+      // title={`${t('home.BiggestProject')}  💯`}
+      className={`max-md:px-5   ${className}`}
       {...rest}
     >
       <>
+        <h2 className="mb-8 md:text-3xl xl:text-4xl font-semibold  max-md:mb-5 whitespace-nowrap text-xl text-white ">
+          {t('home.BiggestProject')} 💯
+        </h2>
         <div className="relative w-full h-full ">
           {/* animation need to be outisde of the swipper */}
           <Blob className="max-md:hidden  bg-[#FE6B6A] w-[550px] h-[400px] -left-32  dark:opacity-80 -top-5" />
