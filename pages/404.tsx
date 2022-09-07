@@ -1,25 +1,35 @@
 import { Layout, Link, Section, Image } from 'components';
 import { useTranslation } from 'next-i18next';
 import useNextBlurhash from 'use-next-blurhash';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import nextI18NextConfig from 'next-i18next.config';
+
+export const getStaticProps = async ({ locale }: { locale: string }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
+    },
+  };
+};
 
 const Page404 = () => {
   const { t } = useTranslation('');
 
   const config = [
     {
-      name: t('Home'),
+      name: t('global.Home'),
       url: '/',
       img: '/img/home-1.jpeg',
       blur: 'LFLg^YQlM|x]~W4TtSZ~pd.9DiWq',
     },
     {
-      name: t('Projects'),
+      name: t('global.Projects'),
       url: '/projects',
       img: '/img/project-work.jpeg',
       blur: 'LbL|$P~qMw9H.TxtNGe=r=IUWFWB',
     },
     {
-      name: t('Contact'),
+      name: t('global.Contact'),
       url: '/contact',
       img: '/img/contact-1.jpeg',
       blur: 'L6FO$5~q0e?b0000?aIU.m^*iw-;',
@@ -31,13 +41,13 @@ const Page404 = () => {
       headTitle="Bartek Home"
       seoTitle="Frontend Développeur Bartek"
       seoDescription="" // todo:
-      title={t('404Page')}
-      description={`${t('OopsYouGotTheWrongLink')} 💩`}
+      title={t('404.404Page')}
+      description={`${t('404.OopsYouGotTheWrongLink')} 💩`}
     >
       <Section className="max-md:px-5">
         <>
           <p className="mb-5 text-xl font-semibold text-gray-800 dark:text-gray-400">
-            {t('HereIsAListOfLinksYouMightWantToCheckOut')}
+            {t('404.HereIsAListOfLinksYouMightWantToCheckOut')}
           </p>
           <ul className="grid grid-cols-12 gap-5">
             {config.map((el, i) => (

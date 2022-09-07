@@ -60,6 +60,11 @@
     "Description": "Description",
     "Send": "Envoyer"
   },
+  "404": {
+    "404Page": "Page 404",
+    "OopsYouGotTheWrongLink": "Ooups tu t'es gourré de lien",
+    "HereIsAListOfLinksYouMightWantToCheckOut": "Voici une liste de liens que tu aurais voulu consulter"
+  },
   "global": {
     "Contact": "Contact",
     "Projects": "Projets",

@@ -7,32 +7,6 @@ import {
   FormationsCardContent,
 } from './config';
 
-export const Experiences = () => {
-  const { t } = useTranslation('');
-
-  return (
-    <>
-      <Section
-        className="max-md:px-5"
-        title={`${t('home.MyProfessionalExperiences')} 💼`}
-      >
-        <div className="grid grid-cols-12 md:gap-x-10 gap-y-10 ">
-          {ExperiencesCardContent().map((el, i) => (
-            <Card key={i} el={el} />
-          ))}
-        </div>
-      </Section>
-      <Section className="max-md:px-5 pt-2" title={`${t('Ma formation')} 📚`}>
-        <div className="grid grid-cols-12 md:gap-x-10 gap-y-10 ">
-          {FormationsCardContent().map((el, i) => (
-            <Card key={i} el={el} />
-          ))}
-        </div>
-      </Section>
-    </>
-  );
-};
-
 const Card = ({
   el: { Icon, post, Description, className, Date },
 }: {
@@ -60,5 +34,31 @@ const Card = ({
         </div>
       </div>
     </div>
+  );
+};
+
+export const Experiences = () => {
+  const { t } = useTranslation('');
+
+  return (
+    <>
+      <Section
+        className="max-md:px-5"
+        title={`${t('home.MyProfessionalExperiences')} 💼`}
+      >
+        <div className="grid grid-cols-12 md:gap-x-10 gap-y-10 ">
+          {ExperiencesCardContent().map((el, i) => (
+            <Card key={i} el={el} />
+          ))}
+        </div>
+      </Section>
+      <Section className="max-md:px-5 pt-2" title={`${t('Ma formation')} 📚`}>
+        <div className="grid grid-cols-12 md:gap-x-10 gap-y-10 ">
+          {FormationsCardContent().map((el, i) => (
+            <Card key={i} el={el} />
+          ))}
+        </div>
+      </Section>
+    </>
   );
 };
