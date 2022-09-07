@@ -14,7 +14,7 @@ export const Experiences = () => {
     <>
       <Section
         className="max-md:px-5"
-        title={`${t('MyProfessionalExperiences')} 💼`}
+        title={`${t('home.MyProfessionalExperiences')} 💼`}
       >
         <div className="grid grid-cols-12 md:gap-x-10 gap-y-10 ">
           {ExperiencesCardContent().map((el, i) => (

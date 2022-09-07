@@ -37,7 +37,7 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
       <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-xl shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256]">
         <Column positionX="center" className="justify-center w-full h-full ">
           <h2 className="mb-5 text-4xl font-semibold  text-white">
-            {t('Authentification')}
+            {t('home.Authentification')}
           </h2>
 
           <UmengoIcon className="absolute w-10 h-10 left-5 top-5 " />
@@ -53,7 +53,7 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
           className="absolute bottom-0 left-0 z-10 justify-center w-full h-14 transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 bg-gray-50"
         >
           <p className="text-lg font-semibold text-center bg-clip-text bg-gradient-to-r text-transparent from-[#FE6B6A] via-[#50CBC3] to-[#4A5256]">
-            {t('Signup')}
+            {t('home.Signup')}
           </p>
         </Column>
         <div className="relative w-full h-full">
@@ -199,7 +199,7 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
           className="absolute bottom-0 left-0 z-10 justify-center w-full h-14 transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 bg-gray-50"
         >
           <p className="text-lg font-semibold text-center from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] bg-clip-text bg-gradient-to-tr text-transparent ">
-            {t('Notification')}
+            {t('home.Notification')}
           </p>
         </Column>
         <div className="relative w-full h-full bg-white">

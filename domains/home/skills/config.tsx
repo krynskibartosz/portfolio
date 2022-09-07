@@ -22,13 +22,15 @@ export const SkillsContent = (): SKILLS => {
   const { t: translation } = useTranslation('');
   return [
     {
-      name: translation('FrameworkAndLibrairies'),
+      name: translation('home.FrameworkAndLibrairies'),
       description: [
         translation(
-          'OverTwoyearsOfExperienceDevelopingWebApplicationsUsingTheReactAndJavaScriptEcosystem'
+          'home.OverTwoyearsOfExperienceDevelopingWebApplicationsUsingTheReactAndJavaScriptEcosystem'
         ),
-        translation('MoreThanFiveProjectsMaintainedAndBuiltInLessThanAYear'),
-        translation('OneYearInReactNativeMobileApplicationDevelopment'),
+        translation(
+          'home.MoreThanFiveProjectsMaintainedAndBuiltInLessThanAYear'
+        ),
+        translation('home.OneYearInReactNativeMobileApplicationDevelopment'),
         'bonne connaissance en SEO',
       ],
       img: {
@@ -40,12 +42,12 @@ export const SkillsContent = (): SKILLS => {
       direction: 'left',
     },
     {
-      name: translation('ProjectSoftwareManagement'),
+      name: translation('home.ProjectSoftwareManagement'),
       description: [
-        translation('AgileAndScrumMethodology'),
-        translation('VersionManagementViaGithubOrGitlab'),
-        translation('ProfessionalAndPersonalUseOfNotion'),
-        translation('GeneralUnderstandingOfLowCodeAndNoCodeTools'),
+        translation('home.AgileAndScrumMethodology'),
+        translation('home.VersionManagementViaGithubOrGitlab'),
+        translation('home.ProfessionalAndPersonalUseOfNotion'),
+        translation('home.GeneralUnderstandingOfLowCodeAndNoCodeTools'),
       ],
       img: {
         blur: 'LLRxbFae]]tRo#SQngwZ}Ms-AMRj',
@@ -56,11 +58,11 @@ export const SkillsContent = (): SKILLS => {
       direction: 'right',
     },
     {
-      name: translation('SoftSkills'),
+      name: translation('home.SoftSkills'),
       description: [
-        translation('DemonstratesHumility'),
+        translation('home.DemonstratesHumility'),
         "Caméléon, je m'adapte à tout groupe de personnes et situations",
-        translation('AbleToWorkCollaborativelyAndIndependently'),
+        translation('home.AbleToWorkCollaborativelyAndIndependently'),
       ],
       img: {
         blur: 'LrF4a]RjRUohD%t7ouah?1jJRjbW',
@@ -69,7 +71,7 @@ export const SkillsContent = (): SKILLS => {
       badges: [
         'Caméléon',
         'Minutieux',
-        locale === 'fr' ? translation('Reagent') : '',
+        locale === 'fr' ? translation('home.Reagent') : '',
         'Rigoureux',
         // todo: garder la traduction en anglais et français
       ],
@@ -79,9 +81,9 @@ export const SkillsContent = (): SKILLS => {
     {
       name: `Conception graphique`,
       description: [
-        translation('AdvancedSkillsInCSSAndItsEcosystem'),
-        translation('AdvancedSkillsInResponsiveWebDesign'),
-        translation('ProfessionalAndPersonalExperiencesWithDesignerTools'),
+        translation('home.AdvancedSkillsInCSSAndItsEcosystem'),
+        translation('home.AdvancedSkillsInResponsiveWebDesign'),
+        translation('home.ProfessionalAndPersonalExperiencesWithDesignerTools'),
         translation('Pratique de la conception créative et du remue-méninges'),
       ],
       img: {

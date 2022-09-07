@@ -48,7 +48,7 @@ export const ExperiencesCardContent = (): COMPANIES => {
       Icon: () => (
         <DigitaluIcon className="w-80 h-80 max-md:w-60 max-md:h-60" />
       ),
-      post: translation('FrontEndDeveloper'),
+      post: translation('home.FrontEndDeveloper'),
 
       className: 'col-span-full selection:!bg-[#448FFF]',
 
@@ -56,7 +56,7 @@ export const ExperiencesCardContent = (): COMPANIES => {
         <>
           <p>
             {translation(
-              'CreationAndMaintenanceOfSeveralWebAndMobileApplicationsUsingHighPerformanceTechnologies'
+              'home.CreationAndMaintenanceOfSeveralWebAndMobileApplicationsUsingHighPerformanceTechnologies'
             )}
             .
             <Link passHref href="/projects">
@@ -85,14 +85,14 @@ export const FormationsCardContent = (): FORMATIONS => {
       Icon: () => (
         <UtopixIcon className="w-40 h-40 fill-black dark:fill-white" />
       ),
-      post: translation('InternshipInWebDevelopment'),
+      post: translation('home.InternshipInWebDevelopment'),
       className:
         'col-span-6  selection:!bg-gray-900 dark:selection:!bg-purple-500',
 
       Description: (
         <>
           <p>
-            {translation('DevelopmentOfAManagementPlatform')}.{' '}
+            {translation('home.DevelopmentOfAManagementPlatform')}.{' '}
             <a target="_blank" href="https://www.utopix.com/" rel="noreferrer">
               <span
                 className={`dark:text-white hover:brightness-125 transition-all duration-300 ease-in-out  underline cursor-pointer`}
@@ -107,7 +107,7 @@ export const FormationsCardContent = (): FORMATIONS => {
     },
     {
       Icon: () => <BecodeIcon className="" />,
-      post: translation('TrainingInWebDevelopment'),
+      post: translation('home.TrainingInWebDevelopment'),
 
       className: 'col-span-6 selection:!bg-[#5ABEC9]',
 
@@ -115,7 +115,7 @@ export const FormationsCardContent = (): FORMATIONS => {
         <div className="flex-wrap">
           <p>
             {translation(
-              '7MonthsTrainingInFrontEndWebDevelopmentAndBackEndDevelopment'
+              'home.7MonthsTrainingInFrontEndWebDevelopmentAndBackEndDevelopment'
             )}
             .
             <a target="_blank" href="https://becode.org/" rel="noreferrer">

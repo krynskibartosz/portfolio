@@ -143,7 +143,7 @@ export const Skills = () => {
       </div>
       <Section
         className="max-md:px-5 z-20"
-        title={`${t('ProfessionalSkills')} 🚀`}
+        title={`${t('home.ProfessionalSkills')} 🚀`}
       >
         <Column className="gap-y-10 mt-10">
           {SkillsContent().map((el, i) => (

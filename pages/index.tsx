@@ -23,9 +23,9 @@ const Home = () => {
       headTitle="Bartek Portfolio"
       seoTitle="Frontend Développeur"
       seoDescription="" // todo:
-      title={`${t('Hey')}! 👋🏻 ${t('Iam')} Bartek`}
+      title={`${t('home.Hey')}! 👋🏻 ${t('home.Iam')} Bartek`}
       description={t(
-        'AFrontEndDeveloperThatllBuildYourNextDreamWebAndMobileApplication'
+        'home.AFrontEndDeveloperThatllBuildYourNextDreamWebAndMobileApplication'
       )}
     >
       <Column className="w-full gap-y-20 max-md:gap-y-5">

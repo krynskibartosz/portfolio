@@ -16,7 +16,7 @@ import { AppProps } from 'next/app';
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <div className="relative overflow-x-hidden ">
+    <div className="relative overflow-x-hidden max-md:hidden ">
       <Component id="root" {...pageProps} />
       <div className="absolute top-0 left-0 w-screen h-0 mt-10 max-lg:hidden ">
         <div className="w-full mx-auto max-w-7xl">

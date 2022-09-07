@@ -26,7 +26,7 @@ export const FavorieteProject = ({
 
   return (
     <Section
-      title={`${t('BiggestProject')}  💯`}
+      title={`${t('home.BiggestProject')}  💯`}
       className={`max-md:px-5 ${className}`}
       {...rest}
     >

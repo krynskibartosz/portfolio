@@ -9,6 +9,17 @@ import {
 import { Form } from 'components/forms/Form';
 import { useTranslation } from 'next-i18next';
 
+import nextI18NextConfig from 'next-i18next.config';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export const getStaticProps = async ({ locale }: { locale: string }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
+    },
+  };
+};
+
 const Contact = () => {
   // const [reset, setReset] = useState(false);
 
@@ -27,9 +38,9 @@ const Contact = () => {
       headTitle="Bartek Contact"
       seoTitle="Frontend Développeur Bartek"
       seoDescription="" // todo:
-      title={t('Contact')}
+      title={t('contact.Contact')}
       description={`${t(
-        'YouWantToTrustMeWithAMissionOrRecruitMeEverythingHappensHere'
+        'contact.YouWantToTrustMeWithAMissionOrRecruitMeEverythingHappensHere'
       )} !`}
     >
       <Section className="z-10 max-md:px-5">

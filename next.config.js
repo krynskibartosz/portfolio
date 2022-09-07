@@ -13,6 +13,8 @@ if (
 
 // const withPlugins = require('next-compose-plugins');
 // const optimizedImages = require('next-optimized-images');
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { i18n } = require('./next-i18next.config');
 
 module.exports = {
