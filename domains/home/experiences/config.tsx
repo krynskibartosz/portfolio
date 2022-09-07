@@ -25,7 +25,7 @@ export const ExperiencesCardContent = (): COMPANIES => {
       Icon: () => <FresheoIcon className=" fill-white w-80" />,
       post: translation('Leader frontend et graphiste web'),
       className:
-        'col-span-full shadow-lg cardNew from-[#9abe36] to-green-800  selection:bg-[#9abe36]',
+        'col-span-full  cardNew from-[#9abe36] to-green-800  selection:bg-[#9abe36]',
       Description: (
         <>
           <p>
@@ -52,7 +52,7 @@ export const ExperiencesCardContent = (): COMPANIES => {
       post: translation('home.FrontEndDeveloper'),
 
       className:
-        'col-span-full shadow-lg cardNew rounded-lg from-[#448FFF] to-[#F81444] selection:!bg-[#448FFF]',
+        'col-span-full  cardNew rounded-lg from-[#448FFF] to-[#F81444] selection:!bg-[#448FFF]',
 
       Description: (
         <>
@@ -62,11 +62,8 @@ export const ExperiencesCardContent = (): COMPANIES => {
             )}
             .
             <Link passHref href="/projects">
-              <span className="relative hover:brightness-125 transition-all duration-300 ease-in-out text-transparent pl-1 bg-clip-text cursor-pointer bg-gradient-to-r from-[#448FFF] to-[#F81444] underline">
+              <span className="relative hover:brightness-125 brightness-110 transition-all duration-300 ease-in-out text-[#448FFF]  pl-1  cursor-pointer   underline">
                 Découvrir les projets
-                <span className="absolute  left-1 min-h-[1px] max-h-[1px] top-full bg-gradient-to-r text-transparent from-[#448FFF] to-[#F81444]">
-                  Découvrir les projets
-                </span>
               </span>
             </Link>
           </p>
@@ -90,10 +87,11 @@ export const FormationsCardContent = (): FORMATIONS => {
           <p>
             {translation('home.DevelopmentOfAManagementPlatform')}.{' '}
             <a target="_blank" href="https://www.utopix.com/" rel="noreferrer">
-              <span
-                className={`dark:text-white hover:brightness-125 transition-all duration-300 ease-in-out  underline cursor-pointer`}
-              >
+              <span className="relative hover:brightness-125 transition-all duration-300 ease-in-out text-transparent pl-1 bg-clip-text cursor-pointer bg-gradient-to-r from-gray-600 to-white underline">
                 Voir le site
+                <span className="absolute  left-1 min-h-[1px] max-h-[1px] top-full bg-gradient-to-r text-transparent from-gray-600 to-white">
+                  Voir le site
+                </span>
               </span>
             </a>
           </p>

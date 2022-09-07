@@ -283,7 +283,7 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
                   circleClassName="group-hover:fill-white dark:group-hover:fill-white transition-colors duration-500 ease-in-out"
                   className="h-7 mr-1 dark:fill-[#63DAFA]"
                 />
-                <p className="text-[#63DAFA] font-semibold group-hover:text-white transition-colors duration-500 ease-in-out">
+                <p className="text-[#63DAFA] font-semibold whitespace-nowrap group-hover:text-white transition-colors duration-500 ease-in-out">
                   React Native
                 </p>
               </div>

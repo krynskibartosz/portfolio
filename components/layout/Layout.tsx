@@ -27,8 +27,8 @@ export const Layout = ({
         <NextSeo title={seoTitle} description={seoDescription} />
         <link rel="shortcut icon" href="/vercel.svg" />
       </Head>
-      {/* #111111 */}
-      <div className="relative w-screen min-h-screen bg-white dark:bg-gradient-to-br dark:from-[#111111] dark:to-[#010101] ">
+
+      <div className="relative w-screen min-h-screen bg-white dark:bg-gradient-to-br dark:from-[#111111] dark:to-[#010101]">
         <div className="h-full  pb-28 pt-28 max-md:pt-10 max-md:mx-0">
           <Column as="section" className="max-w-3xl mx-auto max-md:px-5">
             <h1

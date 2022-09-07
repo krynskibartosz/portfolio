@@ -22,9 +22,9 @@ function App({ Component, pageProps }: AppProps) {
         <div className="w-full mx-auto max-w-7xl">
           <Row positionX="right" className="w-full">
             <div className="relative h-[450px] w-[410px]">
-              <Blob className="top-0 z-20 w-64 h-64 bg-[#9abe36] -left-12 dark:opacity-80" />
-              <Blob className="top-0 z-10 w-64 h-64 bg-gradient-to-br from-[#448FFF] to-[#F81444]  -right-4 animation-delay-2000 dark:opacity-60" />
-              <Blob className="w-64 h-64 z-0 bg-[#5ABEC9] dark:opacity-90 animation-delay-4000 -bottom-8 left-20" />
+              <Blob className="top-0 z-20 w-64 h-64 bg-[#9abe36] -left-12 dark:!opacity-50" />
+              <Blob className="top-0 z-10 w-64 h-64 bg-gradient-to-br from-[#448FFF] to-[#F81444]  -right-4 animation-delay-2000 dark:opacity-70" />
+              <Blob className="w-64 h-64 z-0 bg-[#5ABEC9] dark:!opacity-30 animation-delay-4000 -bottom-8 left-20" />
             </div>
           </Row>
         </div>
