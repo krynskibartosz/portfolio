@@ -24,7 +24,7 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
       navigation={true}
     >
       {/* UMENGO */}
-      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-xl shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256]">
+      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-[20px] shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256]">
         <Column positionX="center" className="justify-center w-full h-full ">
           <h2 className="mb-8 font-semibold text-center  text-7xl text-white">
             Umengo
@@ -34,7 +34,7 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
       </SwiperSlide>
 
       {/* AUTH */}
-      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-xl shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256]">
+      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-[20px] shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256]">
         <Column positionX="center" className="justify-center w-full h-full ">
           <h2 className="mb-5 text-4xl font-semibold  text-white">
             {t('home.Authentification')}
@@ -47,7 +47,7 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
         </Column>
       </SwiperSlide>
       {/* SIGNUP */}
-      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-xl shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] group">
+      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-[20px] shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] group">
         <Column
           positionX="center"
           className="absolute bottom-0 left-0 z-10 justify-center w-full h-14 transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 bg-gray-50"
@@ -68,7 +68,7 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
         </span>
       </SwiperSlide>
       {/* CRUD */}
-      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-xl shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] ">
+      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-[20px] shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] ">
         <Column positionX="center" className="justify-center w-full h-full ">
           <h2 className="text-4xl font-semibold text-white">CRUD</h2>
 
@@ -80,7 +80,7 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
       </SwiperSlide>
 
       {/* CREATE */}
-      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-xl shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] group">
+      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-[20px] shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] group">
         <Column
           positionX="center"
           className="absolute bottom-0 left-0 z-10 justify-center w-full h-14 transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 bg-gray-50"
@@ -102,7 +102,7 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
         </span>
       </SwiperSlide>
       {/* READ */}
-      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-xl shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] group">
+      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-[20px] shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] group">
         <Column
           positionX="center"
           className="absolute bottom-0 left-0 z-10 justify-center w-full h-14 transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 bg-gray-50"
@@ -124,7 +124,7 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
       </SwiperSlide>
 
       {/* UPDATE */}
-      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-xl shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] group">
+      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-[20px] shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] group">
         <Column
           positionX="center"
           className="absolute bottom-0 left-0 z-10 justify-center w-full h-14 transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 "
@@ -145,7 +145,7 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
         </span>
       </SwiperSlide>
       {/* DELETE */}
-      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-xl shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] group">
+      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-[20px] shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] group">
         <Column
           positionX="center"
           className="absolute bottom-0 left-0 z-10 justify-center w-full h-14 transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 "
@@ -161,7 +161,7 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
           7
         </span>
       </SwiperSlide>
-      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-xl shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] ">
+      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-[20px] shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] ">
         <Column positionX="center" className="justify-center w-full h-full ">
           <h2 className="mb-5 text-4xl font-semibold text-white">WebSocket</h2>
 
@@ -172,7 +172,7 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
         </Column>
       </SwiperSlide>
       {/* MESSENGER */}
-      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-xl shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] group">
+      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-[20px] shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] group">
         <Column
           positionX="center"
           className="absolute bottom-0 left-0 z-10 justify-center w-full h-14 transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 bg-gray-50"
@@ -193,7 +193,7 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
         </span>
       </SwiperSlide>
       {/* NOTIFICATION */}
-      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-xl shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] group">
+      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-[20px] shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] group">
         <Column
           positionX="center"
           className="absolute bottom-0 left-0 z-10 justify-center w-full h-14 transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 bg-gray-50"
@@ -214,7 +214,7 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
         </span>
       </SwiperSlide>
       {/* MOBILE */}
-      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br -black rounded-xl shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] group">
+      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br -black rounded-[20px] shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] group">
         <Column
           positionX="center"
           className="absolute bottom-0 left-0 z-10 justify-center w-full h-14 transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 bg-gray-50"
@@ -234,20 +234,20 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
           11
         </span>
       </SwiperSlide>
-      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-xl shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] ">
+      <SwiperSlide className="relative z-10 cursor-pointer bg-gradient-to-br  rounded-[20px] shadow-main  from-[#FE6B6A] via-[#50CBC3] to-[#4A5256] ">
         <Column className=" w-full h-full p-6 pt-8 gap-y-5">
           <Column className="w-full">
             <h2 className=" md:text-3xl pt-5 w-full text-center mb-4 font-semibold text-white">
               Technologies utilisées
             </h2>
             <ul className="dark:text-white pl-5 flex flex-wrap gap-3 justify-center">
-              <div className="px-4  border-2 border-[#010001] hover:bg-[#010001] bg-white group  rounded-xl transition-colors duration-500 ease-in-out ">
+              <div className="px-4  border-2 border-[#010001] hover:bg-[#010001] bg-white group  rounded-[20px] transition-colors duration-500 ease-in-out ">
                 <NextJSIcon
                   className="w-20 h-10 "
                   pathClassName="fill-[#010001] transition-colors duration-500 ease-in-out group-hover:fill-white"
                 />
               </div>
-              <div className="px-4 transition-colors duration-500 ease-in-out hover:bg-[#1D1F21] group  border-2 flex items-center border-[#1D1F21] bg-white  rounded-xl ">
+              <div className="px-4 transition-colors duration-500 ease-in-out hover:bg-[#1D1F21] group  border-2 flex items-center border-[#1D1F21] bg-white  rounded-[20px] ">
                 <Row className="items-center">
                   <SocketIOIcon
                     circleClassName="group-hover:stroke-white transition-colors duration-500 ease-in-out"
@@ -259,7 +259,7 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
                   </p>
                 </Row>
               </div>
-              <div className="px-4  border-2 hover:bg-[#774BBC] transition-colors duration-500 ease-in-out border-[#774BBC] bg-white group  rounded-xl ">
+              <div className="px-4  border-2 hover:bg-[#774BBC] transition-colors duration-500 ease-in-out border-[#774BBC] bg-white group  rounded-[20px] ">
                 <Row className="items-center">
                   <ReduxIcon
                     colorClassName="group-hover:fill-white transition-colors duration-500 ease-in-out"
@@ -271,13 +271,13 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
                 </Row>
               </div>
 
-              <div className="group px-4  border-2 border-[#027ACC] hover:bg-[#027ACC] transition-colors duration-500 ease-in-out bg-white  rounded-xl ">
+              <div className="group px-4  border-2 border-[#027ACC] hover:bg-[#027ACC] transition-colors duration-500 ease-in-out bg-white  rounded-[20px] ">
                 <TypeScriptIcon
                   colorClassName="group-hover:fill-white fill-[#027ACC] transition-colors duration-500 ease-in-out"
                   className="w-20 h-10"
                 />
               </div>
-              <div className="group px-4 flex items-center  border-2 border-[#63DAFA] hover:bg-[#63DAFA] transition-colors duration-500 ease-in-out bg-white  rounded-xl ">
+              <div className="group px-4 flex items-center  border-2 border-[#63DAFA] hover:bg-[#63DAFA] transition-colors duration-500 ease-in-out bg-white  rounded-[20px] ">
                 <ReactNativeIcon
                   groupClassName="group-hover:stroke-white dark:group-hover:stroke-white transition-colors duration-500 ease-in-out"
                   circleClassName="group-hover:fill-white dark:group-hover:fill-white transition-colors duration-500 ease-in-out"
@@ -287,13 +287,13 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
                   React Native
                 </p>
               </div>
-              <div className="px-4 group  border-2 hover:bg-[#38bdf8] transition-colors duration-500 ease-in-out border-[#38bdf8] bg-white  rounded-xl ">
+              <div className="px-4 group  border-2 hover:bg-[#38bdf8] transition-colors duration-500 ease-in-out border-[#38bdf8] bg-white  rounded-[20px] ">
                 <TailwindIcon
                   pathClassName="fill-[#38bdf8] group-hover:fill-white transition-colors duration-500  ease-in-out"
                   className="w-28 text-[#38bdf8] h-10  group-hover:text-white transition-colors duration-500  ease-in-out"
                 />
               </div>
-              <div className="px-4 group h-10 flex items-center  border-2 border-[#CE649A] bg-white hover:bg-[#CE649A] transition-colors duration-500 ease-in-out  rounded-xl ">
+              <div className="px-4 group h-10 flex items-center  border-2 border-[#CE649A] bg-white hover:bg-[#CE649A] transition-colors duration-500 ease-in-out  rounded-[20px] ">
                 <SassIcon
                   pathClassName="fill-[#CF649A] group-hover:fill-white transition-colors duration-500  ease-in-out"
                   className="w-20 h-7"
@@ -309,22 +309,22 @@ export const CarouselDesktop = ({ className }: { className?: string }) => {
             {/* //todo: Changer le liens du site web par une image de l'accueil de umengo */}
             {/* //todo: + img du qrcode */}
             <Row positionX="between" className="w-full px-16">
-              <div className="border-2 p-1 rounded-xl">
-                <div className="relative  w-[192px] h-48 rounded-xl hover:scale-110 transition-transform duration-500 ease-in-out  overflow-hidden">
+              <div className="border-2 p-1 rounded-[20px]">
+                <div className="relative  w-[192px] h-48 rounded-[20px] hover:scale-110 transition-transform duration-500 ease-in-out  overflow-hidden">
                   <Image
                     layout="fill"
-                    className="rounded-md"
+                    className="rounded-[20px]"
                     objectFit="contain"
                     src="/img/umengo/qrcode.png"
                   />
                 </div>
               </div>
               {/* //todo: add an overlay that say open the link */}
-              <div className="border-2 p-1 rounded-xl">
-                <div className="relative hover:scale-110 transition-transform duration-500 ease-in-out  w-[305px] h-48 rounded-xl shadow-main overflow-hidden">
+              <div className="border-2 p-1 rounded-[20px]">
+                <div className="relative hover:scale-110 transition-transform duration-500 ease-in-out  w-[305px] h-48 rounded-[20px] shadow-main overflow-hidden">
                   <Image
                     layout="fill"
-                    className="rounded-md"
+                    className="rounded-[20px]"
                     objectFit="contain"
                     src="/img/umengo/umengo-home.jpg"
                   />

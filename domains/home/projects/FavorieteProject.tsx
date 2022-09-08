@@ -31,7 +31,7 @@ export const FavorieteProject = ({
       {...rest}
     >
       <>
-        <h2 className="mb-8 md:text-3xl xl:text-4xl font-semibold  max-md:mb-5 whitespace-nowrap text-xl text-white ">
+        <h2 className="mb-5 md:text-3xl xl:text-4xl font-semibold  max-md:mb-5 whitespace-nowrap text-xl text-white ">
           {t('home.BiggestProject')} 💯
         </h2>
         <div className="relative w-full h-full ">

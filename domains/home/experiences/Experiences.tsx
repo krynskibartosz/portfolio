@@ -14,7 +14,7 @@ const Card = ({
 }) => {
   return (
     <div
-      className={`z-10 grid overflow-hidden  max-md:col-span-full h-[400px] max-md:w-full  place-items-center  relative group  ${className}`}
+      className={`z-10 grid overflow-hidden  max-md:col-span-full h-[400px] max-md:w-full rounded-[20px]  place-items-center  relative group  ${className}`}
     >
       <div className="absolute z-20 top-5 right-5">{Date}</div>
       {/* @ts-ignore */}
@@ -43,7 +43,7 @@ export const Experiences = () => {
   return (
     <>
       <Section
-        className="max-md:px-5"
+        className="max-md:px-5 "
         title={`${t('home.MyProfessionalExperiences')} 💼`}
       >
         <div className="grid grid-cols-12 md:gap-x-10 gap-y-10 ">
@@ -52,7 +52,10 @@ export const Experiences = () => {
           ))}
         </div>
       </Section>
-      <Section className="max-md:px-5 pt-2" title={`${t('Ma formation')} 📚`}>
+      <Section
+        className="max-md:px-5 pb-14 pt-2"
+        title={`${t('Ma formation')} 📚`}
+      >
         <div className="grid grid-cols-12 md:gap-x-10 gap-y-10 ">
           {FormationsCardContent().map((el, i) => (
             <Card key={i} el={el} />

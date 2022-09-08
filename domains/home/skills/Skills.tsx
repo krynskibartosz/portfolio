@@ -126,7 +126,7 @@ export const Skills = () => {
   const { t } = useTranslation('');
 
   return (
-    <div className="relative w-full mx-auto max-w-7xl">
+    <div className="relative w-full mx-auto max-w-7xl pt-10">
       <div className="absolute bottom-0 ">
         <div className="relative h-[450px] w-[410px]">
           <Blob className="top-0 w-64 h-64 bg-yellow-400 -left-4 dark:opacity-40" />
