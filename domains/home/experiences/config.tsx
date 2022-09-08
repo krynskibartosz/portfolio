@@ -23,7 +23,7 @@ export const ExperiencesCardContent = (): COMPANIES => {
   return [
     {
       Icon: () => <FresheoIcon className=" fill-white w-80" />,
-      post: translation('Leader frontend et graphiste web'),
+      post: translation('Leader frontend et graphiste'),
       className:
         'col-span-full  cardNew from-[#9abe36] to-green-800  selection:bg-[#9abe36]',
       Description: (

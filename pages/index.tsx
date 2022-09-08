@@ -42,7 +42,7 @@ const Home = () => {
           </span>{' '}
           et{' '}
           <span className=" font-semibold text-center from-[#ffb6ff] to-[#b344ff]  bg-clip-text bg-gradient-to-tr text-transparent ">
-            graphiste web
+            graphiste
           </span>{' '}
           qui construira votre prochaine application web et application mobile{' '}
           <span className=" font-semibold text-center from-[#ffb6ff] to-[#b344ff]  bg-clip-text bg-gradient-to-tr text-transparent ">
