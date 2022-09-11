@@ -31,7 +31,7 @@ export const SkillsContent = (): SKILLS => {
           'home.MoreThanFiveProjectsMaintainedAndBuiltInLessThanAYear'
         ),
         translation('home.OneYearInReactNativeMobileApplicationDevelopment'),
-        'bonne connaissance en SEO',
+        translation('home.GoodKnowledgeInSEO'),
       ],
       img: {
         blur: 'L383nu]n1JBoClEg-B=|0|AC}Y=e',
@@ -53,7 +53,12 @@ export const SkillsContent = (): SKILLS => {
         blur: 'LLRxbFae]]tRo#SQngwZ}Ms-AMRj',
         url: '/img/skills/managment.jpeg',
       },
-      badges: ['Communication', 'Notion', 'SuiteGoogle', 'Loom'],
+      badges: [
+        translation('home.Communication'),
+        'Notion',
+        'SuiteGoogle',
+        'Loom',
+      ],
       color: 'yellow',
       direction: 'right',
     },
@@ -61,7 +66,9 @@ export const SkillsContent = (): SKILLS => {
       name: translation('home.SoftSkills'),
       description: [
         translation('home.DemonstratesHumility'),
-        "Caméléon, je m'adapte à tout groupe de personnes et situations",
+        translation(
+          'home.ChameleonLike,ICanAdaptToAnyGroupOfPeopleAndSituations'
+        ),
         translation('home.AbleToWorkCollaborativelyAndIndependently'),
       ],
       img: {
@@ -69,28 +76,32 @@ export const SkillsContent = (): SKILLS => {
         url: '/img/skills/work.jpeg',
       },
       badges: [
-        'Caméléon',
-        'Minutieux',
-        locale === 'fr' ? translation('home.Reagent') : '',
-        'Rigoureux',
-        // todo: garder la traduction en anglais et français
+        translation('home.Chameleon'),
+        translation('home.Meticulous'),
+
+        translation('home.Rigorous'),
       ],
       color: 'purple',
       direction: 'left',
     },
     {
-      name: `Conception graphique`,
+      name: translation('home.GraphicDesign'),
       description: [
         translation('home.AdvancedSkillsInCSSAndItsEcosystem'),
         translation('home.AdvancedSkillsInResponsiveWebDesign'),
         translation('home.ProfessionalAndPersonalExperiencesWithDesignerTools'),
-        translation('Pratique de la conception créative et du remue-méninges'),
+        translation('home.PracticeCreativeDesignAndBrainstorming'),
       ],
       img: {
         blur: 'LLEVTx4.-;S2~BIV-pof%zVtxus:',
         url: '/img/skills/design.jpg',
       },
-      badges: ['Figma', 'UX/UI', 'Morderne', 'Minimalisme'],
+      badges: [
+        'Figma',
+        'UX/UI',
+        translation('home.Mordern'),
+        translation('home.Minimalisme'),
+      ],
       color: 'pink',
       direction: 'right',
     },

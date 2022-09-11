@@ -21,7 +21,7 @@ const SkillsCard = ({
     <div
       className={`z-10 w-full max-md:h-min h-min group overflow-hidden card !border-none group`}
     >
-      <div className="w-full h-[340px] grid grid-cols-12 grid-rows-6 ">
+      <div className="w-full md:h-[340px] grid grid-cols-12 grid-rows-6 ">
         {direction === 'left' && (
           <div
             className={`relative group-hover:brightness-105 col-span-5 row-span-full brightness-90  h-full max-md:hidden  overflow-hidden transition-all ease-in-out duration-300 ${
@@ -40,7 +40,7 @@ const SkillsCard = ({
           </div>
         )}
 
-        <Column className="justify-between w-[97%]  h-full p-5 max-md:p-4 col-span-7 row-span-full">
+        <Column className="justify-between w-[97%]  h-full p-5 max-md:p-4 md:col-span-7 col-span-full row-span-full">
           <Column className="">
             <Row className="w-full mb-2 max-md:mb-3" positionY="center">
               <div
@@ -64,7 +64,7 @@ const SkillsCard = ({
                 {name}
               </p>
             </Row>
-            <ul className="flex flex-col pl-5 gap-y-3 ">
+            <ul className="flex flex-col pl-5 gap-y-3  ">
               {description?.map((el, i) => (
                 <li
                   // eslint-disable-next-line react/no-any-property
@@ -74,7 +74,7 @@ const SkillsCard = ({
                   }  text-xs md:text-sm xl:text-base  list-disc`}
                 >
                   <p
-                    className={`text-gray-800 first-letter:uppercase dark:text-gray-400 text-base ${
+                    className={`text-gray-800  first-letter:uppercase dark:text-gray-400 text-sm  xl:text-base ${
                       getColor(color).selection
                     }`}
                   >
@@ -84,13 +84,13 @@ const SkillsCard = ({
               ))}
             </ul>
           </Column>
-          <Row as="ul" className="gap-x-2 ">
+          <Row as="ul" className="gap-x-2 pt-5">
             {badges?.map((el, i) => (
               <Row
                 as="li"
                 key={i}
                 positionY="center"
-                className={`px-3 text-xs xl:text-sm text-white whitespace-nowrap   h-7 rounded-xl ${
+                className={`px-3 text-xs max-md:last-of-type:hidden xl:text-sm text-white whitespace-nowrap   h-7 rounded-xl ${
                   getColor(color).bg
                 }`}
               >

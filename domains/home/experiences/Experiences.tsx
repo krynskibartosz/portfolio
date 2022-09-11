@@ -14,12 +14,12 @@ const Card = ({
 }) => {
   return (
     <div
-      className={`z-10 grid overflow-hidden  max-md:col-span-full h-[400px] max-md:w-full rounded-[20px]  place-items-center  relative group  ${className}`}
+      className={`z-10 grid overflow-hidden  max-md:col-span-full  h-[400px] max-md:w-full rounded-[20px]  place-items-center  relative group  ${className}`}
     >
       <div className="absolute z-20 top-5 right-5">{Date}</div>
       {/* @ts-ignore */}
       <Icon className={`w-40 h-40 `} />
-      <div className="absolute bottom-0 z-20 w-full h-16 transition-transform duration-500 ease-in-out delay-500 bg-opacity-10 group-hover:-translate-y-16 ">
+      <div className="absolute bottom-0 z-20 w-full h-16 transition-transform duration-500 ease-in-out delay-500 bg-opacity-10 md:group-hover:-translate-y-16 max-md:group-hover:-translate-y-20 ">
         <div className="px-5">
           <div className="w-auto mb-2 max-w-max">
             <p className="text-sm md:text-lg font-semibold text-white xl:text-xl">

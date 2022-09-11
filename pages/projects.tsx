@@ -24,7 +24,7 @@ const Projects = () => {
     >
       <Section>
         <p className="text-3xl text-center text-gray-900 dark:text-white">
-          Coming soon
+          {t('projects.msg')}
         </p>
       </Section>
     </Layout>

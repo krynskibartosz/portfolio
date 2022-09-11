@@ -57,11 +57,11 @@ export const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   const [animationConfig, setAnimationConfig] = useState([
-    { name: 'home', isHovered: false, style: {} },
-    { name: 'projects', isHovered: false, style: {} },
-    { name: 'contact', isHovered: false, style: {} },
+    { name: t('home'), isHovered: false, style: {} },
+    { name: t('projects'), isHovered: false, style: {} },
+    { name: t('contact'), isHovered: false, style: {} },
     { name: 'theme', isHovered: false, style: {} },
-    { name: 'language', isHovered: false, style: {} },
+    { name: t('language'), isHovered: false, style: {} },
     { name: 'linktree', isHovered: false, style: {} },
   ]);
   const isAtLeastOnElementHovered = animationConfig.some(
@@ -193,7 +193,7 @@ export const NavBar = () => {
             })}
             <Row className="gap-x-2">
               <div
-                className={`pl-2 border-l relative has-tooltip border-gray-100 max-md:border-gray-200 dark:border-[#1c1c1c]  ${
+                className={`pl-2 max-md:hidden border-l relative has-tooltip border-gray-100 max-md:border-gray-200 dark:border-[#1c1c1c]  ${
                   isAtLeastOnElementHovered ? 'border-none' : ''
                 }`}
               >
@@ -250,7 +250,7 @@ export const NavBar = () => {
               </div>
 
               <ClickOutside onClick={() => setOpen(false)}>
-                <div className="relative has-tooltip">
+                <div className="relative  has-tooltip">
                   {!open && (
                     <Tooltip
                       className="max-md:hidden -translate-x-2/3 ml-0.5"

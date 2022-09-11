@@ -70,13 +70,13 @@ const Contact = () => {
                     <TextInput
                       {...inputProps('email')}
                       placeholder="jhon-doe@gmail.com"
-                      label={t('Email')}
+                      label={t('contact.Email')}
                       required={true}
                       type="email"
                     />
                     <TextInput
                       placeholder="John Doe"
-                      label={t('Name')}
+                      label={t('contact.Name')}
                       maxLength={30}
                       required
                       {...inputProps('name')}
@@ -84,8 +84,8 @@ const Contact = () => {
                   </Row>
 
                   <CounterInput
-                    placeholder={t('Description')}
-                    label={t('Description')}
+                    placeholder={t('contact.Description')}
+                    label={t('contact.Description')}
                     required
                     maxLength={300}
                     {...inputProps('description')}
@@ -95,12 +95,12 @@ const Contact = () => {
                   {/* todo: set and bg on onactive */}
                   <button
                     type="submit"
-                    value={t('Send')}
+                    value={t('contact.Send')}
                     accessKey="Enter"
                     className="px-6 py-2 mt-5 text-white transition-colors duration-300 ease-in-out bg-gray-900 border border-gray-200 appearance-none cursor-pointer active:bg-gray-700 focus:active:bg-gray-700 hover:bg-gray-800 text-uppercase dark:text-white dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 dark:active:bg-gray-600 w-min whitespace-nowrap rounded-xl max-md:px-4"
                     form="contact"
                   >
-                    {t('Send')}
+                    {t('contact.Send')}
                   </button>
                 </Row>
               </>

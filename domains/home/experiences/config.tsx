@@ -23,21 +23,21 @@ export const ExperiencesCardContent = (): COMPANIES => {
   return [
     {
       Icon: () => <FresheoIcon className=" fill-white w-80" />,
-      post: translation('Leader frontend et graphiste'),
+      post: translation('home.FrontendLeaderAndDesigner'),
       className:
         'col-span-full  cardNew from-[#9abe36] to-green-800  selection:bg-[#9abe36]',
       Description: (
         <>
           <p>
             {translation(
-              "Gestion de la refonte du site web et aide à la maintenance de l'actuel"
+              'home.ManagementOfTheRedesignOfTheWebsiteAndHelpWithTheMaintenanceOfTheCurrentOne'
             )}
             .
             <Link passHref href="/projects">
               <span
                 className={`text-[#9abe36] hover:brightness-125 transition-all duration-300 ease-in-out pl-1 underline cursor-pointer`}
               >
-                Découvrir le projet
+                {translation('home.DiscoverTheProject')}
               </span>
             </Link>
           </p>
@@ -63,7 +63,7 @@ export const ExperiencesCardContent = (): COMPANIES => {
             .
             <Link passHref href="/projects">
               <span className="relative hover:brightness-125 brightness-110 transition-all duration-300 ease-in-out text-[#448FFF]  pl-1  cursor-pointer   underline">
-                Découvrir les projets
+                {translation('home.DiscoverTheProjects')}
               </span>
             </Link>
           </p>
@@ -88,9 +88,9 @@ export const FormationsCardContent = (): FORMATIONS => {
             {translation('home.DevelopmentOfAManagementPlatform')}.{' '}
             <a target="_blank" href="https://www.utopix.com/" rel="noreferrer">
               <span className="relative hover:brightness-125 transition-all duration-300 ease-in-out text-transparent pl-1 bg-clip-text cursor-pointer bg-gradient-to-r from-gray-600 to-white underline">
-                Voir le site
+                {translation('home.ViewTheWebsite')}
                 <span className="absolute  left-1 min-h-[1px] max-h-[1px] top-full bg-gradient-to-r text-transparent from-gray-600 to-white">
-                  Voir le site
+                  {translation('home.ViewTheWebsite')}
                 </span>
               </span>
             </a>
@@ -117,7 +117,7 @@ export const FormationsCardContent = (): FORMATIONS => {
               <span
                 className={`text-[#5ABEC9] hover:brightness-125 transition-all duration-300 ease-in-out pl-1 underline cursor-pointer`}
               >
-                Découvrir la formation
+                {translation('home.DiscoverTheTraining')}
               </span>
             </a>
           </p>
