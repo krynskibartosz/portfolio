@@ -11,6 +11,7 @@ import { useTranslation } from 'next-i18next';
 
 import nextI18NextConfig from 'next-i18next.config';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import emailjs from '@emailjs/browser';
 
 export const getStaticProps = async ({ locale }: { locale: string }) => {
   return {
@@ -26,10 +27,27 @@ const Contact = () => {
   const { t } = useTranslation('');
 
   const submit = (body: any) => {
-    fetch('/api/mail', {
-      method: 'post',
-      body: JSON.stringify(body),
-    });
+    emailjs
+      .sendForm(
+        `${process.env.SERVICE_EMAIL_ID}`,
+        `${process.env.TEMPLATE_EMAIL_ID}`,
+        body,
+        `${process.env.PUBLIC_KEY_EMAIL_ID}`
+      )
+      .then(
+        (result) => {
+          console.log(
+            '🚀 ~ file: contact.tsx ~ line 40 ~ submit ~ result',
+            result.text
+          );
+        },
+        (error) => {
+          console.log(
+            '🚀 ~ file: contact.tsx ~ line 43 ~ submit ~ error',
+            error.text
+          );
+        }
+      );
     // setReset(!reset);
   };
 

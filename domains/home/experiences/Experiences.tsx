@@ -43,7 +43,7 @@ export const Experiences = () => {
   return (
     <>
       <Section
-        className="max-md:px-5 "
+        className="max-md:px-5"
         title={`${t('home.MyProfessionalExperiences')} 💼`}
       >
         <div className="grid grid-cols-12 md:gap-x-10 gap-y-10 ">
@@ -54,7 +54,7 @@ export const Experiences = () => {
       </Section>
       <Section
         className="max-md:px-5 pb-14 pt-2"
-        title={`${t('Ma formation')} 📚`}
+        title={`${t('home.MyTraining')} 📚`}
       >
         <div className="grid grid-cols-12 md:gap-x-10 gap-y-10 ">
           {FormationsCardContent().map((el, i) => (
